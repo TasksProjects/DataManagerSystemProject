@@ -56,7 +56,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.AddStudiengangBtn = new System.Windows.Forms.Button();
             this.AddHochschuleBtn = new System.Windows.Forms.Button();
-            this.AddStudienLandBtn = new System.Windows.Forms.Button();
             this.AddNationalitaetBtn = new System.Windows.Forms.Button();
             this.KommentarTB = new System.Windows.Forms.TextBox();
             this.AblehnungsgrundTB = new System.Windows.Forms.TextBox();
@@ -105,7 +104,6 @@
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.AddStudiengangBtn);
             this.panel1.Controls.Add(this.AddHochschuleBtn);
-            this.panel1.Controls.Add(this.AddStudienLandBtn);
             this.panel1.Controls.Add(this.AddNationalitaetBtn);
             this.panel1.Controls.Add(this.KommentarTB);
             this.panel1.Controls.Add(this.AblehnungsgrundTB);
@@ -408,18 +406,6 @@
             this.AddHochschuleBtn.UseVisualStyleBackColor = false;
             this.AddHochschuleBtn.Click += new System.EventHandler(this.AddHochschuleBtn_Click);
             // 
-            // AddStudienLandBtn
-            // 
-            this.AddStudienLandBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.AddStudienLandBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStudienLandBtn.ForeColor = System.Drawing.Color.White;
-            this.AddStudienLandBtn.Location = new System.Drawing.Point(800, 199);
-            this.AddStudienLandBtn.Name = "AddStudienLandBtn";
-            this.AddStudienLandBtn.Size = new System.Drawing.Size(139, 23);
-            this.AddStudienLandBtn.TabIndex = 16;
-            this.AddStudienLandBtn.Text = "Hinzufügen";
-            this.AddStudienLandBtn.UseVisualStyleBackColor = false;
-            // 
             // AddNationalitaetBtn
             // 
             this.AddNationalitaetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -589,7 +575,6 @@
         private System.Windows.Forms.TextBox FirstnameTB;
         private System.Windows.Forms.Button AddStudiengangBtn;
         private System.Windows.Forms.Button AddHochschuleBtn;
-        private System.Windows.Forms.Button AddStudienLandBtn;
         private System.Windows.Forms.Button AddNationalitaetBtn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label Ablehnungsgrund;
