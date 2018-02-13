@@ -1,0 +1,32 @@
+27.01.2018.
+
+1-Creation de 3 Windows Form:
+	1-AddUserUI
+	2-EditUserUI
+	3-RemoveUserUI
+2- Ajout d un button dans AdminUI
+	1- Button Update Display (pour raffraichir la fenetre d affichage)
+3- Button EditUser deja acheve.
+	1- J ai fait de tel sorte que deux personnes ne puissent pas avoir le meme username
+4- Button RemoveUser deja acheve.
+
+5- Button AddUser deja acheve
+	1-  J ai fait de tel sorte que deux personnes ne puissent pas avoir le meme username
+6- Button Update Display deja acheve
+
+7- Windows Form deja acheve
+	
+8- Ajout de fonctions dans la classe DatabaseManager
+	1- Function SearchUser qui permet de rechercher un username dans la base de donne
+	2- funtion editUser qui permet d editer les donnees d un user tout en verifiant si le username est deja utilise en mode superuser
+	3- function addUser qui permet d ajouter un User tout en verifiant si le username est deja utilise en mode superuser
+	4- function RemoveUser qui permet de retirer un user de la base de donnee
+	5- function  EditAccountUser qui permet d editer un user en mode simple utilisateur
+	6- functon ReturnUserID permet de retourner le userID du username qu on veut modifier
+	7- function  checkUserID permet de retourner le id d un username qu on veut ajouter dans la database s il existe deja
+
+
+bon voila ce que j ai un peu fait tu peux executer tout en modifiant ce qu il ya a modifier.
+
+On peut deja changer les datas de n importe quel user meme le Super User.
+donc cote gestion des User j ai termine.
