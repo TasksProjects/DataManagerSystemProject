@@ -16,6 +16,8 @@ namespace DataManagerSystem.Modules
     public partial class NewStudentUI : Form
     {
         private ConfigData config = new ConfigData();
+       
+
         public NewStudentUI()
         {
             
@@ -736,19 +738,39 @@ namespace DataManagerSystem.Modules
         // Add a New Bewerbung in Database
         public void Add_New_Bewerbung()
         {
-            int check_Prof = 0;
-            int check_Verwaltung = 0;
-            int check_Angenommen = 0;
-            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            int check_Prof ;
+            int check_Verwaltung ;
+            int check_Angenommen ;
 
-           /* if (NoteVorläufingCheckBox.Checked == true)
+            if (AnProfCheckBox.Checked == true)
             {
-                check_NoteVorläufing = 1;
+                check_Prof = 1;
             }
             else
             {
-                check_NoteVorläufing = 0;
-            }*/
+                check_Prof = 0;
+            }
+
+            if (AngenommenCheckBox.Checked == true)
+            {
+                check_Angenommen = 1;
+            }
+            else
+            {
+                check_Angenommen = 0;
+            }
+
+            if (AnHaCheckBox.Checked == true)
+            {
+                check_Verwaltung = 1;
+            }
+            else
+            {
+                check_Verwaltung = 0;
+            }
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+
+        
 
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
             int Studenten_ID = Search_ID_Student(NameTB.Text.Trim());
@@ -762,7 +784,11 @@ namespace DataManagerSystem.Modules
                 SemesterID = STudenten_SemesterID,
                 Comment1 = ZusatzTB.Text,
                 Comment2 = AblehnungsgrundTB.Text,
-                Comment3 = KommentarTB.Text
+                Comment3 = KommentarTB.Text,
+                Prof = check_Prof,
+                Verwaltung = check_Verwaltung,
+                Angenommen = check_Angenommen
+                
             };
 
             string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
@@ -799,5 +825,9 @@ namespace DataManagerSystem.Modules
             this.Close();
 
         }
+
+       
+
+        
     }
 }

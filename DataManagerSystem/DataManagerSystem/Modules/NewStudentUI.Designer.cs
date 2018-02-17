@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewStudentUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AnHaCheckBox = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AngenommenCheckBox = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.AnProfCheckBox = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SemesterCB = new System.Windows.Forms.ComboBox();
             this.DruckenBtn = new System.Windows.Forms.Button();
             this.SemesterBtn = new System.Windows.Forms.Button();
@@ -51,9 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
+            this.AngenommenBtn = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.AnProfBtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.AddStudiengangBtn = new System.Windows.Forms.Button();
             this.AddHochschuleBtn = new System.Windows.Forms.Button();
@@ -78,6 +84,12 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.AnHaCheckBox);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.AngenommenCheckBox);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.AnProfCheckBox);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.SemesterCB);
             this.panel1.Controls.Add(this.DruckenBtn);
             this.panel1.Controls.Add(this.SemesterBtn);
@@ -99,9 +111,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button11);
+            this.panel1.Controls.Add(this.AngenommenBtn);
             this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.AnProfBtn);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.AddStudiengangBtn);
             this.panel1.Controls.Add(this.AddHochschuleBtn);
@@ -124,6 +136,66 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 827);
             this.panel1.TabIndex = 0;
+            // 
+            // AnHaCheckBox
+            // 
+            this.AnHaCheckBox.AutoSize = true;
+            this.AnHaCheckBox.Location = new System.Drawing.Point(772, 406);
+            this.AnHaCheckBox.Margin = new System.Windows.Forms.Padding(10);
+            this.AnHaCheckBox.Name = "AnHaCheckBox";
+            this.AnHaCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AnHaCheckBox.TabIndex = 48;
+            this.AnHaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(681, 404);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 16);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "An Ha 4.1:";
+            // 
+            // AngenommenCheckBox
+            // 
+            this.AngenommenCheckBox.AutoSize = true;
+            this.AngenommenCheckBox.Location = new System.Drawing.Point(585, 406);
+            this.AngenommenCheckBox.Margin = new System.Windows.Forms.Padding(10);
+            this.AngenommenCheckBox.Name = "AngenommenCheckBox";
+            this.AngenommenCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AngenommenCheckBox.TabIndex = 46;
+            this.AngenommenCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(466, 404);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 16);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "Angenommen:";
+            // 
+            // AnProfCheckBox
+            // 
+            this.AnProfCheckBox.AutoSize = true;
+            this.AnProfCheckBox.Location = new System.Drawing.Point(362, 404);
+            this.AnProfCheckBox.Margin = new System.Windows.Forms.Padding(10);
+            this.AnProfCheckBox.Name = "AnProfCheckBox";
+            this.AnProfCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AnProfCheckBox.TabIndex = 44;
+            this.AnProfCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(287, 402);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 16);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "An Prof:";
             // 
             // SemesterCB
             // 
@@ -346,17 +418,17 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Vorname:";
             // 
-            // button11
+            // AngenommenBtn
             // 
-            this.button11.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(800, 652);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(139, 23);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "Angenommen";
-            this.button11.UseVisualStyleBackColor = false;
+            this.AngenommenBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AngenommenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AngenommenBtn.ForeColor = System.Drawing.Color.White;
+            this.AngenommenBtn.Location = new System.Drawing.Point(800, 652);
+            this.AngenommenBtn.Name = "AngenommenBtn";
+            this.AngenommenBtn.Size = new System.Drawing.Size(139, 23);
+            this.AngenommenBtn.TabIndex = 23;
+            this.AngenommenBtn.Text = "Angenommen";
+            this.AngenommenBtn.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -370,17 +442,17 @@
             this.button10.Text = "An Ha 4.1";
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // AnProfBtn
             // 
-            this.button9.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(800, 571);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(139, 23);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "An Prof";
-            this.button9.UseVisualStyleBackColor = false;
+            this.AnProfBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AnProfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AnProfBtn.ForeColor = System.Drawing.Color.White;
+            this.AnProfBtn.Location = new System.Drawing.Point(800, 571);
+            this.AnProfBtn.Name = "AnProfBtn";
+            this.AnProfBtn.Size = new System.Drawing.Size(139, 23);
+            this.AnProfBtn.TabIndex = 21;
+            this.AnProfBtn.Text = "An Prof";
+            this.AnProfBtn.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -494,8 +566,6 @@
             this.CpTB.Name = "CpTB";
             this.CpTB.Size = new System.Drawing.Size(574, 20);
             this.CpTB.TabIndex = 8;
-       
-            
             // 
             // StudiengangCB
             // 
@@ -541,8 +611,6 @@
             this.AbschlussnoteTB.Name = "AbschlussnoteTB";
             this.AbschlussnoteTB.Size = new System.Drawing.Size(574, 21);
             this.AbschlussnoteTB.TabIndex = 7;
-        
-           
             // 
             // NameTB
             // 
@@ -612,9 +680,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button AngenommenBtn;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button AnProfBtn;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox NoteVorläufingCheckBox;
@@ -624,5 +692,11 @@
         private System.Windows.Forms.Button DruckenBtn;
         private System.Windows.Forms.Button SemesterBtn;
         private System.Windows.Forms.ComboBox SemesterCB;
+        private System.Windows.Forms.CheckBox AnHaCheckBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox AngenommenCheckBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox AnProfCheckBox;
+        private System.Windows.Forms.Label label4;
     }
 }
