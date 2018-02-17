@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewStudentUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SemesterCB = new System.Windows.Forms.ComboBox();
+            this.DruckenBtn = new System.Windows.Forms.Button();
+            this.SemesterBtn = new System.Windows.Forms.Button();
             this.ZusatzTB = new System.Windows.Forms.TextBox();
             this.NoteVorläufingCheckBox = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -38,7 +41,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.Ablehnungsgrund = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.SemersterNum = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,7 +54,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.AddStudiengangBtn = new System.Windows.Forms.Button();
             this.AddHochschuleBtn = new System.Windows.Forms.Button();
@@ -60,8 +61,8 @@
             this.KommentarTB = new System.Windows.Forms.TextBox();
             this.AblehnungsgrundTB = new System.Windows.Forms.TextBox();
             this.MasterstudiengangCB = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.CanceledBtn = new System.Windows.Forms.Button();
             this.CpTB = new System.Windows.Forms.TextBox();
             this.StudiengangCB = new System.Windows.Forms.ComboBox();
             this.HochshuleCB = new System.Windows.Forms.ComboBox();
@@ -71,13 +72,15 @@
             this.NameTB = new System.Windows.Forms.TextBox();
             this.FirstnameTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SemersterNum)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.SemesterCB);
+            this.panel1.Controls.Add(this.DruckenBtn);
+            this.panel1.Controls.Add(this.SemesterBtn);
             this.panel1.Controls.Add(this.ZusatzTB);
             this.panel1.Controls.Add(this.NoteVorläufingCheckBox);
             this.panel1.Controls.Add(this.label15);
@@ -86,7 +89,6 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.Ablehnungsgrund);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.SemersterNum);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
@@ -100,7 +102,6 @@
             this.panel1.Controls.Add(this.button11);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.AddStudiengangBtn);
             this.panel1.Controls.Add(this.AddHochschuleBtn);
@@ -108,8 +109,8 @@
             this.panel1.Controls.Add(this.KommentarTB);
             this.panel1.Controls.Add(this.AblehnungsgrundTB);
             this.panel1.Controls.Add(this.MasterstudiengangCB);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.SaveBtn);
+            this.panel1.Controls.Add(this.CanceledBtn);
             this.panel1.Controls.Add(this.CpTB);
             this.panel1.Controls.Add(this.StudiengangCB);
             this.panel1.Controls.Add(this.HochshuleCB);
@@ -124,13 +125,48 @@
             this.panel1.Size = new System.Drawing.Size(1015, 827);
             this.panel1.TabIndex = 0;
             // 
+            // SemesterCB
+            // 
+            this.SemesterCB.FormattingEnabled = true;
+            this.SemesterCB.Location = new System.Drawing.Point(213, 531);
+            this.SemesterCB.Margin = new System.Windows.Forms.Padding(10);
+            this.SemesterCB.Name = "SemesterCB";
+            this.SemesterCB.Size = new System.Drawing.Size(574, 21);
+            this.SemesterCB.TabIndex = 11;
+            // 
+            // DruckenBtn
+            // 
+            this.DruckenBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.DruckenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DruckenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DruckenBtn.ForeColor = System.Drawing.Color.White;
+            this.DruckenBtn.Location = new System.Drawing.Point(661, 711);
+            this.DruckenBtn.Name = "DruckenBtn";
+            this.DruckenBtn.Size = new System.Drawing.Size(126, 35);
+            this.DruckenBtn.TabIndex = 17;
+            this.DruckenBtn.Text = "Drucken";
+            this.DruckenBtn.UseVisualStyleBackColor = false;
+            // 
+            // SemesterBtn
+            // 
+            this.SemesterBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.SemesterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SemesterBtn.ForeColor = System.Drawing.Color.White;
+            this.SemesterBtn.Location = new System.Drawing.Point(800, 528);
+            this.SemesterBtn.Name = "SemesterBtn";
+            this.SemesterBtn.Size = new System.Drawing.Size(139, 23);
+            this.SemesterBtn.TabIndex = 43;
+            this.SemesterBtn.Text = "Hinzufügen";
+            this.SemesterBtn.UseVisualStyleBackColor = false;
+            this.SemesterBtn.Click += new System.EventHandler(this.SemesterBtn_Click);
+            // 
             // ZusatzTB
             // 
             this.ZusatzTB.Location = new System.Drawing.Point(213, 571);
             this.ZusatzTB.Margin = new System.Windows.Forms.Padding(10);
             this.ZusatzTB.Name = "ZusatzTB";
             this.ZusatzTB.Size = new System.Drawing.Size(574, 20);
-            this.ZusatzTB.TabIndex = 42;
+            this.ZusatzTB.TabIndex = 12;
             // 
             // NoteVorläufingCheckBox
             // 
@@ -139,7 +175,7 @@
             this.NoteVorläufingCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.NoteVorläufingCheckBox.Name = "NoteVorläufingCheckBox";
             this.NoteVorläufingCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.NoteVorläufingCheckBox.TabIndex = 41;
+            this.NoteVorläufingCheckBox.TabIndex = 9;
             this.NoteVorläufingCheckBox.UseVisualStyleBackColor = true;
             // 
             // label15
@@ -209,16 +245,6 @@
             this.label11.Size = new System.Drawing.Size(57, 16);
             this.label11.TabIndex = 35;
             this.label11.Text = "Zusatz:";
-            // 
-            // SemersterNum
-            // 
-            this.SemersterNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SemersterNum.Location = new System.Drawing.Point(213, 530);
-            this.SemersterNum.Margin = new System.Windows.Forms.Padding(10);
-            this.SemersterNum.Name = "SemersterNum";
-            this.SemersterNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SemersterNum.Size = new System.Drawing.Size(574, 20);
-            this.SemersterNum.TabIndex = 34;
             // 
             // label10
             // 
@@ -356,18 +382,6 @@
             this.button9.Text = "An Prof";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(800, 530);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(139, 23);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "Drucken";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.MidnightBlue;
@@ -433,7 +447,7 @@
             this.AblehnungsgrundTB.Margin = new System.Windows.Forms.Padding(10);
             this.AblehnungsgrundTB.Name = "AblehnungsgrundTB";
             this.AblehnungsgrundTB.Size = new System.Drawing.Size(574, 20);
-            this.AblehnungsgrundTB.TabIndex = 12;
+            this.AblehnungsgrundTB.TabIndex = 13;
             // 
             // MasterstudiengangCB
             // 
@@ -444,40 +458,44 @@
             this.MasterstudiengangCB.Size = new System.Drawing.Size(574, 21);
             this.MasterstudiengangCB.TabIndex = 10;
             // 
-            // button2
+            // SaveBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(213, 711);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 35);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Speichern";
-            this.button2.UseVisualStyleBackColor = false;
+            this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(213, 711);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(126, 35);
+            this.SaveBtn.TabIndex = 15;
+            this.SaveBtn.Text = "Speichern";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // button1
+            // CanceledBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(608, 711);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 35);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Abbrechen";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CanceledBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.CanceledBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CanceledBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CanceledBtn.ForeColor = System.Drawing.Color.White;
+            this.CanceledBtn.Location = new System.Drawing.Point(429, 711);
+            this.CanceledBtn.Name = "CanceledBtn";
+            this.CanceledBtn.Size = new System.Drawing.Size(126, 35);
+            this.CanceledBtn.TabIndex = 16;
+            this.CanceledBtn.Text = "Abbrechen";
+            this.CanceledBtn.UseVisualStyleBackColor = false;
+            this.CanceledBtn.Click += new System.EventHandler(this.CanceledBtn_Click);
             // 
             // CpTB
             // 
+            this.CpTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CpTB.Location = new System.Drawing.Point(213, 364);
             this.CpTB.Margin = new System.Windows.Forms.Padding(10);
             this.CpTB.Name = "CpTB";
             this.CpTB.Size = new System.Drawing.Size(574, 20);
-            this.CpTB.TabIndex = 7;
+            this.CpTB.TabIndex = 8;
+       
+            
             // 
             // StudiengangCB
             // 
@@ -517,11 +535,14 @@
             // 
             // AbschlussnoteTB
             // 
+            this.AbschlussnoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AbschlussnoteTB.Location = new System.Drawing.Point(213, 324);
             this.AbschlussnoteTB.Margin = new System.Windows.Forms.Padding(10);
             this.AbschlussnoteTB.Name = "AbschlussnoteTB";
-            this.AbschlussnoteTB.Size = new System.Drawing.Size(574, 20);
-            this.AbschlussnoteTB.TabIndex = 2;
+            this.AbschlussnoteTB.Size = new System.Drawing.Size(574, 21);
+            this.AbschlussnoteTB.TabIndex = 7;
+        
+           
             // 
             // NameTB
             // 
@@ -529,7 +550,8 @@
             this.NameTB.Margin = new System.Windows.Forms.Padding(10);
             this.NameTB.Name = "NameTB";
             this.NameTB.Size = new System.Drawing.Size(574, 20);
-            this.NameTB.TabIndex = 1;
+            this.NameTB.TabIndex = 2;
+            this.NameTB.TextChanged += new System.EventHandler(this.NameTB_TextChanged);
             // 
             // FirstnameTB
             // 
@@ -537,7 +559,7 @@
             this.FirstnameTB.Margin = new System.Windows.Forms.Padding(10);
             this.FirstnameTB.Name = "FirstnameTB";
             this.FirstnameTB.Size = new System.Drawing.Size(574, 20);
-            this.FirstnameTB.TabIndex = 0;
+            this.FirstnameTB.TabIndex = 1;
             // 
             // NewStudentUI
             // 
@@ -547,12 +569,13 @@
             this.ClientSize = new System.Drawing.Size(1015, 827);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewStudentUI";
             this.Text = "Neue Bewerbung";
             this.Load += new System.EventHandler(this.NewStudentUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SemersterNum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,8 +586,8 @@
         private System.Windows.Forms.TextBox KommentarTB;
         private System.Windows.Forms.TextBox AblehnungsgrundTB;
         private System.Windows.Forms.ComboBox MasterstudiengangCB;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button CanceledBtn;
         private System.Windows.Forms.TextBox CpTB;
         private System.Windows.Forms.ComboBox StudiengangCB;
         private System.Windows.Forms.ComboBox HochshuleCB;
@@ -579,7 +602,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label Ablehnungsgrund;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown SemersterNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -593,12 +615,14 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox NoteVorläufingCheckBox;
         private System.Windows.Forms.Label label15;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.TextBox ZusatzTB;
+        private System.Windows.Forms.Button DruckenBtn;
+        private System.Windows.Forms.Button SemesterBtn;
+        private System.Windows.Forms.ComboBox SemesterCB;
     }
 }

@@ -105,7 +105,7 @@ namespace DataManagerSystem.Modules
         }
 
        
-
+        // function to search a hochschule's id
         public int Search_Hochschule_ID(string hochschuleName)
         {
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
@@ -143,7 +143,47 @@ namespace DataManagerSystem.Modules
             
         }
 
-        public void Add_Studiengang(int Hochschule_ID)
+        //function to search a title's id
+        public int Search_Title_ID(string titel)
+        {
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            string query = "SELECT ID FROM tab_titel where txtTitel = '" + titel + "' ";
+
+            OleDbConnection UserConnection1 = new OleDbConnection
+            {
+                ConnectionString = config.DbConnectionString
+            };
+            UserConnection1.Open();
+            OleDbCommand cmd1 = new OleDbCommand
+            {
+                Connection = UserConnection1,
+                CommandType = CommandType.Text,
+                CommandText = query
+            };
+            OleDbDataReader reader = cmd1.ExecuteReader();
+
+
+            if (reader.HasRows)
+
+            {
+                reader.Read();
+                string resultat = reader["ID"].ToString();
+                int id = Convert.ToInt32(resultat);
+                UserConnection1.Close();
+                return id;
+            }
+
+            else
+            {
+                UserConnection1.Close();
+                return 0;
+            }
+
+        }
+
+
+        // Function to add a new studiengang
+        public void Add_Studiengang(int Hochschule_ID, int titel)
         {
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
             int check_CPErsatz;
@@ -159,7 +199,7 @@ namespace DataManagerSystem.Modules
 
             string query = "insert into  tab_studiengang ([txtName],[intHochschule],[intRegelstudienzeit],[intCredits],[intTitel],[blnCPErsatz])" +
                           " values ('" + StudyTextBox.Text.Trim() + "','" + Hochschule_ID + "','" + numericUpDown2.Value + "'," +
-                          "'" + numericUpDown1.Value + "','" + 1 + "','" + check_CPErsatz + "')";
+                          "'" + numericUpDown1.Value + "','" + titel + "','" + check_CPErsatz + "')";
             OleDbConnection UserConnection = new OleDbConnection();
             UserConnection.ConnectionString = config.DbConnectionString;
             OleDbCommand cmd = new OleDbCommand();
@@ -185,9 +225,10 @@ namespace DataManagerSystem.Modules
         {
             
             int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
-            if  (ID_Hochschule != 0 && ID_Hochschule != -1)
+            int ID_titel = Search_Title_ID(comboBox1.Text.Trim());
+            if  (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
             {
-                Add_Studiengang(ID_Hochschule);
+                Add_Studiengang(ID_Hochschule,ID_titel);
             }
             else if (ID_Hochschule == 0)
             {

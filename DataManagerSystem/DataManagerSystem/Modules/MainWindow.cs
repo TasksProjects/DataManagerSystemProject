@@ -21,9 +21,10 @@ namespace DataManagerSystem
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
+            
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void SettingButton_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace DataManagerSystem
         {
             NewStudentUI newStudentUI = new NewStudentUI();
             newStudentUI.Show();
+            
         }
 
         private void AdminButton_Click(object sender, EventArgs e)
