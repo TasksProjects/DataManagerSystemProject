@@ -1,27 +1,37 @@
-﻿using DataManagerSystem.Modules;
+﻿using DataManagerSystem.Configs;
+using DataManagerSystem.Modules;
 using System;
+using System.Data;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace DataManagerSystem
 {
     public partial class MainWindow : Form
     {
+        string Online_benutzer;
+        DatabaseManager databaseManager = new DatabaseManager();
+        ConfigData config = new ConfigData();
         SettingsUI settingUI = new SettingsUI();
-        AdminUI adminUI = new AdminUI();
+       
+        
 
-        public MainWindow( string status)
+        public MainWindow( string benutzerName, string status)
         {
             InitializeComponent();
             Disable(status);
             labelStatus.Text = status;
+            Online_benutzer = benutzerName;
 
             // to display the time
             timer1.Start();
         }
 
+        // Disconect the user
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            
+
+            Disconnect_USer(Online_benutzer);
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
             this.Close();
@@ -32,22 +42,28 @@ namespace DataManagerSystem
             settingUI.Show();
         }
 
+
+        //Exit button
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            Disconnect_USer(Online_benutzer);
             Environment.Exit(1);
         }
 
+
+        
         private void AddButton_Click(object sender, EventArgs e)
         {
-            NewStudentUI newStudentUI = new NewStudentUI();
+            NewStudentUI newStudentUI = new NewStudentUI(Online_benutzer);
             newStudentUI.Show();
             
         }
 
         private void AdminButton_Click(object sender, EventArgs e)
         {
+            AdminUI adminUI = new AdminUI(Online_benutzer);
             adminUI.Show();
-            this.WindowState = FormWindowState.Minimized;
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void ShowDbButton_Click(object sender, EventArgs e)
@@ -88,6 +104,81 @@ namespace DataManagerSystem
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        // Disconnect the User
+        public void Disconnect_USer(string user)
+        {
+            UserData onlineuser = new UserData();
+            onlineuser.Username = user;
+            
+            // check if the username already exist and return his value
+            Boolean response = Search_User_Online_To_Disconect(onlineuser);
+            int userID = databaseManager.checkUserID(onlineuser.Username);
+
+
+            if (response == true)
+            {
+                config = XmlDataManager.XmlConfigDataReader("configs.xml");
+                string query = "Update  tab_User set [BlnOnline] = '" + 0 + "'  where ID = " + userID + "";
+                OleDbConnection UserConnection = new OleDbConnection();
+                UserConnection.ConnectionString = config.DbConnectionString;
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = UserConnection;
+                UserConnection.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    // MessageBox.Show("Data Edit Successful");
+                    UserConnection.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Logout failed! " + user + " is already offline!");
+            }
+        }
+
+        // Search the connected user
+        public bool Search_User_Online_To_Disconect(UserData userdat)
+        {
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            int count = 0;
+
+            OleDbConnection LoginConnection = new OleDbConnection();
+            LoginConnection.ConnectionString = config.DbConnectionString;
+            LoginConnection.Open();
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = LoginConnection;
+            cmd.CommandText = "SELECT * FROM tab_User where Username = '" + userdat.Username + "' ";
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count++;
+            }
+
+            LoginConnection.Close();
+
+            // Test if the given username exists in the database
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

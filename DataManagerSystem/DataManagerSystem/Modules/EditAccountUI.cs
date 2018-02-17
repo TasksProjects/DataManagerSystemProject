@@ -8,22 +8,32 @@ namespace DataManagerSystem.Modules
 {
     public partial class EditAccountUI : Form
     {
+        string Online_User;
         DatabaseManager databaseManager = new DatabaseManager();
         OleDbConnection UserConnection = new OleDbConnection();
         ConfigData config = new ConfigData();
         UserData userData = new UserData();
         UserData userData1 = new UserData();
-        public EditAccountUI()
+        public EditAccountUI(string OnlineUser)
         {
             InitializeComponent();
+            Online_User = OnlineUser;
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)
         {
-             this.Close();
-            AdminUI adminUI = new AdminUI();
-            adminUI.Show();
-
+            bool testConnection = databaseManager.Test_Connection_User(Online_User);
+            if (testConnection == true)
+            {
+                this.Close();
+                AdminUI adminUI = new AdminUI(Online_User);
+                adminUI.Show();
+            }
+            else
+            {
+                MessageBox.Show("The User " + Online_User + " is offline!");
+                this.Close();
+            }
         }
 
         private void EditAccountUI_Load(object sender, EventArgs e)
@@ -35,69 +45,74 @@ namespace DataManagerSystem.Modules
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
-            if (UsernameTextBox.Text == string.Empty || OldPasswordTextBox.Text == string.Empty || NewPasswordTextBox.Text == string.Empty || RepeatPasswordTextBox.Text == string.Empty)
+            bool testConnection = databaseManager.Test_Connection_User(Online_User);
+            if (testConnection == true)
             {
-                MessageBox.Show("Please enter correct data!");
-            }
-            else
-            {
-                userData = XmlDataManager.XmlUserDataReader("userdata.xml");
-                string  unchangeUsername = userData.Username; // old Username
-                string UserAttribut = userData.UserAttribut;
-
-                userData1 = XmlDataManager.XmlUserDataReader("XMLSystemAdmin.xml");
-                string UserAttribut1 = userData1.UserAttribut;
-
-
-
-                if (!(UserAttribut.Equals("SuperAdmin")))
+                if (UsernameTextBox.Text == string.Empty || OldPasswordTextBox.Text == string.Empty || NewPasswordTextBox.Text == string.Empty || RepeatPasswordTextBox.Text == string.Empty)
                 {
-                    // return the UserId from the database
-                    int UserId = databaseManager.ReturnUserID(unchangeUsername, OldPasswordTextBox.Text);
-
-                    string newUsername = UsernameTextBox.Text; // new Username
-                    string oldPassword = OldPasswordTextBox.Text; // old Password
-                    string newPassword = NewPasswordTextBox.Text; // new Password
-                    string repeatPassword = RepeatPasswordTextBox.Text; // new Password
-
-                    //Edit the UserData as simple user.
-                    databaseManager.EditAccountUser(UserId, newUsername, oldPassword, newPassword, repeatPassword);
-                    UsernameTextBox.Clear();
-                     OldPasswordTextBox.Clear();
-                     NewPasswordTextBox.Clear();
-                     RepeatPasswordTextBox.Clear();
-                    this.Close();
+                    MessageBox.Show("Please enter correct data!");
                 }
                 else
                 {
-                   
-                    string AdminPassword = userData1.Password;
-                    if ((OldPasswordTextBox.Text).Equals(AdminPassword))
+                    userData = XmlDataManager.XmlUserDataReader("userdata.xml");
+                    string unchangeUsername = userData.Username; // old Username
+                    string UserAttribut = userData.UserAttribut;
+
+                    userData1 = XmlDataManager.XmlUserDataReader("XMLSystemAdmin.xml");
+                    string UserAttribut1 = userData1.UserAttribut;
+
+
+
+                    if (!(UserAttribut.Equals("SuperAdmin")))
                     {
-                        if (File.Exists("XMLSystemAdmin.xml"))
-                        {
-                            userData.Username = UsernameTextBox.Text.Trim();
-                            userData.Password = NewPasswordTextBox.Text.Trim();
-                            userData.UserAttribut = UserAttribut;
-                            XmlDataManager.XmlDataWriter(userData, "XMLSystemAdmin.xml");
-                            MessageBox.Show("SuperAdmin Data changed successful");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Fie doesn't exists!");
-                        }
+                        // return the UserId from the database
+                        int UserId = databaseManager.ReturnUserID(unchangeUsername, OldPasswordTextBox.Text);
+
+                        string newUsername = UsernameTextBox.Text; // new Username
+                        string oldPassword = OldPasswordTextBox.Text; // old Password
+                        string newPassword = NewPasswordTextBox.Text; // new Password
+                        string repeatPassword = RepeatPasswordTextBox.Text; // new Password
+
+                        //Edit the UserData as simple user.
+                        databaseManager.EditAccountUser(UserId, newUsername, oldPassword, newPassword, repeatPassword);
+                        UsernameTextBox.Clear();
+                        OldPasswordTextBox.Clear();
+                        NewPasswordTextBox.Clear();
+                        RepeatPasswordTextBox.Clear();
+                        this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Wrong Password. Please give a correct password!");
+
+                        string AdminPassword = userData1.Password;
+                        if ((OldPasswordTextBox.Text).Equals(AdminPassword))
+                        {
+                            if (File.Exists("XMLSystemAdmin.xml"))
+                            {
+                                userData.Username = UsernameTextBox.Text.Trim();
+                                userData.Password = NewPasswordTextBox.Text.Trim();
+                                userData.UserAttribut = UserAttribut;
+                                XmlDataManager.XmlDataWriter(userData, "XMLSystemAdmin.xml");
+                                MessageBox.Show("SuperAdmin Data changed successful");
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Fie doesn't exists!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong Password. Please give a correct password!");
+                        }
                     }
                 }
-
-
-
             }
+            else
+            {
+                MessageBox.Show("The User " + Online_User + " is offline!");
+                this.Close();
+            } 
         }
     }
 }

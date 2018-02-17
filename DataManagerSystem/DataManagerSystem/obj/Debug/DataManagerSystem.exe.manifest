@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataManagerSystem.exe" size="4293632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataManagerSystem.exe" size="4296192">
       <assemblyIdentity name="DataManagerSystem" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZFQUh4guv3IqRRZOgH1yUzrqyyFeV7u/GKYq/U8nyjQ=</dsig:DigestValue>
+        <dsig:DigestValue>IJP6JUk9nJheDbFfGPkEKo/fS+DuGPueJ2ECC4Ek1RU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -7,13 +7,16 @@ namespace DataManagerSystem.Modules
 {
     public partial class AdminUI : Form
     {
+        string benutzer_Online;
         DatabaseManager databaseManager = new DatabaseManager();
         OleDbConnection UserConnection = new OleDbConnection();
         UserData userData = new UserData();
+       
 
-        public AdminUI()
+        public AdminUI(string onlineUser)
         {
             InitializeComponent();
+            benutzer_Online = onlineUser;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -48,9 +51,19 @@ namespace DataManagerSystem.Modules
 
         private void EditAccountButton_Click(object sender, EventArgs e)
         {
-            EditAccountUI editAccountUI = new EditAccountUI();
-            editAccountUI.Show();
-            this.Hide();
+            bool testConnection = databaseManager.Test_Connection_User(benutzer_Online);
+            if (testConnection == true)
+            {
+                EditAccountUI editAccountUI = new EditAccountUI(benutzer_Online);
+                editAccountUI.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("The User " + benutzer_Online + " is offline!");
+                this.Close();
+            }
+           
         }
 
         private void UserDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -16,12 +16,16 @@ namespace DataManagerSystem.Modules
     public partial class NewStudentUI : Form
     {
         private ConfigData config = new ConfigData();
-       
+        DatabaseManager databaseManager = new DatabaseManager();
+        string benutzer_Name;
 
-        public NewStudentUI()
+
+
+        public NewStudentUI(string benutzername)
         {
             
             InitializeComponent();
+            benutzer_Name = benutzername;
             AutoCompleteText_Nationalitaet();
             Load_Nationalitaet_Database();
              AutoCompleteText_Land();
@@ -604,13 +608,13 @@ namespace DataManagerSystem.Modules
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
             StudentData studentData = new StudentData
             {
-                Vorname = FirstnameTB.Text,
-                Name = NameTB.Text,
+                Vorname = FirstnameTB.Text.Trim(),
+                Name = NameTB.Text.Trim(),
                 Nationalitaet = Student_nationalitaet,
                 Bachelor = BachelorNummer,
-                Student_Note = Convert.ToDouble(AbschlussnoteTB.Text),
+                Student_Note = Convert.ToDouble(AbschlussnoteTB.Text.Trim()),
                 NoteVorlaefig = check_NoteVorläufing,
-                Creditpunkte = Convert.ToInt32(CpTB.Text)
+                Creditpunkte = Convert.ToInt32(CpTB.Text.Trim())
             };
 
             string query = "insert into  tab_person([txtVorname],[txtName],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
@@ -782,9 +786,9 @@ namespace DataManagerSystem.Modules
                 StudentID = Studenten_ID,
                 Master_StudiengangID = MasterstudiengangID,
                 SemesterID = STudenten_SemesterID,
-                Comment1 = ZusatzTB.Text,
-                Comment2 = AblehnungsgrundTB.Text,
-                Comment3 = KommentarTB.Text,
+                Comment1 = ZusatzTB.Text.Trim(),
+                Comment2 = AblehnungsgrundTB.Text.Trim(),
+                Comment3 = KommentarTB.Text.Trim(),
                 Prof = check_Prof,
                 Verwaltung = check_Verwaltung,
                 Angenommen = check_Angenommen
@@ -815,15 +819,34 @@ namespace DataManagerSystem.Modules
 
         private void CanceledBtn_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            Add_New_Student();
-            Add_New_Bewerbung();
-            this.Close();
+            bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
 
+            if (test_Connection == true)
+            {
+                if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
+                   || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
+                   || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
+                {
+                    Add_New_Student();
+                    Add_New_Bewerbung();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please fill all the field!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                this.Close();
+            }
         }
 
        

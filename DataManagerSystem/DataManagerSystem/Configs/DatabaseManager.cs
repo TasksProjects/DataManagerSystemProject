@@ -8,7 +8,7 @@ namespace DataManagerSystem.Configs
     public class DatabaseManager
     {
         private ConfigData config = new ConfigData();
-
+       
 
         public void ShowDatabase(DataGridView grid)
         {
@@ -328,7 +328,69 @@ namespace DataManagerSystem.Configs
 
         }
 
+        // Search the connected user
+        public bool Search_User_Online(UserData userdat)
+        {
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            int count = 0;
 
+            OleDbConnection LoginConnection = new OleDbConnection();
+            LoginConnection.ConnectionString = config.DbConnectionString;
+            LoginConnection.Open();
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = LoginConnection;
+            cmd.CommandText = "SELECT * FROM tab_User where Username = '" + userdat.Username + "' and Password = '" + userdat.Password + "' and Attribut = '" + userdat.UserAttribut + "' ";
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count++;
+            }
+
+            LoginConnection.Close();
+
+            // Test if the given username exists in the database
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Test_Connection_User(string benutzername)
+        {
+            
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            OleDbConnection LoginConnection = new OleDbConnection();
+            LoginConnection.ConnectionString = config.DbConnectionString;
+            LoginConnection.Open();
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = LoginConnection;
+            cmd.CommandText = "SELECT BlnOnline FROM tab_User where Username = '" + benutzername + "' ";
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+
+            {
+                reader.Read();
+                string userOnline = reader["BlnOnline"].ToString();
+
+                LoginConnection.Close();
+                bool UserIsOnline = Convert.ToBoolean(userOnline);
+
+                return UserIsOnline;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
