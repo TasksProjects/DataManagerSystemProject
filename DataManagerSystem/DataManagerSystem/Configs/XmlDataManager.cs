@@ -25,6 +25,17 @@ namespace DataManagerSystem.Configs
             return obj;
         }
 
+        //Userdata xml reader
+        public static SuperUserData XmlSuperUserDataReader(string filename)
+        {
+            SuperUserData obj = new SuperUserData();
+            XmlSerializer xs = new XmlSerializer(typeof(SuperUserData));
+            FileStream reader = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+            obj = (SuperUserData)xs.Deserialize(reader);
+            reader.Close();
+            return obj;
+        }
+
         //Configs xml reader
         public static ConfigData XmlConfigDataReader(string filename)
         {

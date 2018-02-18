@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,15 @@ namespace DataManagerSystem.Modules
 {
     public partial class Add_Land : Form
     {
+        DatabaseManager databaseManager = new DatabaseManager();
+        string benutzer_Online;
         private ConfigData config = new ConfigData();
 
-        public Add_Land(String NameLand)
+        public Add_Land(string benutzer, String NameLand)
         {
             InitializeComponent();
             LandTextBox.Text = NameLand;
+            benutzer_Online = benutzer;
         }
 
         public Add_Land()
@@ -58,8 +62,46 @@ namespace DataManagerSystem.Modules
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            AddLand();
-            this.Close();
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
+            {
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
+            }
+
+            if (user.UserAttribut != "SuperAdmin")
+            {
+                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Online);
+
+                if (test_Connection == true)
+                {
+                    AddLand();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Online + " is offline!");
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                }
+
+                if (superUser.SuperUserstatut == 1)
+                {
+                    AddLand();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Online + " is offline!");
+                    this.Close();
+                }
+            }
         }
 
         private void Cancelbtn_Click(object sender, EventArgs e)

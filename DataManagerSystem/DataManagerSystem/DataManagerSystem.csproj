@@ -103,6 +103,7 @@
     <Compile Include="Configs\ConfigData.cs" />
     <Compile Include="Configs\DatabaseManager.cs" />
     <Compile Include="Configs\StudentData.cs" />
+    <Compile Include="Configs\SuperUserData.cs" />
     <Compile Include="Configs\UserData.cs" />
     <Compile Include="Configs\XmlDataManager.cs" />
     <Compile Include="Modules\AddUserUI.cs">

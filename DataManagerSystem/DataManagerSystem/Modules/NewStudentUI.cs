@@ -44,21 +44,134 @@ namespace DataManagerSystem.Modules
 
         private void AddStudiengangBtn_Click(object sender, EventArgs e)
         {
-            StudiengangUI studiengangUI = new StudiengangUI(StudiengangCB.Text);
-            studiengangUI.Show();
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
+            {
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
+            }
+
+            if (user.UserAttribut != "SuperAdmin")
+            {
+                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
+
+                if (test_Connection == true)
+                {
+                    StudiengangUI studiengangUI = new StudiengangUI(benutzer_Name, StudiengangCB.Text);
+                    studiengangUI.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                }
+
+                if (superUser.SuperUserstatut == 1)
+                {
+                    StudiengangUI studiengangUI = new StudiengangUI(benutzer_Name, StudiengangCB.Text);
+                    studiengangUI.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+            }
         }
 
         private void AddHochschuleBtn_Click(object sender, EventArgs e)
         {
-            Add_Hochschule add_Hochschule = new Add_Hochschule(HochshuleCB.Text);
-            add_Hochschule.Show();
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
+            {
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
+            }
 
+            if (user.UserAttribut != "SuperAdmin")
+            {
+                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
+
+                if (test_Connection == true)
+                {
+                    Add_Hochschule add_Hochschule = new Add_Hochschule(benutzer_Name, HochshuleCB.Text);
+                    add_Hochschule.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                }
+
+                if (superUser.SuperUserstatut == 1)
+                {
+                    Add_Hochschule add_Hochschule = new Add_Hochschule(benutzer_Name, HochshuleCB.Text);
+                    add_Hochschule.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+            }
         }
 
         private void AddNationalitaetBtn_Click(object sender, EventArgs e)
         {
-            Add_Land add_Land = new Add_Land(NationalityTB.Text);
-            add_Land.Show();
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
+            {
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
+            }
+
+            if (user.UserAttribut != "SuperAdmin")
+            {
+                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
+
+                if (test_Connection == true)
+                {
+                    Add_Land add_Land = new Add_Land(benutzer_Name, NationalityTB.Text);
+                    add_Land.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                }
+
+                if (superUser.SuperUserstatut == 1)
+                {
+                    Add_Land add_Land = new Add_Land(benutzer_Name, NationalityTB.Text);
+                    add_Land.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+            }
         }
 
         private void NewStudentUI_Load(object sender, EventArgs e)
@@ -825,27 +938,67 @@ namespace DataManagerSystem.Modules
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
-
-            if (test_Connection == true)
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
             {
-                if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
-                   || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
-                   || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
+            }
+
+            if (user.UserAttribut != "SuperAdmin")
+            {
+                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
+
+                if (test_Connection == true)
                 {
-                    Add_New_Student();
-                    Add_New_Bewerbung();
-                    this.Close();
+                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
+                       || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
+                       || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
+                    {
+                        Add_New_Student();
+                        Add_New_Bewerbung();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill all the field!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Please fill all the field!");
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
                 }
             }
             else
             {
-                MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                this.Close();
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                }
+
+                if (superUser.SuperUserstatut == 1)
+                {
+                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
+                      || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
+                      || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
+                    {
+                        Add_New_Student();
+                        Add_New_Bewerbung();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill all the field!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
+                    this.Close();
+                }
+                
+
             }
         }
 

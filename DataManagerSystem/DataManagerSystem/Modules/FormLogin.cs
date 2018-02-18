@@ -16,6 +16,7 @@ namespace DataManagerSystem
         String Attribut = string.Empty;
         UserData benutzer = new UserData();
         UserData userData = new UserData();
+        SuperUserData superUserData = new SuperUserData();
         ConfigData config = new ConfigData();
 
         public FormLogin()
@@ -38,6 +39,7 @@ namespace DataManagerSystem
         // Button to Exit the Application
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            
             Environment.Exit(1);
         }
 
@@ -85,6 +87,15 @@ namespace DataManagerSystem
 
                         if (UserNameTextBox.Text.Trim() == userData.Username.Trim() & PasswordTextBox.Text.Trim() == userData.Password.Trim() & AttributComboBox.Text.Trim() == userData.UserAttribut.Trim())
                         {
+                            SuperUserData superUser = new SuperUserData
+                            {
+                                SuperUsername = userData.Username,
+                                SuperUserAttribut = userData.UserAttribut,
+                                SuperUserstatut = 1
+                            };
+                            superUserData = superUser;
+                            XmlDataManager.XmlDataWriter(superUserData, "SuperUserStatut.xml");
+                     
                             MainWindow objMainWindow = new MainWindow(userData.Username,userData.UserAttribut);
                             objMainWindow.Show();
                             this.Hide();

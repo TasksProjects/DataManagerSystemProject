@@ -9,19 +9,23 @@ namespace DataManagerSystem.Modules
 {
     public partial class StudiengangUI : Form
     {
+        DatabaseManager databaseManager = new DatabaseManager();
+        string benutzerOnline;
         private ConfigData config = new ConfigData();
         
 
-        public StudiengangUI()
+        public StudiengangUI(string User)
         {
             InitializeComponent();
+           
             AutoCompleteText_Hochschule();
             Load_Hochschule_Database();
         }
 
-        public StudiengangUI(string StudiengangName)
+        public StudiengangUI(string benutzername, string StudiengangName)
         {
             InitializeComponent();
+            benutzerOnline = benutzername;
             StudyTextBox.Text = StudiengangName;
         }
 
@@ -223,31 +227,76 @@ namespace DataManagerSystem.Modules
         private void AddButton_Click(object sender, EventArgs e)
            
         {
-            
-            int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
-            int ID_titel = Search_Title_ID(comboBox1.Text.Trim());
-            if  (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
             {
-                Add_Studiengang(ID_Hochschule,ID_titel);
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
             }
-            else if (ID_Hochschule == 0)
-            {
 
-                DialogResult dialogResult = MessageBox.Show("Hochschule doesn't exist! Please click Ok to add a new hochschule!", "confirmation", MessageBoxButtons.OKCancel);
-                if (dialogResult == DialogResult.OK)
+            if (user.UserAttribut != "SuperAdmin")
+            {
+                bool test_Connection = databaseManager.Test_Connection_User(benutzerOnline);
+
+                if (test_Connection == true)
                 {
-                    Add_Hochschule add_Hochschule = new Add_Hochschule(HochschuleComboBox.Text);
-                    add_Hochschule.Show();
-                    this.Close();
+                    int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
+                    int ID_titel = Search_Title_ID(comboBox1.Text.Trim());
+                    if (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
+                    {
+                        Add_Studiengang(ID_Hochschule, ID_titel);
+                    }
+                    else if (ID_Hochschule == 0)
+                    {
 
-                   
+                        DialogResult dialogResult = MessageBox.Show("Hochschule doesn't exist! Please click Ok to add a new hochschule!", "confirmation", MessageBoxButtons.OKCancel);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            Add_Hochschule add_Hochschule = new Add_Hochschule(benutzerOnline, HochschuleComboBox.Text);
+                            add_Hochschule.Show();
+                            this.Close();
+                        }
+                    }
                 }
-               
+                else
+                {
+                    MessageBox.Show("The User " + benutzerOnline + " is offline!");
+                    this.Close();
+                }
             }
-            
-           
-                
-            
+            else
+            {
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                }
+
+                if (superUser.SuperUserstatut == 1)
+                {
+                    int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
+                    int ID_titel = Search_Title_ID(comboBox1.Text.Trim());
+                    if (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
+                    {
+                        Add_Studiengang(ID_Hochschule, ID_titel);
+                    }
+                    else if (ID_Hochschule == 0)
+                    {
+
+                        DialogResult dialogResult = MessageBox.Show("Hochschule doesn't exist! Please click Ok to add a new hochschule!", "confirmation", MessageBoxButtons.OKCancel);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            Add_Hochschule add_Hochschule = new Add_Hochschule(benutzerOnline, HochschuleComboBox.Text);
+                            add_Hochschule.Show();
+                            this.Close();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The User " + benutzerOnline + " is offline!");
+                    this.Close();
+                }
+            }
         }
 
         private void Show_Database()

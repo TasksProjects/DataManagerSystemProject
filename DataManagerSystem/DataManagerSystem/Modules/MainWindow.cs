@@ -3,6 +3,7 @@ using DataManagerSystem.Modules;
 using System;
 using System.Data;
 using System.Data.OleDb;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DataManagerSystem
@@ -30,11 +31,34 @@ namespace DataManagerSystem
         // Disconect the user
         private void LogoutButton_Click(object sender, EventArgs e)
         {
+            UserData user = new UserData();
+            SuperUserData superUser = new SuperUserData();
+            if (File.Exists("userData.xml"))
+            {
+                user = XmlDataManager.XmlUserDataReader("userData.xml");
+            }
+            if ( user.UserAttribut != "SuperAdmin")
+            {
+                Disconnect_USer(Online_benutzer);
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+                this.Close();
+            }
+            else
+            {
+                if (File.Exists("SuperUserStatut.xml"))
+                {
+                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
 
-            Disconnect_USer(Online_benutzer);
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
-            this.Close();
+                    superUser.SuperUserstatut = 0;
+                    XmlDataManager.XmlDataWriter(superUser, "SuperUserStatut.xml");
+                    FormLogin formLogin = new FormLogin();
+                    formLogin.Show();
+                    this.Close();
+                }
+               
+            }
+            
         }
 
         private void SettingButton_Click(object sender, EventArgs e)
@@ -97,7 +121,8 @@ namespace DataManagerSystem
 
         private void StudiengangButton_Click(object sender, EventArgs e)
         {
-            StudiengangUI studiengangUI = new StudiengangUI();
+            string studuengang = "";
+            StudiengangUI studiengangUI = new StudiengangUI(Online_benutzer,studuengang );
             studiengangUI.Show();
         }
 
