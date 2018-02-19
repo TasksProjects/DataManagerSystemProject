@@ -35,7 +35,7 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.HochschuleComboBox = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TitelComboBox = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.HochschuleComboBox);
             this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.TitelComboBox);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -131,12 +131,12 @@
             this.numericUpDown1.Size = new System.Drawing.Size(254, 20);
             this.numericUpDown1.TabIndex = 36;
             // 
-            // comboBox1
+            // TitelComboBox
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TitelComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TitelComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TitelComboBox.FormattingEnabled = true;
+            this.TitelComboBox.Items.AddRange(new object[] {
             "B. Sc.",
             "M. Sc.",
             "B. Eng",
@@ -144,10 +144,10 @@
             "Prof. Dr.-Ing",
             "Prof. Dr. rer. nat.",
             "Prof. Dr. techn. Dipl.-Ing"});
-            this.comboBox1.Location = new System.Drawing.Point(509, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(254, 21);
-            this.comboBox1.TabIndex = 35;
+            this.TitelComboBox.Location = new System.Drawing.Point(509, 59);
+            this.TitelComboBox.Name = "TitelComboBox";
+            this.TitelComboBox.Size = new System.Drawing.Size(254, 21);
+            this.TitelComboBox.TabIndex = 35;
             // 
             // checkBox1
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.ComboBox HochschuleComboBox;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox TitelComboBox;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

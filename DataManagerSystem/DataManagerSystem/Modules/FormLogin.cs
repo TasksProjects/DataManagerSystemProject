@@ -63,14 +63,23 @@ namespace DataManagerSystem
                 if (benutzerOnline.UserAttribut != "SuperAdmin")
                 {
                     bool Check_benutzer_online = Search_Online_benutzer(benutzerOnline);
-                    if (Check_benutzer_online == true)
+                    bool checkBenutzerData = Check_Benutzer_Data(benutzerOnline);
+                    if (checkBenutzerData == true)
                     {
-                        Set_USer_Online(benutzerOnline);
+                        if (Check_benutzer_online == true)
+                        {
+                            Set_USer_Online(benutzerOnline);
+                        }
+                        else
+                        {
+                            MessageBox.Show("connection failed! " + benutzerOnline.Username + " is already online!");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("connection failed! " + benutzerOnline.Username + " is already online!");
+                        MessageBox.Show("Check your Username and Password!");
                     }
+                   
                    
                    
                
@@ -122,6 +131,37 @@ namespace DataManagerSystem
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = LoginConnection;
             cmd.CommandText = "SELECT BlnOnline FROM tab_User where Username = '" + userdat.Username + "' and Password = '" + userdat.Password + "' and Attribut = '" + userdat.UserAttribut + "' ";
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count++;
+            }
+
+            LoginConnection.Close();
+
+            // Test if the given username exists in the database
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Check_Benutzer_Data(UserData userdat)
+        {
+            int count = 0;
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            OleDbConnection LoginConnection = new OleDbConnection();
+            LoginConnection.ConnectionString = config.DbConnectionString;
+            LoginConnection.Open();
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = LoginConnection;
+            cmd.CommandText = "SELECT * FROM tab_User where Username = '" + userdat.Username + "' and Password = '" + userdat.Password + "' and Attribut = '" + userdat.UserAttribut + "' ";
             OleDbDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())

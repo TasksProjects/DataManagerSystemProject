@@ -57,8 +57,16 @@ namespace DataManagerSystem.Modules
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            AddSemester();
-            this.Close();
+            if (!SemesterTextBox.Text.Trim().Equals(string.Empty))
+            {
+                AddSemester();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please give a semester!");
+            }
+          
         }
     }
 }

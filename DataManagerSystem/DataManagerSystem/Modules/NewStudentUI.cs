@@ -719,37 +719,60 @@ namespace DataManagerSystem.Modules
            
             int BachelorNummer = 50;
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
-            StudentData studentData = new StudentData
-            {
-                Vorname = FirstnameTB.Text.Trim(),
-                Name = NameTB.Text.Trim(),
-                Nationalitaet = Student_nationalitaet,
-                Bachelor = BachelorNummer,
-                Student_Note = Convert.ToDouble(AbschlussnoteTB.Text.Trim()),
-                NoteVorlaefig = check_NoteVorläufing,
-                Creditpunkte = Convert.ToInt32(CpTB.Text.Trim())
-            };
+            double AbschlussNote;
+            int CP;
+            bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
+            bool result = int.TryParse(CpTB.Text.Trim(), out CP);
 
-            string query = "insert into  tab_person([txtVorname],[txtName],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
-                         " values ('" + studentData.Vorname + "','" + studentData.Name + "','" + studentData.Nationalitaet + "'," +
-                         "'" + studentData.Bachelor + "','" + studentData.Student_Note + "', '" + studentData.NoteVorlaefig + "', '" + studentData.Creditpunkte + "')";
-            OleDbConnection UserConnection = new OleDbConnection();
-            UserConnection.ConnectionString = config.DbConnectionString;
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = query;
-            cmd.Connection = UserConnection;
-            UserConnection.Open();
-            try
+            if (Student_nationalitaet !=0)
             {
-                cmd.ExecuteNonQuery();
-               // MessageBox.Show("Data Saved Successful");
-                UserConnection.Close();
+                if ((res == true) && (result == true))
+                {
+                    StudentData studentData = new StudentData
+                    {
+                        Vorname = FirstnameTB.Text.Trim(),
+                        Name = NameTB.Text.Trim(),
+                        Nationalitaet = Student_nationalitaet,
+                        Bachelor = BachelorNummer,
+                        //Student_Note = Convert.ToDouble(AbschlussnoteTB.Text.Trim()),
+                        Student_Note = AbschlussNote,
+                        NoteVorlaefig = check_NoteVorläufing,
+                        // Creditpunkte = Convert.ToInt32(CpTB.Text.Trim())
+                        Creditpunkte = CP
+                    };
+
+                    string query = "insert into  tab_person([txtVorname],[txtName],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
+                           " values ('" + studentData.Vorname + "','" + studentData.Name + "','" + studentData.Nationalitaet + "'," +
+                           "'" + studentData.Bachelor + "','" + studentData.Student_Note + "', '" + studentData.NoteVorlaefig + "', '" + studentData.Creditpunkte + "')";
+                    OleDbConnection UserConnection = new OleDbConnection();
+                    UserConnection.ConnectionString = config.DbConnectionString;
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = UserConnection;
+                    UserConnection.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        // MessageBox.Show("Data Saved Successful");
+                        UserConnection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correct Abschlussnote or CP! " + CP + " or " + AbschlussNote + " has bad format!");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error " + ex);
+                MessageBox.Show("Please check the nationality! " + NationalityTB.Text.Trim() + " doesn't exist!" );
             }
+
+           
         }
         
         // function to search a Student_ID in database
@@ -892,42 +915,53 @@ namespace DataManagerSystem.Modules
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
             int Studenten_ID = Search_ID_Student(NameTB.Text.Trim());
             int MasterstudiengangID = Search_ID_Masterstudiengang(MasterstudiengangCB.Text.Trim());
-            int STudenten_SemesterID = Search_ID_Smester(SemesterCB.Text.Trim());
+            int Studenten_SemesterID = Search_ID_Smester(SemesterCB.Text.Trim());
 
-            Bewerbungsdata bewerbungsdata = new Bewerbungsdata
+            if ((Student_nationalitaet!=0)&&(Studenten_ID != 0)&&(MasterstudiengangID !=0)&&(Studenten_SemesterID !=0))
             {
-                StudentID = Studenten_ID,
-                Master_StudiengangID = MasterstudiengangID,
-                SemesterID = STudenten_SemesterID,
-                Comment1 = ZusatzTB.Text.Trim(),
-                Comment2 = AblehnungsgrundTB.Text.Trim(),
-                Comment3 = KommentarTB.Text.Trim(),
-                Prof = check_Prof,
-                Verwaltung = check_Verwaltung,
-                Angenommen = check_Angenommen
-                
-            };
+                Bewerbungsdata bewerbungsdata = new Bewerbungsdata
+                {
+                    StudentID = Studenten_ID,
+                    Master_StudiengangID = MasterstudiengangID,
+                    SemesterID = Studenten_SemesterID,
+                    Comment1 = ZusatzTB.Text.Trim(),
+                    Comment2 = AblehnungsgrundTB.Text.Trim(),
+                    Comment3 = KommentarTB.Text.Trim(),
+                    Prof = check_Prof,
+                    Verwaltung = check_Verwaltung,
+                    Angenommen = check_Angenommen
 
-            string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
-                         " values ('" + bewerbungsdata.StudentID + "','" + bewerbungsdata.Master_StudiengangID + "','" + bewerbungsdata.SemesterID + "'," +
-                         "'" +  bewerbungsdata.Comment1 + "','" + bewerbungsdata.Comment2 + "', '" + bewerbungsdata.Comment3 + "', '" +check_Prof  + "', '" + check_Verwaltung + "', '" + check_Angenommen + "')";
-            OleDbConnection UserConnection = new OleDbConnection();
-            UserConnection.ConnectionString = config.DbConnectionString;
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = query;
-            cmd.Connection = UserConnection;
-            UserConnection.Open();
-            try
-            {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data Saved Successful");
-                UserConnection.Close();
+                };
+
+                string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
+                             " values ('" + bewerbungsdata.StudentID + "','" + bewerbungsdata.Master_StudiengangID + "','" + bewerbungsdata.SemesterID + "'," +
+                             "'" + bewerbungsdata.Comment1 + "','" + bewerbungsdata.Comment2 + "', '" + bewerbungsdata.Comment3 + "', '" + check_Prof + "', '" + check_Verwaltung + "', '" + check_Angenommen + "')";
+                OleDbConnection UserConnection = new OleDbConnection();
+                UserConnection.ConnectionString = config.DbConnectionString;
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = UserConnection;
+                UserConnection.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data Saved Successful");
+                    UserConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error " + ex);
+                MessageBox.Show("Please check the student'daten! " + MasterstudiengangCB.Text.Trim() + " or " + SemesterCB.Text.Trim() + " has bad format!");
+                NewStudentUI newStudent = new NewStudentUI(benutzer_Name);
+                newStudent.Show();
             }
+
+           
         }
 
         private void CanceledBtn_Click(object sender, EventArgs e)
@@ -997,13 +1031,7 @@ namespace DataManagerSystem.Modules
                     MessageBox.Show("The User " + benutzer_Name + " is offline!");
                     this.Close();
                 }
-                
-
             }
-        }
-
-       
-
-        
+        }  
     }
 }

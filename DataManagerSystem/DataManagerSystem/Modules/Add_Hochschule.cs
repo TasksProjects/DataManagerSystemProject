@@ -174,83 +174,90 @@ namespace DataManagerSystem.Modules
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
-            if (File.Exists("userData.xml"))
+            if (!NameTextBox.Text.Trim().Equals(string.Empty) && !LandComboBox.Text.Trim().Equals(string.Empty))
             {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-
-            if (user.UserAttribut != "SuperAdmin")
-            {
-                bool test_Connection = databaseManager.Test_Connection_User(benutzerOnline);
-
-                if (test_Connection == true)
+                UserData user = new UserData();
+                SuperUserData superUser = new SuperUserData();
+                if (File.Exists("userData.xml"))
                 {
-                    int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
-                    if (ID_Land != 0 && ID_Land != -1)
-                    {
-                        AddHochschule(ID_Land);
-                    }
-                    else if (ID_Land == 0)
-                    {
+                    user = XmlDataManager.XmlUserDataReader("userData.xml");
+                }
 
-                        DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
-                        if (dialogResult == DialogResult.OK)
+                if (user.UserAttribut != "SuperAdmin")
+                {
+                    bool test_Connection = databaseManager.Test_Connection_User(benutzerOnline);
+
+                    if (test_Connection == true)
+                    {
+                        int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
+                        if (ID_Land != 0 && ID_Land != -1)
                         {
-                            Add_Land add_Land = new Add_Land(benutzerOnline, LandComboBox.Text);
-                            add_Land.Show();
-                            this.Close();
+                            AddHochschule(ID_Land);
+                        }
+                        else if (ID_Land == 0)
+                        {
+
+                            DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                Add_Land add_Land = new Add_Land(benutzerOnline, LandComboBox.Text);
+                                add_Land.Show();
+                                this.Close();
+                            }
+
                         }
 
+                        this.Close();
+                        /*StudiengangUI studiengangUI = new StudiengangUI();
+                        studiengangUI.Show();*/
                     }
-
-                    this.Close();
-                    /*StudiengangUI studiengangUI = new StudiengangUI();
-                    studiengangUI.Show();*/
+                    else
+                    {
+                        MessageBox.Show("The User " + benutzerOnline + " is offline!");
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The User " + benutzerOnline + " is offline!");
-                    this.Close();
+                    if (File.Exists("SuperUserStatut.xml"))
+                    {
+                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                    }
+
+                    if (superUser.SuperUserstatut == 1)
+                    {
+                        int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
+                        if (ID_Land != 0 && ID_Land != -1)
+                        {
+                            AddHochschule(ID_Land);
+                        }
+                        else if (ID_Land == 0)
+                        {
+
+                            DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                Add_Land add_Land = new Add_Land(benutzerOnline, LandComboBox.Text);
+                                add_Land.Show();
+                                this.Close();
+                            }
+
+                        }
+
+                        this.Close();
+                        /*StudiengangUI studiengangUI = new StudiengangUI();
+                        studiengangUI.Show();*/
+                    }
+                    else
+                    {
+                        MessageBox.Show("The User " + benutzerOnline + " is offline!");
+                        this.Close();
+                    }
                 }
             }
             else
             {
-                if (File.Exists("SuperUserStatut.xml"))
-                {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                }
-
-                if (superUser.SuperUserstatut == 1)
-                {
-                    int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
-                    if (ID_Land != 0 && ID_Land != -1)
-                    {
-                        AddHochschule(ID_Land);
-                    }
-                    else if (ID_Land == 0)
-                    {
-
-                        DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
-                        if (dialogResult == DialogResult.OK)
-                        {
-                            Add_Land add_Land = new Add_Land(benutzerOnline, LandComboBox.Text);
-                            add_Land.Show();
-                            this.Close();
-                        }
-
-                    }
-
-                    this.Close();
-                    /*StudiengangUI studiengangUI = new StudiengangUI();
-                    studiengangUI.Show();*/
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzerOnline + " is offline!");
-                    this.Close();
-                }
+                MessageBox.Show("Please Fill all the field!");
             }
         }
 

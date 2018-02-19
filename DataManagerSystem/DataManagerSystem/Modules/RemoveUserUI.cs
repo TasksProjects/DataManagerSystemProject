@@ -27,41 +27,48 @@ namespace DataManagerSystem.Modules
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
+            if (!UserIDTextBox.Text.Trim().Equals(string.Empty) && !UsernameTextBox.Text.Trim().Equals(string.Empty))
+            {
+                UserData user = new UserData();
+                SuperUserData superUser = new SuperUserData();
 
-            if (File.Exists("userData.xml"))
-            {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-            if (user.UserAttribut == "SuperAdmin")
-            {
-                if (File.Exists("SuperUserStatut.xml"))
+                if (File.Exists("userData.xml"))
                 {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                    user = XmlDataManager.XmlUserDataReader("userData.xml");
                 }
-
-                if (superUser.SuperUserstatut == 1)
+                if (user.UserAttribut == "SuperAdmin")
                 {
-                    if (UserIDTextBox.Text == string.Empty || UsernameTextBox.Text == string.Empty)
+                    if (File.Exists("SuperUserStatut.xml"))
                     {
-                        MessageBox.Show("Please enter correct data!");
+                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                    }
+
+                    if (superUser.SuperUserstatut == 1)
+                    {
+                        if (UserIDTextBox.Text == string.Empty || UsernameTextBox.Text == string.Empty)
+                        {
+                            MessageBox.Show("Please enter correct data!");
+                        }
+                        else
+                        {
+                            int id = Convert.ToInt32(UserIDTextBox.Text);
+                            string username = UsernameTextBox.Text;
+                            databaseManager.RemoveUser(id, username);
+                            UserIDTextBox.Clear();
+                            UsernameTextBox.Clear();
+                        }
                     }
                     else
                     {
-                        int id = Convert.ToInt32(UserIDTextBox.Text);
-                        string username = UsernameTextBox.Text;
-                        databaseManager.RemoveUser(id, username);
-                        UserIDTextBox.Clear();
-                        UsernameTextBox.Clear();
+                        MessageBox.Show("The User " + Benutzer_online + " is offline!");
+                        this.Close();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("The User " + Benutzer_online + " is offline!");
-                    this.Close();
-                }
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the field!");
             }
         }
 

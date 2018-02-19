@@ -62,45 +62,52 @@ namespace DataManagerSystem.Modules
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
-            if (File.Exists("userData.xml"))
+            if (!LandTextBox.Text.Trim().Equals(string.Empty) && !NationalitättextBox.Text.Trim().Equals(string.Empty))
             {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-
-            if (user.UserAttribut != "SuperAdmin")
-            {
-                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Online);
-
-                if (test_Connection == true)
+                UserData user = new UserData();
+                SuperUserData superUser = new SuperUserData();
+                if (File.Exists("userData.xml"))
                 {
-                    AddLand();
-                    this.Close();
+                    user = XmlDataManager.XmlUserDataReader("userData.xml");
+                }
+
+                if (user.UserAttribut != "SuperAdmin")
+                {
+                    bool test_Connection = databaseManager.Test_Connection_User(benutzer_Online);
+
+                    if (test_Connection == true)
+                    {
+                        AddLand();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The User " + benutzer_Online + " is offline!");
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The User " + benutzer_Online + " is offline!");
-                    this.Close();
+                    if (File.Exists("SuperUserStatut.xml"))
+                    {
+                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                    }
+
+                    if (superUser.SuperUserstatut == 1)
+                    {
+                        AddLand();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The User " + benutzer_Online + " is offline!");
+                        this.Close();
+                    }
                 }
             }
             else
             {
-                if (File.Exists("SuperUserStatut.xml"))
-                {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                }
-
-                if (superUser.SuperUserstatut == 1)
-                {
-                    AddLand();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Online + " is offline!");
-                    this.Close();
-                }
+                MessageBox.Show("Please fill all the field!");
             }
         }
 

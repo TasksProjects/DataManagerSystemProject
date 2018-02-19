@@ -21,42 +21,49 @@ namespace DataManagerSystem.Modules
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
+            if (!UsernameTextBox.Text.Trim().Equals(string.Empty) && !PasswordTextBox.Text.Trim().Equals(string.Empty) && !AttributComboBox.Text.Trim().Equals(string.Empty))
+            {
+                UserData user = new UserData();
+                SuperUserData superUser = new SuperUserData();
 
-            if (File.Exists("userData.xml"))
-            {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-            if (user.UserAttribut == "SuperAdmin")
-            {
-                if (File.Exists("SuperUserStatut.xml"))
+                if (File.Exists("userData.xml"))
                 {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                    user = XmlDataManager.XmlUserDataReader("userData.xml");
                 }
-
-                if (superUser.SuperUserstatut == 1)
+                if (user.UserAttribut == "SuperAdmin")
                 {
-                    if (UsernameTextBox.Text == string.Empty || PasswordTextBox.Text == string.Empty || AttributComboBox.Text == string.Empty)
+                    if (File.Exists("SuperUserStatut.xml"))
                     {
-                        MessageBox.Show("Please enter correct data!");
+                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+                    }
+
+                    if (superUser.SuperUserstatut == 1)
+                    {
+                        if (UsernameTextBox.Text == string.Empty || PasswordTextBox.Text == string.Empty || AttributComboBox.Text == string.Empty)
+                        {
+                            MessageBox.Show("Please enter correct data!");
+                        }
+                        else
+                        {
+                            string username = UsernameTextBox.Text;
+                            string password = PasswordTextBox.Text;
+                            string attribut = AttributComboBox.Text;
+                            databaseManager.AddUser(username, password, attribut);
+                            UsernameTextBox.Clear();
+                            PasswordTextBox.Clear();
+                        }
                     }
                     else
                     {
-                        string username = UsernameTextBox.Text;
-                        string password = PasswordTextBox.Text;
-                        string attribut = AttributComboBox.Text;
-                        databaseManager.AddUser(username, password, attribut);
-                        UsernameTextBox.Clear();
-                        PasswordTextBox.Clear();
+                        MessageBox.Show("The User " + benutzer_Online + " is offline!");
+                        this.Close();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Online + " is offline!");
-                    this.Close();
-                }
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the field!");
             }
 
         }
