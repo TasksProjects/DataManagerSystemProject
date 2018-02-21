@@ -136,11 +136,23 @@
     <Compile Include="Modules\AdminUI.Designer.cs">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\BewerbungUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\BewerbungUI.Designer.cs">
+      <DependentUpon>BewerbungUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\EditAccountUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\EditAccountUI.Designer.cs">
       <DependentUpon>EditAccountUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\EditPerson.Designer.cs">
+      <DependentUpon>EditPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\EditUserUI.cs">
       <SubType>Form</SubType>
@@ -201,8 +213,14 @@
     <EmbeddedResource Include="Modules\AdminUI.resx">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\BewerbungUI.resx">
+      <DependentUpon>BewerbungUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\EditAccountUI.resx">
       <DependentUpon>EditAccountUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\EditPerson.resx">
+      <DependentUpon>EditPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\EditUserUI.resx">
       <DependentUpon>EditUserUI.cs</DependentUpon>

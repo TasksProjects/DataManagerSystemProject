@@ -15,8 +15,6 @@ namespace DataManagerSystem
         ConfigData config = new ConfigData();
         SettingsUI settingUI = new SettingsUI();
        
-        
-
         public MainWindow( string benutzerName, string status)
         {
             InitializeComponent();
@@ -66,21 +64,17 @@ namespace DataManagerSystem
             settingUI.Show();
         }
 
-
         //Exit button
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Disconnect_USer(Online_benutzer);
             Environment.Exit(1);
         }
-
-
-        
+     
         private void AddButton_Click(object sender, EventArgs e)
         {
             NewStudentUI newStudentUI = new NewStudentUI(Online_benutzer);
             newStudentUI.Show();
-            
         }
 
         private void AdminButton_Click(object sender, EventArgs e)
@@ -92,12 +86,14 @@ namespace DataManagerSystem
 
         private void ShowDbButton_Click(object sender, EventArgs e)
         {
-
+            BewerbungUI bewerbungUI = new BewerbungUI();
+            bewerbungUI.Show();
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-
+            EditPerson editPerson = new EditPerson();
+            editPerson.Show();
         }
 
         private void Helpbutton_Click(object sender, EventArgs e)
@@ -125,12 +121,6 @@ namespace DataManagerSystem
             StudiengangUI studiengangUI = new StudiengangUI(Online_benutzer,studuengang );
             studiengangUI.Show();
         }
-
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         // Disconnect the User
         public void Disconnect_USer(string user)
