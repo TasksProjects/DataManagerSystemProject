@@ -18,6 +18,7 @@ namespace DataManagerSystem.Modules
         private ConfigData config = new ConfigData();
         DatabaseManager databaseManager = new DatabaseManager();
         string benutzer_Name;
+        string geschlecht;
 
 
 
@@ -702,10 +703,45 @@ namespace DataManagerSystem.Modules
             }
         }
 
-       //Function to save Student's information
+        // return the studiengang ID
+        public int Search_StudiengangID(string studiengang)
+        {
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            string query = "SELECT ID FROM tab_studiengang where txtName = '" + studiengang + "'";
+
+            OleDbConnection UserConnection1 = new OleDbConnection();
+            UserConnection1.ConnectionString = config.DbConnectionString;
+            UserConnection1.Open();
+            OleDbCommand cmd1 = new OleDbCommand();
+            cmd1.Connection = UserConnection1;
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = query;
+            OleDbDataReader reader = cmd1.ExecuteReader();
+
+
+            if (reader.HasRows)
+
+            {
+                reader.Read();
+                string resultat = reader["ID"].ToString();
+                UserConnection1.Close();
+                int id = Convert.ToInt32(resultat);
+                return id;
+            }
+
+            else
+            {
+                UserConnection1.Close();
+                return 0;
+            }
+        }
+
+        //Function to save Student's information
         public void Add_New_Student()
         {
             int check_NoteVorläufing;
+            int check_geschlecht;
+
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
 
             if (NoteVorläufingCheckBox.Checked == true)
@@ -716,15 +752,36 @@ namespace DataManagerSystem.Modules
             {
                 check_NoteVorläufing = 0;
             }
-           
-            int BachelorNummer = 50;
+
+            if ((MannlichRadioButton.Checked == true)||(WeiblichRadioButton.Checked == true))
+            {
+                check_geschlecht = 1;
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Geschelcht bitte auswählen: Ja für Männlich und Nein für Weiblich.", "Geschlecht auswählen", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MannlichRadioButton.Checked = true;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    WeiblichRadioButton.Checked = true;
+                }
+            }
+
+         
+
+
+           // int BachelorNummer = 50;
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
+            int Student_studiengang = Search_StudiengangID(StudiengangCB.Text.Trim());
             double AbschlussNote;
             int CP;
             bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
             bool result = int.TryParse(CpTB.Text.Trim(), out CP);
 
-            if (Student_nationalitaet !=0)
+            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0))
             {
                 if ((res == true) && (result == true))
                 {
@@ -733,7 +790,7 @@ namespace DataManagerSystem.Modules
                         Vorname = FirstnameTB.Text.Trim(),
                         Name = NameTB.Text.Trim(),
                         Nationalitaet = Student_nationalitaet,
-                        Bachelor = BachelorNummer,
+                        Bachelor = Student_studiengang,
                         //Student_Note = Convert.ToDouble(AbschlussnoteTB.Text.Trim()),
                         Student_Note = AbschlussNote,
                         NoteVorlaefig = check_NoteVorläufing,
@@ -741,8 +798,8 @@ namespace DataManagerSystem.Modules
                         Creditpunkte = CP
                     };
 
-                    string query = "insert into  tab_person([txtVorname],[txtName],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
-                           " values ('" + studentData.Vorname + "','" + studentData.Name + "','" + studentData.Nationalitaet + "'," +
+                    string query = "insert into  tab_person([txtVorname],[txtName],[txtGeschlecht],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
+                           " values ('" + studentData.Vorname + "','" + studentData.Name + "','" + geschlecht + "','" + studentData.Nationalitaet + "'," +
                            "'" + studentData.Bachelor + "','" + studentData.Student_Note + "', '" + studentData.NoteVorlaefig + "', '" + studentData.Creditpunkte + "')";
                     OleDbConnection UserConnection = new OleDbConnection();
                     UserConnection.ConnectionString = config.DbConnectionString;
@@ -1032,6 +1089,21 @@ namespace DataManagerSystem.Modules
                     this.Close();
                 }
             }
-        }  
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MannlichRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            geschlecht = "Mannlich";
+        }
+
+        private void WeiblichRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            geschlecht = "Weiblich";
+        }
     }
 }

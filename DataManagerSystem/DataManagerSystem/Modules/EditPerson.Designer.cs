@@ -30,12 +30,6 @@
         {
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.SearchBtn = new System.Windows.Forms.Button();
-            this.EingabeTB = new System.Windows.Forms.TextBox();
-            this.FilterCB = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label77 = new System.Windows.Forms.Label();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
@@ -86,9 +80,15 @@
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.SearchBtn = new System.Windows.Forms.Button();
+            this.EingabeTB = new System.Windows.Forms.TextBox();
+            this.FilterCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -113,72 +113,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 891);
+            this.panel1.Size = new System.Drawing.Size(982, 881);
             this.panel1.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.SearchBtn);
-            this.groupBox1.Controls.Add(this.EingabeTB);
-            this.groupBox1.Controls.Add(this.FilterCB);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(8, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(962, 70);
-            this.groupBox1.TabIndex = 50;
-            this.groupBox1.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(499, 28);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 53;
-            this.label16.Text = "Eingabefeld:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(318, 28);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Filter:";
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(790, 23);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(139, 23);
-            this.SearchBtn.TabIndex = 51;
-            this.SearchBtn.Text = "Suchen";
-            this.SearchBtn.UseVisualStyleBackColor = false;
-            // 
-            // EingabeTB
-            // 
-            this.EingabeTB.Location = new System.Drawing.Point(575, 25);
-            this.EingabeTB.Margin = new System.Windows.Forms.Padding(10);
-            this.EingabeTB.Name = "EingabeTB";
-            this.EingabeTB.Size = new System.Drawing.Size(202, 20);
-            this.EingabeTB.TabIndex = 51;
-            // 
-            // FilterCB
-            // 
-            this.FilterCB.FormattingEnabled = true;
-            this.FilterCB.Items.AddRange(new object[] {
-            "ID-Bewerbung",
-            "Name/vorname"});
-            this.FilterCB.Location = new System.Drawing.Point(353, 25);
-            this.FilterCB.Margin = new System.Windows.Forms.Padding(10);
-            this.FilterCB.Name = "FilterCB";
-            this.FilterCB.Size = new System.Drawing.Size(125, 21);
-            this.FilterCB.TabIndex = 51;
             // 
             // panel4
             // 
@@ -730,19 +666,83 @@
             this.textBox21.Size = new System.Drawing.Size(574, 20);
             this.textBox21.TabIndex = 1;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.SearchBtn);
+            this.groupBox1.Controls.Add(this.EingabeTB);
+            this.groupBox1.Controls.Add(this.FilterCB);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Location = new System.Drawing.Point(8, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(962, 70);
+            this.groupBox1.TabIndex = 50;
+            this.groupBox1.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(499, 28);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.TabIndex = 53;
+            this.label16.Text = "Eingabefeld:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(318, 28);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "Filter:";
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBtn.ForeColor = System.Drawing.Color.White;
+            this.SearchBtn.Location = new System.Drawing.Point(790, 23);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(139, 23);
+            this.SearchBtn.TabIndex = 51;
+            this.SearchBtn.Text = "Suchen";
+            this.SearchBtn.UseVisualStyleBackColor = false;
+            // 
+            // EingabeTB
+            // 
+            this.EingabeTB.Location = new System.Drawing.Point(575, 25);
+            this.EingabeTB.Margin = new System.Windows.Forms.Padding(10);
+            this.EingabeTB.Name = "EingabeTB";
+            this.EingabeTB.Size = new System.Drawing.Size(202, 20);
+            this.EingabeTB.TabIndex = 51;
+            // 
+            // FilterCB
+            // 
+            this.FilterCB.FormattingEnabled = true;
+            this.FilterCB.Items.AddRange(new object[] {
+            "ID-Bewerbung",
+            "Name/vorname"});
+            this.FilterCB.Location = new System.Drawing.Point(353, 25);
+            this.FilterCB.Margin = new System.Windows.Forms.Padding(10);
+            this.FilterCB.Name = "FilterCB";
+            this.FilterCB.Size = new System.Drawing.Size(125, 21);
+            this.FilterCB.TabIndex = 51;
+            // 
             // EditPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 891);
+            this.ClientSize = new System.Drawing.Size(982, 881);
             this.Controls.Add(this.panel1);
             this.Name = "EditPerson";
             this.Text = "EditPerson";
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

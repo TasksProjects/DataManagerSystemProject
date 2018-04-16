@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewStudentUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.WeiblichRadioButton = new System.Windows.Forms.RadioButton();
+            this.MannlichRadioButton = new System.Windows.Forms.RadioButton();
+            this.label77 = new System.Windows.Forms.Label();
             this.AnHaCheckBox = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.AngenommenCheckBox = new System.Windows.Forms.CheckBox();
@@ -84,6 +87,9 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.WeiblichRadioButton);
+            this.panel1.Controls.Add(this.MannlichRadioButton);
+            this.panel1.Controls.Add(this.label77);
             this.panel1.Controls.Add(this.AnHaCheckBox);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.AngenommenCheckBox);
@@ -136,11 +142,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 827);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // WeiblichRadioButton
+            // 
+            this.WeiblichRadioButton.AutoSize = true;
+            this.WeiblichRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeiblichRadioButton.Location = new System.Drawing.Point(491, 162);
+            this.WeiblichRadioButton.Name = "WeiblichRadioButton";
+            this.WeiblichRadioButton.Size = new System.Drawing.Size(86, 20);
+            this.WeiblichRadioButton.TabIndex = 61;
+            this.WeiblichRadioButton.TabStop = true;
+            this.WeiblichRadioButton.Text = "Weiblich";
+            this.WeiblichRadioButton.UseVisualStyleBackColor = true;
+            this.WeiblichRadioButton.CheckedChanged += new System.EventHandler(this.WeiblichRadioButton_CheckedChanged);
+            // 
+            // MannlichRadioButton
+            // 
+            this.MannlichRadioButton.AutoSize = true;
+            this.MannlichRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MannlichRadioButton.Location = new System.Drawing.Point(263, 165);
+            this.MannlichRadioButton.Name = "MannlichRadioButton";
+            this.MannlichRadioButton.Size = new System.Drawing.Size(87, 20);
+            this.MannlichRadioButton.TabIndex = 60;
+            this.MannlichRadioButton.TabStop = true;
+            this.MannlichRadioButton.Text = "Mannlich";
+            this.MannlichRadioButton.UseVisualStyleBackColor = true;
+            this.MannlichRadioButton.CheckedChanged += new System.EventHandler(this.MannlichRadioButton_CheckedChanged);
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(60, 164);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(89, 16);
+            this.label77.TabIndex = 59;
+            this.label77.Text = "Geschlecht:";
             // 
             // AnHaCheckBox
             // 
             this.AnHaCheckBox.AutoSize = true;
-            this.AnHaCheckBox.Location = new System.Drawing.Point(772, 406);
+            this.AnHaCheckBox.Location = new System.Drawing.Point(776, 494);
             this.AnHaCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.AnHaCheckBox.Name = "AnHaCheckBox";
             this.AnHaCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -151,7 +194,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(681, 404);
+            this.label6.Location = new System.Drawing.Point(685, 492);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
             this.label6.TabIndex = 49;
@@ -160,7 +203,7 @@
             // AngenommenCheckBox
             // 
             this.AngenommenCheckBox.AutoSize = true;
-            this.AngenommenCheckBox.Location = new System.Drawing.Point(585, 406);
+            this.AngenommenCheckBox.Location = new System.Drawing.Point(589, 494);
             this.AngenommenCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.AngenommenCheckBox.Name = "AngenommenCheckBox";
             this.AngenommenCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -171,7 +214,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(466, 404);
+            this.label5.Location = new System.Drawing.Point(470, 492);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 16);
             this.label5.TabIndex = 47;
@@ -180,7 +223,7 @@
             // AnProfCheckBox
             // 
             this.AnProfCheckBox.AutoSize = true;
-            this.AnProfCheckBox.Location = new System.Drawing.Point(362, 404);
+            this.AnProfCheckBox.Location = new System.Drawing.Point(366, 492);
             this.AnProfCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.AnProfCheckBox.Name = "AnProfCheckBox";
             this.AnProfCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -191,7 +234,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(287, 402);
+            this.label4.Location = new System.Drawing.Point(291, 490);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 45;
@@ -200,7 +243,7 @@
             // SemesterCB
             // 
             this.SemesterCB.FormattingEnabled = true;
-            this.SemesterCB.Location = new System.Drawing.Point(213, 531);
+            this.SemesterCB.Location = new System.Drawing.Point(213, 586);
             this.SemesterCB.Margin = new System.Windows.Forms.Padding(10);
             this.SemesterCB.Name = "SemesterCB";
             this.SemesterCB.Size = new System.Drawing.Size(574, 21);
@@ -212,7 +255,7 @@
             this.DruckenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DruckenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DruckenBtn.ForeColor = System.Drawing.Color.White;
-            this.DruckenBtn.Location = new System.Drawing.Point(661, 711);
+            this.DruckenBtn.Location = new System.Drawing.Point(661, 766);
             this.DruckenBtn.Name = "DruckenBtn";
             this.DruckenBtn.Size = new System.Drawing.Size(126, 35);
             this.DruckenBtn.TabIndex = 17;
@@ -224,7 +267,7 @@
             this.SemesterBtn.BackColor = System.Drawing.Color.MidnightBlue;
             this.SemesterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SemesterBtn.ForeColor = System.Drawing.Color.White;
-            this.SemesterBtn.Location = new System.Drawing.Point(800, 528);
+            this.SemesterBtn.Location = new System.Drawing.Point(800, 583);
             this.SemesterBtn.Name = "SemesterBtn";
             this.SemesterBtn.Size = new System.Drawing.Size(139, 23);
             this.SemesterBtn.TabIndex = 43;
@@ -234,7 +277,7 @@
             // 
             // ZusatzTB
             // 
-            this.ZusatzTB.Location = new System.Drawing.Point(213, 571);
+            this.ZusatzTB.Location = new System.Drawing.Point(213, 626);
             this.ZusatzTB.Margin = new System.Windows.Forms.Padding(10);
             this.ZusatzTB.Name = "ZusatzTB";
             this.ZusatzTB.Size = new System.Drawing.Size(574, 20);
@@ -243,7 +286,7 @@
             // NoteVorläufingCheckBox
             // 
             this.NoteVorläufingCheckBox.AutoSize = true;
-            this.NoteVorläufingCheckBox.Location = new System.Drawing.Point(213, 406);
+            this.NoteVorläufingCheckBox.Location = new System.Drawing.Point(217, 494);
             this.NoteVorläufingCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.NoteVorläufingCheckBox.Name = "NoteVorläufingCheckBox";
             this.NoteVorläufingCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -254,7 +297,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(60, 404);
+            this.label15.Location = new System.Drawing.Point(64, 492);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(109, 16);
             this.label15.TabIndex = 40;
@@ -292,7 +335,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(60, 653);
+            this.label13.Location = new System.Drawing.Point(60, 708);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(89, 16);
             this.label13.TabIndex = 37;
@@ -302,7 +345,7 @@
             // 
             this.Ablehnungsgrund.AutoSize = true;
             this.Ablehnungsgrund.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ablehnungsgrund.Location = new System.Drawing.Point(60, 613);
+            this.Ablehnungsgrund.Location = new System.Drawing.Point(60, 668);
             this.Ablehnungsgrund.Name = "Ablehnungsgrund";
             this.Ablehnungsgrund.Size = new System.Drawing.Size(132, 16);
             this.Ablehnungsgrund.TabIndex = 36;
@@ -312,7 +355,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(60, 575);
+            this.label11.Location = new System.Drawing.Point(60, 630);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 16);
             this.label11.TabIndex = 35;
@@ -322,7 +365,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(60, 531);
+            this.label10.Location = new System.Drawing.Point(60, 586);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 16);
             this.label10.TabIndex = 33;
@@ -332,7 +375,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(60, 490);
+            this.label9.Location = new System.Drawing.Point(60, 545);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(144, 16);
             this.label9.TabIndex = 32;
@@ -342,7 +385,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(60, 365);
+            this.label8.Location = new System.Drawing.Point(64, 411);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 16);
             this.label8.TabIndex = 31;
@@ -352,7 +395,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(60, 325);
+            this.label7.Location = new System.Drawing.Point(64, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 16);
             this.label7.TabIndex = 30;
@@ -362,7 +405,7 @@
             // 
             this.Studiengang.AutoSize = true;
             this.Studiengang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Studiengang.Location = new System.Drawing.Point(60, 284);
+            this.Studiengang.Location = new System.Drawing.Point(64, 330);
             this.Studiengang.Name = "Studiengang";
             this.Studiengang.Size = new System.Drawing.Size(99, 16);
             this.Studiengang.TabIndex = 29;
@@ -372,7 +415,7 @@
             // 
             this.HochschuleTexBox.AutoSize = true;
             this.HochschuleTexBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HochschuleTexBox.Location = new System.Drawing.Point(60, 243);
+            this.HochschuleTexBox.Location = new System.Drawing.Point(64, 289);
             this.HochschuleTexBox.Name = "HochschuleTexBox";
             this.HochschuleTexBox.Size = new System.Drawing.Size(93, 16);
             this.HochschuleTexBox.TabIndex = 28;
@@ -382,7 +425,7 @@
             // 
             this.StudienLand.AutoSize = true;
             this.StudienLand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StudienLand.Location = new System.Drawing.Point(60, 202);
+            this.StudienLand.Location = new System.Drawing.Point(64, 248);
             this.StudienLand.Name = "StudienLand";
             this.StudienLand.Size = new System.Drawing.Size(94, 16);
             this.StudienLand.TabIndex = 27;
@@ -392,7 +435,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 161);
+            this.label3.Location = new System.Drawing.Point(64, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 26;
@@ -423,7 +466,7 @@
             this.AngenommenBtn.BackColor = System.Drawing.Color.MidnightBlue;
             this.AngenommenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AngenommenBtn.ForeColor = System.Drawing.Color.White;
-            this.AngenommenBtn.Location = new System.Drawing.Point(800, 652);
+            this.AngenommenBtn.Location = new System.Drawing.Point(800, 707);
             this.AngenommenBtn.Name = "AngenommenBtn";
             this.AngenommenBtn.Size = new System.Drawing.Size(139, 23);
             this.AngenommenBtn.TabIndex = 23;
@@ -435,7 +478,7 @@
             this.button10.BackColor = System.Drawing.Color.MidnightBlue;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(800, 612);
+            this.button10.Location = new System.Drawing.Point(800, 667);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(139, 23);
             this.button10.TabIndex = 22;
@@ -447,7 +490,7 @@
             this.AnProfBtn.BackColor = System.Drawing.Color.MidnightBlue;
             this.AnProfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnProfBtn.ForeColor = System.Drawing.Color.White;
-            this.AnProfBtn.Location = new System.Drawing.Point(800, 571);
+            this.AnProfBtn.Location = new System.Drawing.Point(800, 626);
             this.AnProfBtn.Name = "AnProfBtn";
             this.AnProfBtn.Size = new System.Drawing.Size(139, 23);
             this.AnProfBtn.TabIndex = 21;
@@ -459,7 +502,7 @@
             this.button7.BackColor = System.Drawing.Color.MidnightBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(800, 487);
+            this.button7.Location = new System.Drawing.Point(800, 542);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 23);
             this.button7.TabIndex = 19;
@@ -471,7 +514,7 @@
             this.AddStudiengangBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.AddStudiengangBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddStudiengangBtn.ForeColor = System.Drawing.Color.White;
-            this.AddStudiengangBtn.Location = new System.Drawing.Point(800, 281);
+            this.AddStudiengangBtn.Location = new System.Drawing.Point(804, 327);
             this.AddStudiengangBtn.Name = "AddStudiengangBtn";
             this.AddStudiengangBtn.Size = new System.Drawing.Size(139, 23);
             this.AddStudiengangBtn.TabIndex = 18;
@@ -484,7 +527,7 @@
             this.AddHochschuleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.AddHochschuleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddHochschuleBtn.ForeColor = System.Drawing.Color.White;
-            this.AddHochschuleBtn.Location = new System.Drawing.Point(800, 240);
+            this.AddHochschuleBtn.Location = new System.Drawing.Point(804, 286);
             this.AddHochschuleBtn.Name = "AddHochschuleBtn";
             this.AddHochschuleBtn.Size = new System.Drawing.Size(139, 23);
             this.AddHochschuleBtn.TabIndex = 17;
@@ -497,7 +540,7 @@
             this.AddNationalitaetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.AddNationalitaetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNationalitaetBtn.ForeColor = System.Drawing.Color.White;
-            this.AddNationalitaetBtn.Location = new System.Drawing.Point(800, 158);
+            this.AddNationalitaetBtn.Location = new System.Drawing.Point(804, 204);
             this.AddNationalitaetBtn.Name = "AddNationalitaetBtn";
             this.AddNationalitaetBtn.Size = new System.Drawing.Size(139, 23);
             this.AddNationalitaetBtn.TabIndex = 15;
@@ -507,7 +550,7 @@
             // 
             // KommentarTB
             // 
-            this.KommentarTB.Location = new System.Drawing.Point(213, 652);
+            this.KommentarTB.Location = new System.Drawing.Point(213, 707);
             this.KommentarTB.Margin = new System.Windows.Forms.Padding(10);
             this.KommentarTB.Name = "KommentarTB";
             this.KommentarTB.Size = new System.Drawing.Size(574, 20);
@@ -515,7 +558,7 @@
             // 
             // AblehnungsgrundTB
             // 
-            this.AblehnungsgrundTB.Location = new System.Drawing.Point(213, 612);
+            this.AblehnungsgrundTB.Location = new System.Drawing.Point(213, 667);
             this.AblehnungsgrundTB.Margin = new System.Windows.Forms.Padding(10);
             this.AblehnungsgrundTB.Name = "AblehnungsgrundTB";
             this.AblehnungsgrundTB.Size = new System.Drawing.Size(574, 20);
@@ -524,7 +567,7 @@
             // MasterstudiengangCB
             // 
             this.MasterstudiengangCB.FormattingEnabled = true;
-            this.MasterstudiengangCB.Location = new System.Drawing.Point(213, 489);
+            this.MasterstudiengangCB.Location = new System.Drawing.Point(213, 544);
             this.MasterstudiengangCB.Margin = new System.Windows.Forms.Padding(10);
             this.MasterstudiengangCB.Name = "MasterstudiengangCB";
             this.MasterstudiengangCB.Size = new System.Drawing.Size(574, 21);
@@ -536,7 +579,7 @@
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(213, 711);
+            this.SaveBtn.Location = new System.Drawing.Point(213, 766);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(126, 35);
             this.SaveBtn.TabIndex = 15;
@@ -550,7 +593,7 @@
             this.CanceledBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CanceledBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CanceledBtn.ForeColor = System.Drawing.Color.White;
-            this.CanceledBtn.Location = new System.Drawing.Point(429, 711);
+            this.CanceledBtn.Location = new System.Drawing.Point(429, 766);
             this.CanceledBtn.Name = "CanceledBtn";
             this.CanceledBtn.Size = new System.Drawing.Size(126, 35);
             this.CanceledBtn.TabIndex = 16;
@@ -561,7 +604,7 @@
             // CpTB
             // 
             this.CpTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CpTB.Location = new System.Drawing.Point(213, 364);
+            this.CpTB.Location = new System.Drawing.Point(217, 410);
             this.CpTB.Margin = new System.Windows.Forms.Padding(10);
             this.CpTB.Name = "CpTB";
             this.CpTB.Size = new System.Drawing.Size(574, 20);
@@ -570,7 +613,7 @@
             // StudiengangCB
             // 
             this.StudiengangCB.FormattingEnabled = true;
-            this.StudiengangCB.Location = new System.Drawing.Point(213, 283);
+            this.StudiengangCB.Location = new System.Drawing.Point(217, 329);
             this.StudiengangCB.Margin = new System.Windows.Forms.Padding(10);
             this.StudiengangCB.Name = "StudiengangCB";
             this.StudiengangCB.Size = new System.Drawing.Size(574, 21);
@@ -579,7 +622,7 @@
             // HochshuleCB
             // 
             this.HochshuleCB.FormattingEnabled = true;
-            this.HochshuleCB.Location = new System.Drawing.Point(213, 242);
+            this.HochshuleCB.Location = new System.Drawing.Point(217, 288);
             this.HochshuleCB.Margin = new System.Windows.Forms.Padding(10);
             this.HochshuleCB.Name = "HochshuleCB";
             this.HochshuleCB.Size = new System.Drawing.Size(574, 21);
@@ -588,7 +631,7 @@
             // StudienLandCB
             // 
             this.StudienLandCB.FormattingEnabled = true;
-            this.StudienLandCB.Location = new System.Drawing.Point(213, 201);
+            this.StudienLandCB.Location = new System.Drawing.Point(217, 247);
             this.StudienLandCB.Margin = new System.Windows.Forms.Padding(10);
             this.StudienLandCB.Name = "StudienLandCB";
             this.StudienLandCB.Size = new System.Drawing.Size(574, 21);
@@ -597,7 +640,7 @@
             // NationalityTB
             // 
             this.NationalityTB.FormattingEnabled = true;
-            this.NationalityTB.Location = new System.Drawing.Point(213, 160);
+            this.NationalityTB.Location = new System.Drawing.Point(217, 206);
             this.NationalityTB.Margin = new System.Windows.Forms.Padding(10);
             this.NationalityTB.Name = "NationalityTB";
             this.NationalityTB.Size = new System.Drawing.Size(574, 21);
@@ -606,7 +649,7 @@
             // AbschlussnoteTB
             // 
             this.AbschlussnoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AbschlussnoteTB.Location = new System.Drawing.Point(213, 324);
+            this.AbschlussnoteTB.Location = new System.Drawing.Point(217, 370);
             this.AbschlussnoteTB.Margin = new System.Windows.Forms.Padding(10);
             this.AbschlussnoteTB.Name = "AbschlussnoteTB";
             this.AbschlussnoteTB.Size = new System.Drawing.Size(574, 21);
@@ -698,5 +741,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox AnProfCheckBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.RadioButton WeiblichRadioButton;
+        private System.Windows.Forms.RadioButton MannlichRadioButton;
     }
 }
