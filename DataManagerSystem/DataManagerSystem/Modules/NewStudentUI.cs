@@ -21,7 +21,6 @@ namespace DataManagerSystem.Modules
         string geschlecht;
 
 
-
         public NewStudentUI(string benutzername)
         {
             
@@ -130,6 +129,7 @@ namespace DataManagerSystem.Modules
                 }
             }
         }
+
 
         private void AddNationalitaetBtn_Click(object sender, EventArgs e)
         {
@@ -781,7 +781,7 @@ namespace DataManagerSystem.Modules
             bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
             bool result = int.TryParse(CpTB.Text.Trim(), out CP);
 
-            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0))
+            if ((Student_nationalitaet != 0) && (Student_studiengang != 0))
             {
                 if ((res == true) && (result == true))
                 {
@@ -819,17 +819,7 @@ namespace DataManagerSystem.Modules
                         MessageBox.Show("Error " + ex);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Please enter correct Abschlussnote or CP! " + CP + " or " + AbschlussNote + " has bad format!");
-                }
             }
-            else
-            {
-                MessageBox.Show("Please check the nationality! " + NationalityTB.Text.Trim() + " doesn't exist!" );
-            }
-
-           
         }
         
         // function to search a Student_ID in database
@@ -1005,6 +995,7 @@ namespace DataManagerSystem.Modules
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Data Saved Successful");
                     UserConnection.Close();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -1013,12 +1004,8 @@ namespace DataManagerSystem.Modules
             }
             else
             {
-                MessageBox.Show("Please check the student'daten! " + MasterstudiengangCB.Text.Trim() + " or " + SemesterCB.Text.Trim() + " has bad format!");
-                NewStudentUI newStudent = new NewStudentUI(benutzer_Name);
-                newStudent.Show();
-            }
-
-           
+                MessageBox.Show("Please check the student'daten! ");  
+            }   
         }
 
         private void CanceledBtn_Click(object sender, EventArgs e)
@@ -1048,7 +1035,7 @@ namespace DataManagerSystem.Modules
                     {
                         Add_New_Student();
                         Add_New_Bewerbung();
-                        this.Close();
+                        
                     }
                     else
                     {
@@ -1070,13 +1057,14 @@ namespace DataManagerSystem.Modules
 
                 if (superUser.SuperUserstatut == 1)
                 {
-                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
+
+                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudienLandCB.Text != string.Empty
                       || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
                       || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
                     {
+                       
                         Add_New_Student();
-                        Add_New_Bewerbung();
-                        this.Close();
+                        Add_New_Bewerbung();                        
                     }
                     else
                     {
