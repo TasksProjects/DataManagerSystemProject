@@ -168,4 +168,9 @@ C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\o
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+<<<<<<< Updated upstream
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.ResolveComReference.cache
+=======
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.BewerbungUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditPerson.resources
+>>>>>>> Stashed changes

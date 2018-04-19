@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ConfigData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DatabasePath>C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\Database\Masterbewerbung.accdb</DatabasePath>
-  <DbConnectionString>Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\Database\Masterbewerbung.accdb;Persist Security Info = False;</DbConnectionString>
+  <DatabasePath>G:\GitProjects\DataManagerSystem\DataManagerSystem\Database\Masterbewerbung.accdb</DatabasePath>
+  <DbConnectionString>Provider=Microsoft.ACE.OLEDB.12.0;Data Source=G:\GitProjects\DataManagerSystem\DataManagerSystem\Database\Masterbewerbung.accdb;Persist Security Info = False;</DbConnectionString>
 </ConfigData>
