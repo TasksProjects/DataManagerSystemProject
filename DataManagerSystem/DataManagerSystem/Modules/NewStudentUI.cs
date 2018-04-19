@@ -753,6 +753,7 @@ namespace DataManagerSystem.Modules
                 check_NoteVorläufing = 0;
             }
 
+            /*
             if ((MannlichRadioButton.Checked == true)||(WeiblichRadioButton.Checked == true))
             {
                 check_geschlecht = 1;
@@ -768,7 +769,7 @@ namespace DataManagerSystem.Modules
                 {
                     WeiblichRadioButton.Checked = true;
                 }
-            }
+            }*/
 
          
 
@@ -1060,7 +1061,8 @@ namespace DataManagerSystem.Modules
 
                     if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudienLandCB.Text != string.Empty
                       || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
-                      || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
+                      || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty && (MannlichRadioButton.Checked != false && WeiblichRadioButton.Checked == false)
+                      && (MannlichRadioButton.Checked == false && WeiblichRadioButton.Checked != false))
                     {
                        
                         Add_New_Student();
