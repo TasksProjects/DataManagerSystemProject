@@ -168,3 +168,4 @@ C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\o
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
 C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.ResolveComReference.cache

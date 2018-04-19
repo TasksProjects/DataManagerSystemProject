@@ -29,16 +29,16 @@ namespace DataManagerSystem.Modules
             benutzer_Name = benutzername;
             AutoCompleteText_Nationalitaet();
             Load_Nationalitaet_Database();
-             AutoCompleteText_Land();
-             Load_Land_Database();
-              AutoCompleteText_Hochschule();
-             Load_Hochschule_Database();
-             AutoCompleteText_Studiengang();
-             Load_Studiengang_Database();
-             AutoCompleteText_Master_Studiengang();
-             Load_Master_Studiengang_Database();
-             AutoCompleteText_Vorname();
-             AutoCompleteText_Name();
+            AutoCompleteText_Land();
+            Load_Land_Database();
+            AutoCompleteText_Hochschule();
+            Load_Hochschule_Database();
+            AutoCompleteText_Studiengang();
+            Load_Studiengang_Database();
+            AutoCompleteText_Master_Studiengang();
+            Load_Master_Studiengang_Database();
+            AutoCompleteText_Vorname();
+            AutoCompleteText_Name();
             Load_Semester_Database();
             AutoCompleteText_Semester();
         }
