@@ -7,7 +7,31 @@ namespace DataManagerSystem.Configs
 {
     public class WordDocCreator
     {
-        private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
+        Word.Application wordApp = new Word.Application();
+        Word.Document WordDocx = null;
+        object filename;
+        object readOnly = false;
+        object missing = Missing.Value;
+
+        public WordDocCreator(object filename)
+        {
+            this.filename = filename;
+            if (File.Exists((string)filename))
+            {
+                wordApp.Visible = false;
+                WordDocx = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing, ref missing);
+            }
+            else
+            {
+                MessageBox.Show("File not found!");
+            }
+        }
+
+        public void FindAndReplace(object ToFindText, object replaceWithText)
         {
             object matchCase = true;
             object matchWholeWord = true;
@@ -25,6 +49,8 @@ namespace DataManagerSystem.Configs
             object replace = 2;
             object wrap = 1;
 
+            WordDocx.Activate();
+
             wordApp.Selection.Find.Execute(ref ToFindText,
                 ref matchCase, ref matchWholeWord,
                 ref matchWildCards, ref matchSoundLike,
@@ -36,40 +62,25 @@ namespace DataManagerSystem.Configs
         }
 
         //Creeate the Doc Method
-        private void CreateWordDocument(object filename, object SaveAs)
+        public void CreateDocx(object SaveAs)
         {
-            Word.Application wordApp = new Word.Application();
-            object missing = Missing.Value;
-            Word.Document myWordDoc = null;
-
             if (File.Exists((string)filename))
             {
-                object readOnly = false;
-                wordApp.Visible = false;
+                WordDocx.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing);
 
-                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing, ref missing);
-                myWordDoc.Activate();
+                WordDocx.Close();
+                wordApp.Quit();
+
+                MessageBox.Show("File Created!");
             }
             else
             {
-                MessageBox.Show("File not Found!");
+                MessageBox.Show("No able To Save File!");
             }
-
-            //Save as
-            myWordDoc.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing);
-
-            myWordDoc.Close();
-            wordApp.Quit();
-            MessageBox.Show("File Created!");
         }
-
     }
 }

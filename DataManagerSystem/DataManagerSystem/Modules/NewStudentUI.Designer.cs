@@ -142,7 +142,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 827);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // WeiblichRadioButton
             // 
@@ -151,7 +150,7 @@
             this.WeiblichRadioButton.Location = new System.Drawing.Point(491, 162);
             this.WeiblichRadioButton.Name = "WeiblichRadioButton";
             this.WeiblichRadioButton.Size = new System.Drawing.Size(86, 20);
-            this.WeiblichRadioButton.TabIndex = 21;
+            this.WeiblichRadioButton.TabIndex = 61;
             this.WeiblichRadioButton.TabStop = true;
             this.WeiblichRadioButton.Text = "Weiblich";
             this.WeiblichRadioButton.UseVisualStyleBackColor = true;
@@ -164,7 +163,7 @@
             this.MannlichRadioButton.Location = new System.Drawing.Point(263, 165);
             this.MannlichRadioButton.Name = "MannlichRadioButton";
             this.MannlichRadioButton.Size = new System.Drawing.Size(87, 20);
-            this.MannlichRadioButton.TabIndex = 20;
+            this.MannlichRadioButton.TabIndex = 60;
             this.MannlichRadioButton.TabStop = true;
             this.MannlichRadioButton.Text = "Mannlich";
             this.MannlichRadioButton.UseVisualStyleBackColor = true;
@@ -177,7 +176,7 @@
             this.label77.Location = new System.Drawing.Point(60, 164);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(89, 16);
-            this.label77.TabIndex = 5;
+            this.label77.TabIndex = 59;
             this.label77.Text = "Geschlecht:";
             // 
             // AnHaCheckBox
@@ -187,7 +186,7 @@
             this.AnHaCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.AnHaCheckBox.Name = "AnHaCheckBox";
             this.AnHaCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.AnHaCheckBox.TabIndex = 37;
+            this.AnHaCheckBox.TabIndex = 48;
             this.AnHaCheckBox.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -197,7 +196,7 @@
             this.label6.Location = new System.Drawing.Point(685, 492);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
-            this.label6.TabIndex = 36;
+            this.label6.TabIndex = 49;
             this.label6.Text = "An Ha 4.1:";
             // 
             // AngenommenCheckBox
@@ -207,7 +206,7 @@
             this.AngenommenCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.AngenommenCheckBox.Name = "AngenommenCheckBox";
             this.AngenommenCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.AngenommenCheckBox.TabIndex = 35;
+            this.AngenommenCheckBox.TabIndex = 46;
             this.AngenommenCheckBox.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -217,7 +216,7 @@
             this.label5.Location = new System.Drawing.Point(470, 492);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 16);
-            this.label5.TabIndex = 34;
+            this.label5.TabIndex = 47;
             this.label5.Text = "Angenommen:";
             // 
             // AnProfCheckBox
@@ -227,7 +226,7 @@
             this.AnProfCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.AnProfCheckBox.Name = "AnProfCheckBox";
             this.AnProfCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.AnProfCheckBox.TabIndex = 33;
+            this.AnProfCheckBox.TabIndex = 44;
             this.AnProfCheckBox.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -237,7 +236,7 @@
             this.label4.Location = new System.Drawing.Point(291, 490);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 16);
-            this.label4.TabIndex = 32;
+            this.label4.TabIndex = 45;
             this.label4.Text = "An Prof:";
             // 
             // SemesterCB
@@ -247,7 +246,7 @@
             this.SemesterCB.Margin = new System.Windows.Forms.Padding(10);
             this.SemesterCB.Name = "SemesterCB";
             this.SemesterCB.Size = new System.Drawing.Size(574, 21);
-            this.SemesterCB.TabIndex = 40;
+            this.SemesterCB.TabIndex = 11;
             // 
             // DruckenBtn
             // 
@@ -258,9 +257,10 @@
             this.DruckenBtn.Location = new System.Drawing.Point(661, 766);
             this.DruckenBtn.Name = "DruckenBtn";
             this.DruckenBtn.Size = new System.Drawing.Size(126, 35);
-            this.DruckenBtn.TabIndex = 0;
-            this.DruckenBtn.Text = "Drucken";
+            this.DruckenBtn.TabIndex = 17;
+            this.DruckenBtn.Text = "Docx. Exportiren";
             this.DruckenBtn.UseVisualStyleBackColor = false;
+            this.DruckenBtn.Click += new System.EventHandler(this.DruckenBtn_Click);
             // 
             // SemesterBtn
             // 
@@ -270,7 +270,7 @@
             this.SemesterBtn.Location = new System.Drawing.Point(800, 583);
             this.SemesterBtn.Name = "SemesterBtn";
             this.SemesterBtn.Size = new System.Drawing.Size(139, 23);
-            this.SemesterBtn.TabIndex = 41;
+            this.SemesterBtn.TabIndex = 43;
             this.SemesterBtn.Text = "Hinzufügen";
             this.SemesterBtn.UseVisualStyleBackColor = false;
             this.SemesterBtn.Click += new System.EventHandler(this.SemesterBtn_Click);
@@ -281,7 +281,7 @@
             this.ZusatzTB.Margin = new System.Windows.Forms.Padding(10);
             this.ZusatzTB.Name = "ZusatzTB";
             this.ZusatzTB.Size = new System.Drawing.Size(574, 20);
-            this.ZusatzTB.TabIndex = 42;
+            this.ZusatzTB.TabIndex = 12;
             // 
             // NoteVorläufingCheckBox
             // 
@@ -290,7 +290,7 @@
             this.NoteVorläufingCheckBox.Margin = new System.Windows.Forms.Padding(10);
             this.NoteVorläufingCheckBox.Name = "NoteVorläufingCheckBox";
             this.NoteVorläufingCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.NoteVorläufingCheckBox.TabIndex = 31;
+            this.NoteVorläufingCheckBox.TabIndex = 9;
             this.NoteVorläufingCheckBox.UseVisualStyleBackColor = true;
             // 
             // label15
@@ -300,7 +300,7 @@
             this.label15.Location = new System.Drawing.Point(64, 492);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(109, 16);
-            this.label15.TabIndex = 12;
+            this.label15.TabIndex = 40;
             this.label15.Text = "Note vorläufig:";
             // 
             // label14
@@ -313,7 +313,7 @@
             this.label14.Margin = new System.Windows.Forms.Padding(3);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(247, 33);
-            this.label14.TabIndex = 1;
+            this.label14.TabIndex = 39;
             this.label14.Text = "Neue Bewerbung";
             // 
             // bunifuSeparator2
@@ -327,7 +327,7 @@
             this.bunifuSeparator2.Location = new System.Drawing.Point(12, 42);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(991, 10);
-            this.bunifuSeparator2.TabIndex = 2;
+            this.bunifuSeparator2.TabIndex = 38;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
@@ -338,7 +338,7 @@
             this.label13.Location = new System.Drawing.Point(60, 708);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(89, 16);
-            this.label13.TabIndex = 17;
+            this.label13.TabIndex = 37;
             this.label13.Text = "Kommentar:";
             // 
             // Ablehnungsgrund
@@ -348,7 +348,7 @@
             this.Ablehnungsgrund.Location = new System.Drawing.Point(60, 668);
             this.Ablehnungsgrund.Name = "Ablehnungsgrund";
             this.Ablehnungsgrund.Size = new System.Drawing.Size(132, 16);
-            this.Ablehnungsgrund.TabIndex = 16;
+            this.Ablehnungsgrund.TabIndex = 36;
             this.Ablehnungsgrund.Text = "Ablehnungsgrund:";
             // 
             // label11
@@ -358,7 +358,7 @@
             this.label11.Location = new System.Drawing.Point(60, 630);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 16);
-            this.label11.TabIndex = 15;
+            this.label11.TabIndex = 35;
             this.label11.Text = "Zusatz:";
             // 
             // label10
@@ -368,7 +368,7 @@
             this.label10.Location = new System.Drawing.Point(60, 586);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 16);
-            this.label10.TabIndex = 14;
+            this.label10.TabIndex = 33;
             this.label10.Text = "Semester:";
             // 
             // label9
@@ -378,7 +378,7 @@
             this.label9.Location = new System.Drawing.Point(60, 545);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(144, 16);
-            this.label9.TabIndex = 13;
+            this.label9.TabIndex = 32;
             this.label9.Text = "Masterstudiengang:";
             // 
             // label8
@@ -388,7 +388,7 @@
             this.label8.Location = new System.Drawing.Point(64, 411);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 16);
-            this.label8.TabIndex = 11;
+            this.label8.TabIndex = 31;
             this.label8.Text = "Erworbene CP:";
             // 
             // label7
@@ -398,7 +398,7 @@
             this.label7.Location = new System.Drawing.Point(64, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 16);
-            this.label7.TabIndex = 10;
+            this.label7.TabIndex = 30;
             this.label7.Text = "Abschlussnote:";
             // 
             // Studiengang
@@ -408,7 +408,7 @@
             this.Studiengang.Location = new System.Drawing.Point(64, 330);
             this.Studiengang.Name = "Studiengang";
             this.Studiengang.Size = new System.Drawing.Size(99, 16);
-            this.Studiengang.TabIndex = 9;
+            this.Studiengang.TabIndex = 29;
             this.Studiengang.Text = "Studiengang:";
             // 
             // HochschuleTexBox
@@ -418,7 +418,7 @@
             this.HochschuleTexBox.Location = new System.Drawing.Point(64, 289);
             this.HochschuleTexBox.Name = "HochschuleTexBox";
             this.HochschuleTexBox.Size = new System.Drawing.Size(93, 16);
-            this.HochschuleTexBox.TabIndex = 8;
+            this.HochschuleTexBox.TabIndex = 28;
             this.HochschuleTexBox.Text = "Hochschule:";
             // 
             // StudienLand
@@ -428,7 +428,7 @@
             this.StudienLand.Location = new System.Drawing.Point(64, 248);
             this.StudienLand.Name = "StudienLand";
             this.StudienLand.Size = new System.Drawing.Size(94, 16);
-            this.StudienLand.TabIndex = 7;
+            this.StudienLand.TabIndex = 27;
             this.StudienLand.Text = "Studienland:";
             // 
             // label3
@@ -438,7 +438,7 @@
             this.label3.Location = new System.Drawing.Point(64, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 16);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 26;
             this.label3.Text = "Nationalität:";
             // 
             // label2
@@ -448,7 +448,7 @@
             this.label2.Location = new System.Drawing.Point(60, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 25;
             this.label2.Text = "Name:";
             // 
             // label1
@@ -458,7 +458,7 @@
             this.label1.Location = new System.Drawing.Point(60, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 24;
             this.label1.Text = "Vorname:";
             // 
             // AngenommenBtn
@@ -469,7 +469,7 @@
             this.AngenommenBtn.Location = new System.Drawing.Point(800, 707);
             this.AngenommenBtn.Name = "AngenommenBtn";
             this.AngenommenBtn.Size = new System.Drawing.Size(139, 23);
-            this.AngenommenBtn.TabIndex = 47;
+            this.AngenommenBtn.TabIndex = 23;
             this.AngenommenBtn.Text = "Angenommen";
             this.AngenommenBtn.UseVisualStyleBackColor = false;
             // 
@@ -481,7 +481,7 @@
             this.button10.Location = new System.Drawing.Point(800, 667);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(139, 23);
-            this.button10.TabIndex = 45;
+            this.button10.TabIndex = 22;
             this.button10.Text = "An Ha 4.1";
             this.button10.UseVisualStyleBackColor = false;
             // 
@@ -493,7 +493,7 @@
             this.AnProfBtn.Location = new System.Drawing.Point(800, 626);
             this.AnProfBtn.Name = "AnProfBtn";
             this.AnProfBtn.Size = new System.Drawing.Size(139, 23);
-            this.AnProfBtn.TabIndex = 43;
+            this.AnProfBtn.TabIndex = 21;
             this.AnProfBtn.Text = "An Prof";
             this.AnProfBtn.UseVisualStyleBackColor = false;
             // 
@@ -505,7 +505,7 @@
             this.button7.Location = new System.Drawing.Point(800, 542);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 23);
-            this.button7.TabIndex = 39;
+            this.button7.TabIndex = 19;
             this.button7.Text = "Einstufen";
             this.button7.UseVisualStyleBackColor = false;
             // 
@@ -517,7 +517,7 @@
             this.AddStudiengangBtn.Location = new System.Drawing.Point(804, 327);
             this.AddStudiengangBtn.Name = "AddStudiengangBtn";
             this.AddStudiengangBtn.Size = new System.Drawing.Size(139, 23);
-            this.AddStudiengangBtn.TabIndex = 28;
+            this.AddStudiengangBtn.TabIndex = 18;
             this.AddStudiengangBtn.Text = "Hinzufügen";
             this.AddStudiengangBtn.UseVisualStyleBackColor = false;
             this.AddStudiengangBtn.Click += new System.EventHandler(this.AddStudiengangBtn_Click);
@@ -530,7 +530,7 @@
             this.AddHochschuleBtn.Location = new System.Drawing.Point(804, 286);
             this.AddHochschuleBtn.Name = "AddHochschuleBtn";
             this.AddHochschuleBtn.Size = new System.Drawing.Size(139, 23);
-            this.AddHochschuleBtn.TabIndex = 26;
+            this.AddHochschuleBtn.TabIndex = 17;
             this.AddHochschuleBtn.Text = "Hinzufügen";
             this.AddHochschuleBtn.UseVisualStyleBackColor = false;
             this.AddHochschuleBtn.Click += new System.EventHandler(this.AddHochschuleBtn_Click);
@@ -543,7 +543,7 @@
             this.AddNationalitaetBtn.Location = new System.Drawing.Point(804, 204);
             this.AddNationalitaetBtn.Name = "AddNationalitaetBtn";
             this.AddNationalitaetBtn.Size = new System.Drawing.Size(139, 23);
-            this.AddNationalitaetBtn.TabIndex = 23;
+            this.AddNationalitaetBtn.TabIndex = 15;
             this.AddNationalitaetBtn.Text = "Hinzufügen";
             this.AddNationalitaetBtn.UseVisualStyleBackColor = false;
             this.AddNationalitaetBtn.Click += new System.EventHandler(this.AddNationalitaetBtn_Click);
@@ -554,7 +554,7 @@
             this.KommentarTB.Margin = new System.Windows.Forms.Padding(10);
             this.KommentarTB.Name = "KommentarTB";
             this.KommentarTB.Size = new System.Drawing.Size(574, 20);
-            this.KommentarTB.TabIndex = 46;
+            this.KommentarTB.TabIndex = 14;
             // 
             // AblehnungsgrundTB
             // 
@@ -562,7 +562,7 @@
             this.AblehnungsgrundTB.Margin = new System.Windows.Forms.Padding(10);
             this.AblehnungsgrundTB.Name = "AblehnungsgrundTB";
             this.AblehnungsgrundTB.Size = new System.Drawing.Size(574, 20);
-            this.AblehnungsgrundTB.TabIndex = 44;
+            this.AblehnungsgrundTB.TabIndex = 13;
             // 
             // MasterstudiengangCB
             // 
@@ -571,7 +571,7 @@
             this.MasterstudiengangCB.Margin = new System.Windows.Forms.Padding(10);
             this.MasterstudiengangCB.Name = "MasterstudiengangCB";
             this.MasterstudiengangCB.Size = new System.Drawing.Size(574, 21);
-            this.MasterstudiengangCB.TabIndex = 38;
+            this.MasterstudiengangCB.TabIndex = 10;
             // 
             // SaveBtn
             // 
@@ -582,7 +582,7 @@
             this.SaveBtn.Location = new System.Drawing.Point(213, 766);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(126, 35);
-            this.SaveBtn.TabIndex = 48;
+            this.SaveBtn.TabIndex = 15;
             this.SaveBtn.Text = "Speichern";
             this.SaveBtn.UseVisualStyleBackColor = false;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
@@ -596,7 +596,7 @@
             this.CanceledBtn.Location = new System.Drawing.Point(429, 766);
             this.CanceledBtn.Name = "CanceledBtn";
             this.CanceledBtn.Size = new System.Drawing.Size(126, 35);
-            this.CanceledBtn.TabIndex = 49;
+            this.CanceledBtn.TabIndex = 16;
             this.CanceledBtn.Text = "Abbrechen";
             this.CanceledBtn.UseVisualStyleBackColor = false;
             this.CanceledBtn.Click += new System.EventHandler(this.CanceledBtn_Click);
@@ -608,7 +608,7 @@
             this.CpTB.Margin = new System.Windows.Forms.Padding(10);
             this.CpTB.Name = "CpTB";
             this.CpTB.Size = new System.Drawing.Size(574, 20);
-            this.CpTB.TabIndex = 30;
+            this.CpTB.TabIndex = 8;
             // 
             // StudiengangCB
             // 
@@ -617,7 +617,7 @@
             this.StudiengangCB.Margin = new System.Windows.Forms.Padding(10);
             this.StudiengangCB.Name = "StudiengangCB";
             this.StudiengangCB.Size = new System.Drawing.Size(574, 21);
-            this.StudiengangCB.TabIndex = 27;
+            this.StudiengangCB.TabIndex = 6;
             // 
             // HochshuleCB
             // 
@@ -626,7 +626,7 @@
             this.HochshuleCB.Margin = new System.Windows.Forms.Padding(10);
             this.HochshuleCB.Name = "HochshuleCB";
             this.HochshuleCB.Size = new System.Drawing.Size(574, 21);
-            this.HochshuleCB.TabIndex = 25;
+            this.HochshuleCB.TabIndex = 5;
             // 
             // StudienLandCB
             // 
@@ -635,7 +635,7 @@
             this.StudienLandCB.Margin = new System.Windows.Forms.Padding(10);
             this.StudienLandCB.Name = "StudienLandCB";
             this.StudienLandCB.Size = new System.Drawing.Size(574, 21);
-            this.StudienLandCB.TabIndex = 24;
+            this.StudienLandCB.TabIndex = 4;
             // 
             // NationalityTB
             // 
@@ -644,7 +644,7 @@
             this.NationalityTB.Margin = new System.Windows.Forms.Padding(10);
             this.NationalityTB.Name = "NationalityTB";
             this.NationalityTB.Size = new System.Drawing.Size(574, 21);
-            this.NationalityTB.TabIndex = 22;
+            this.NationalityTB.TabIndex = 3;
             // 
             // AbschlussnoteTB
             // 
@@ -653,7 +653,7 @@
             this.AbschlussnoteTB.Margin = new System.Windows.Forms.Padding(10);
             this.AbschlussnoteTB.Name = "AbschlussnoteTB";
             this.AbschlussnoteTB.Size = new System.Drawing.Size(574, 21);
-            this.AbschlussnoteTB.TabIndex = 29;
+            this.AbschlussnoteTB.TabIndex = 7;
             // 
             // NameTB
             // 
@@ -661,8 +661,7 @@
             this.NameTB.Margin = new System.Windows.Forms.Padding(10);
             this.NameTB.Name = "NameTB";
             this.NameTB.Size = new System.Drawing.Size(574, 20);
-            this.NameTB.TabIndex = 19;
-            this.NameTB.TextChanged += new System.EventHandler(this.NameTB_TextChanged);
+            this.NameTB.TabIndex = 2;
             // 
             // FirstnameTB
             // 
@@ -670,7 +669,7 @@
             this.FirstnameTB.Margin = new System.Windows.Forms.Padding(10);
             this.FirstnameTB.Name = "FirstnameTB";
             this.FirstnameTB.Size = new System.Drawing.Size(574, 20);
-            this.FirstnameTB.TabIndex = 18;
+            this.FirstnameTB.TabIndex = 1;
             // 
             // NewStudentUI
             // 

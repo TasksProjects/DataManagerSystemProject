@@ -1,15 +1,12 @@
 ﻿using DataManagerSystem.Configs;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using Word = Microsoft.Office.Interop.Word;
+
 
 namespace DataManagerSystem.Modules
 {
@@ -20,10 +17,9 @@ namespace DataManagerSystem.Modules
         string benutzer_Name;
         string geschlecht;
 
-
         public NewStudentUI(string benutzername)
         {
-            
+
             InitializeComponent();
             benutzer_Name = benutzername;
             AutoCompleteText_Nationalitaet();
@@ -130,7 +126,6 @@ namespace DataManagerSystem.Modules
             }
         }
 
-
         private void AddNationalitaetBtn_Click(object sender, EventArgs e)
         {
             UserData user = new UserData();
@@ -187,7 +182,6 @@ namespace DataManagerSystem.Modules
                 MessageBox.Show("no config xml file!");
             }
         }
-
 
         //Load Nationalität in NationalitätComboBox
         private void Load_Nationalitaet_Database()
@@ -656,14 +650,7 @@ namespace DataManagerSystem.Modules
             }
             SemesterCB.AutoCompleteCustomSource = coll;
         }
-
       
-
-        private void NameTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SemesterBtn_Click(object sender, EventArgs e)
         {
             Add_Semester add_Semester = new Add_Semester();
@@ -740,7 +727,6 @@ namespace DataManagerSystem.Modules
         public void Add_New_Student()
         {
             int check_NoteVorläufing;
-            int check_geschlecht;
 
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
 
@@ -753,27 +739,16 @@ namespace DataManagerSystem.Modules
                 check_NoteVorläufing = 0;
             }
 
-            /*
-            if ((MannlichRadioButton.Checked == true)||(WeiblichRadioButton.Checked == true))
+            DialogResult dialogResult = MessageBox.Show("Geschelcht bitte auswählen: Ja für Männlich und Nein für Weiblich.", "Geschlecht auswählen", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                check_geschlecht = 1;
+                MannlichRadioButton.Checked = true;
             }
-            else
+            else if (dialogResult == DialogResult.No)
             {
-                DialogResult dialogResult = MessageBox.Show("Geschelcht bitte auswählen: Ja für Männlich und Nein für Weiblich.", "Geschlecht auswählen", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    MannlichRadioButton.Checked = true;
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    WeiblichRadioButton.Checked = true;
-                }
-            }*/
-
-         
-
-
+                WeiblichRadioButton.Checked = true;
+            }
+            
            // int BachelorNummer = 50;
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
             int Student_studiengang = Search_StudiengangID(StudiengangCB.Text.Trim());
@@ -782,7 +757,7 @@ namespace DataManagerSystem.Modules
             bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
             bool result = int.TryParse(CpTB.Text.Trim(), out CP);
 
-            if ((Student_nationalitaet != 0) && (Student_studiengang != 0))
+            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0))
             {
                 if ((res == true) && (result == true))
                 {
@@ -820,6 +795,14 @@ namespace DataManagerSystem.Modules
                         MessageBox.Show("Error " + ex);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Please enter correct Abschlussnote or CP! " + CP + " or " + AbschlussNote + " has bad format!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please check the nationality! " + NationalityTB.Text.Trim() + " doesn't exist!" );
             }
         }
         
@@ -922,7 +905,6 @@ namespace DataManagerSystem.Modules
             }
         }
 
-
         // Add a New Bewerbung in Database
         public void Add_New_Bewerbung()
         {
@@ -996,7 +978,6 @@ namespace DataManagerSystem.Modules
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Data Saved Successful");
                     UserConnection.Close();
-                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -1005,14 +986,23 @@ namespace DataManagerSystem.Modules
             }
             else
             {
-                MessageBox.Show("Please check the student'daten! ");  
-            }   
+                MessageBox.Show("Please check the student'daten! " + MasterstudiengangCB.Text.Trim() + " or " + SemesterCB.Text.Trim() + " has bad format!");
+                NewStudentUI newStudent = new NewStudentUI(benutzer_Name);
+                newStudent.Show();
+            }
+
+           
         }
 
         private void CanceledBtn_Click(object sender, EventArgs e)
         {
 
             this.Close();
+        }
+
+        private void DruckenBtn_Click(object sender, EventArgs e)
+        {
+            ExportDocx();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -1036,7 +1026,7 @@ namespace DataManagerSystem.Modules
                     {
                         Add_New_Student();
                         Add_New_Bewerbung();
-                        
+                        this.Close();
                     }
                     else
                     {
@@ -1058,15 +1048,13 @@ namespace DataManagerSystem.Modules
 
                 if (superUser.SuperUserstatut == 1)
                 {
-
-                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudienLandCB.Text != string.Empty
+                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
                       || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
-                      || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty && (MannlichRadioButton.Checked != false && WeiblichRadioButton.Checked == false)
-                      && (MannlichRadioButton.Checked == false && WeiblichRadioButton.Checked != false))
+                      || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
                     {
-                       
                         Add_New_Student();
-                        Add_New_Bewerbung();                        
+                        Add_New_Bewerbung();
+                        this.Close();
                     }
                     else
                     {
@@ -1081,11 +1069,6 @@ namespace DataManagerSystem.Modules
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void MannlichRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             geschlecht = "Mannlich";
@@ -1094,6 +1077,26 @@ namespace DataManagerSystem.Modules
         private void WeiblichRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             geschlecht = "Weiblich";
+        }
+
+        private void ExportDocx()
+        {
+            WordDocCreator Docx = new WordDocCreator(@"C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\template\BCI.docx");
+
+            Docx.FindAndReplace("<name>", NameTB.Text.Trim());
+            Docx.FindAndReplace("<vorname>", FirstnameTB.Text.Trim());
+            Docx.FindAndReplace("<nationalitaet>", NationalityTB.Text.Trim());
+            Docx.FindAndReplace("<studiengang>", StudiengangCB.Text.Trim());
+            Docx.FindAndReplace("<hochschule>", HochshuleCB.Text.Trim());
+            Docx.FindAndReplace("<note>", AbschlussnoteTB.Text.Trim());
+            Docx.FindAndReplace("<erworbenecp>", CpTB.Text.Trim());
+            Docx.FindAndReplace("<masterstudiengang>", MasterstudiengangCB.Text.Trim());
+
+            Docx.FindAndReplace("<ablehnungsgrund>", AblehnungsgrundTB.Text.Trim());
+            Docx.FindAndReplace("<kommentar>", KommentarTB.Text.Trim());
+            Docx.FindAndReplace("<date>", DateTime.Now.ToShortDateString());
+
+            Docx.CreateDocx(@"C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\template\Bewerbung.docx");
         }
     }
 }

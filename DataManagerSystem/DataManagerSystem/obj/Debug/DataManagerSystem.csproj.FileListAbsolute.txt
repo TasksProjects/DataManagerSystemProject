@@ -1,18 +1,100 @@
-G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
-G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
-G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
-G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
-G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.Cache
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+C:\Users\william\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.Cache
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+C:\Users\Ulrich\Desktop\Database Verfahren\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangUI.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.Cache
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Land.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangUI.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.Cache
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+C:\Users\Ulrich\Desktop\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
-G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.ResolveComReference.cache
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Land.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Semester.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
-G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.BewerbungUI.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
-G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditPerson.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
@@ -23,7 +105,38 @@ G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.M
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.Cache
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
 G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Land.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Semester.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangUI.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.Cache
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+C:\Users\Ulrich\Desktop\Database Verfahren\Back up\18.02.2018\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
