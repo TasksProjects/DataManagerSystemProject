@@ -727,11 +727,9 @@ namespace DataManagerSystem.Modules
         public void Add_New_Student()
         {
             int check_NoteVorläufing;
-<<<<<<< Updated upstream
 
-=======
             
->>>>>>> Stashed changes
+
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
 
             if (NoteVorläufingCheckBox.Checked == true)
@@ -743,21 +741,8 @@ namespace DataManagerSystem.Modules
                 check_NoteVorläufing = 0;
             }
 
-<<<<<<< Updated upstream
-            DialogResult dialogResult = MessageBox.Show("Geschelcht bitte auswählen: Ja für Männlich und Nein für Weiblich.", "Geschlecht auswählen", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                MannlichRadioButton.Checked = true;
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                WeiblichRadioButton.Checked = true;
-            }
-            
-           // int BachelorNummer = 50;
-=======
-           
->>>>>>> Stashed changes
+
+
             int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
             int Student_studiengang = Search_StudiengangID(StudiengangCB.Text.Trim());
             double AbschlussNote;
@@ -1058,17 +1043,10 @@ namespace DataManagerSystem.Modules
 
                 if (superUser.SuperUserstatut == 1)
                 {
-<<<<<<< Updated upstream
-                    if (FirstnameTB.Text != string.Empty || NameTB.Text != string.Empty || NationalityTB.Text != string.Empty || StudiengangCB.Text != string.Empty
-                      || HochshuleCB.Text != string.Empty || StudiengangCB.Text != string.Empty || AbschlussnoteTB.Text != string.Empty
-                      || CpTB.Text != string.Empty || MasterstudiengangCB.Text != string.Empty || SemesterCB.Text != string.Empty)
-=======
-
                     if (FirstnameTB.Text != string.Empty && NameTB.Text != string.Empty && NationalityTB.Text != string.Empty && StudienLandCB.Text != string.Empty
                       && HochshuleCB.Text != string.Empty && StudiengangCB.Text != string.Empty && AbschlussnoteTB.Text != string.Empty
                       && CpTB.Text != string.Empty && MasterstudiengangCB.Text != string.Empty && SemesterCB.Text != string.Empty && (MannlichRadioButton.Checked != false && WeiblichRadioButton.Checked == false)
                       || (MannlichRadioButton.Checked == false && WeiblichRadioButton.Checked != false))
->>>>>>> Stashed changes
                     {
                         Add_New_Student();
                         Add_New_Bewerbung();
