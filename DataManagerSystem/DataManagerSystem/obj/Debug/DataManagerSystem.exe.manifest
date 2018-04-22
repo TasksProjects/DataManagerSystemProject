@@ -54,14 +54,22 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< Updated upstream
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataManagerSystem.exe" size="8898560">
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataManagerSystem.exe" size="4535808">
+>>>>>>> Stashed changes
       <assemblyIdentity name="DataManagerSystem" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< Updated upstream
         <dsig:DigestValue>p9Hv4MegywF339NagU9Hp7HpgEDQM90SGQzOZQKjvuU=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>ysa6KYREwWdLH9dV86shCTapIDglKMPLwcyYHKvObCc=</dsig:DigestValue>
+>>>>>>> Stashed changes
       </hash>
     </dependentAssembly>
   </dependency>

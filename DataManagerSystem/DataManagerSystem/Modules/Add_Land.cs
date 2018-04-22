@@ -19,10 +19,10 @@ namespace DataManagerSystem.Modules
         string benutzer_Online;
         private ConfigData config = new ConfigData();
 
-        public Add_Land(string benutzer, String NameLand)
+        public Add_Land(string benutzer, String NameNationalitaet)
         {
             InitializeComponent();
-            LandTextBox.Text = NameLand;
+            NationalitättextBox.Text = NameNationalitaet;
             benutzer_Online = benutzer;
         }
 

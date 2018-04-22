@@ -56,5 +56,13 @@ namespace DataManagerSystem.Configs
             get { return _noteVorlaefig; }
             set { _noteVorlaefig = value; }
         }
+
+        private string _geschlecht;
+        public string Geschlecht
+        {
+            get { return _geschlecht; }
+            set {_geschlecht = value; }
+        }
+       
     }
 }

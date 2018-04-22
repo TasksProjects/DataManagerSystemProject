@@ -665,6 +665,7 @@
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(574, 20);
             this.textBox21.TabIndex = 1;
+            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
             // 
             // groupBox1
             // 
