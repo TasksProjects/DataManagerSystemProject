@@ -39,6 +39,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.DocxPathBtn = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.DocxPathTB = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -51,7 +54,7 @@
             this.LoadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.LoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadButton.ForeColor = System.Drawing.Color.White;
-            this.LoadButton.Location = new System.Drawing.Point(495, 76);
+            this.LoadButton.Location = new System.Drawing.Point(495, 94);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(104, 23);
             this.LoadButton.TabIndex = 20;
@@ -65,7 +68,7 @@
             this.Cancelbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelbutton.Location = new System.Drawing.Point(495, 153);
+            this.Cancelbutton.Location = new System.Drawing.Point(495, 206);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(104, 33);
             this.Cancelbutton.TabIndex = 18;
@@ -80,7 +83,7 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(385, 153);
+            this.SaveButton.Location = new System.Drawing.Point(385, 206);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(104, 33);
             this.SaveButton.TabIndex = 17;
@@ -92,7 +95,7 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 79);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 97);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(143, 16);
             this.bunifuCustomLabel1.TabIndex = 16;
@@ -103,7 +106,7 @@
             this.DbPathTexbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.DbPathTexbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DbPathTexbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DbPathTexbox.Location = new System.Drawing.Point(161, 77);
+            this.DbPathTexbox.Location = new System.Drawing.Point(161, 95);
             this.DbPathTexbox.Name = "DbPathTexbox";
             this.DbPathTexbox.Size = new System.Drawing.Size(328, 22);
             this.DbPathTexbox.TabIndex = 15;
@@ -140,12 +143,48 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // DocxPathBtn
+            // 
+            this.DocxPathBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.DocxPathBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DocxPathBtn.ForeColor = System.Drawing.Color.White;
+            this.DocxPathBtn.Location = new System.Drawing.Point(495, 146);
+            this.DocxPathBtn.Name = "DocxPathBtn";
+            this.DocxPathBtn.Size = new System.Drawing.Size(104, 23);
+            this.DocxPathBtn.TabIndex = 23;
+            this.DocxPathBtn.Text = "Load Path";
+            this.DocxPathBtn.UseVisualStyleBackColor = false;
+            this.DocxPathBtn.Click += new System.EventHandler(this.DocxPathBtn_Click);
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(12, 149);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(124, 16);
+            this.bunifuCustomLabel2.TabIndex = 22;
+            this.bunifuCustomLabel2.Text = "Generated Docx:";
+            // 
+            // DocxPathTB
+            // 
+            this.DocxPathTB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.DocxPathTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DocxPathTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DocxPathTB.Location = new System.Drawing.Point(161, 147);
+            this.DocxPathTB.Name = "DocxPathTB";
+            this.DocxPathTB.Size = new System.Drawing.Size(328, 22);
+            this.DocxPathTB.TabIndex = 21;
+            // 
             // SettingsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(611, 198);
+            this.ClientSize = new System.Drawing.Size(611, 263);
+            this.Controls.Add(this.DocxPathBtn);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.DocxPathTB);
             this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.Cancelbutton);
             this.Controls.Add(this.SaveButton);
@@ -174,5 +213,8 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Button DocxPathBtn;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private WindowsFormsControlLibrary1.BunifuCustomTextbox DocxPathTB;
     }
 }

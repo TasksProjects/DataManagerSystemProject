@@ -254,7 +254,7 @@
             this.MaximizeBox = false;
             this.Name = "StudiengangUI";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Studiengangübersicht";
+            this.Text = "Studiengang";
             this.Load += new System.EventHandler(this.StudiengangUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StudiengangGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

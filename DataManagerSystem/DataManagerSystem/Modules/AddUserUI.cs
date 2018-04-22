@@ -8,7 +8,7 @@ namespace DataManagerSystem.Modules
 {
     public partial class AddUserUI : Form
     {
-        string benutzer_Online;
+        string User_Online;
         DatabaseManager databaseManager = new DatabaseManager();
         OleDbConnection UserConnection = new OleDbConnection();
         ConfigData config = new ConfigData();
@@ -16,61 +16,36 @@ namespace DataManagerSystem.Modules
         public AddUserUI(string user_online)
         {
             InitializeComponent();
-            benutzer_Online = user_online;
+            User_Online = user_online;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (!UsernameTextBox.Text.Trim().Equals(string.Empty) && !PasswordTextBox.Text.Trim().Equals(string.Empty) && !AttributComboBox.Text.Trim().Equals(string.Empty))
             {
-                UserData user = new UserData();
-                SuperUserData superUser = new SuperUserData();
+                string username = UsernameTextBox.Text;
+                string password = PasswordTextBox.Text;
+                string attribut = AttributComboBox.Text;
+                databaseManager.AddUser(username, password, attribut);
+                UsernameTextBox.Clear();
+                PasswordTextBox.Clear();
 
-                if (File.Exists("userData.xml"))
-                {
-                    user = XmlDataManager.XmlUserDataReader("userData.xml");
-                }
-                if (user.UserAttribut == "SuperAdmin")
-                {
-                    if (File.Exists("SuperUserStatut.xml"))
-                    {
-                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                    }
-
-                    if (superUser.SuperUserstatut == 1)
-                    {
-                        if (UsernameTextBox.Text == string.Empty || PasswordTextBox.Text == string.Empty || AttributComboBox.Text == string.Empty)
-                        {
-                            MessageBox.Show("Please enter correct data!");
-                        }
-                        else
-                        {
-                            string username = UsernameTextBox.Text;
-                            string password = PasswordTextBox.Text;
-                            string attribut = AttributComboBox.Text;
-                            databaseManager.AddUser(username, password, attribut);
-                            UsernameTextBox.Clear();
-                            PasswordTextBox.Clear();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("The User " + benutzer_Online + " is offline!");
-                        this.Close();
-                    }
-
-                }
+                AdminUI adminUI = new AdminUI(User_Online);
+                this.Close();
+                adminUI.Show();
             }
             else
             {
-                MessageBox.Show("Please fill all the field!");
+                MessageBox.Show("Please fill all the fields!");
             }
 
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            AdminUI adminUI = new AdminUI(User_Online);
             this.Close();
+            adminUI.Show();
         }
     }
 }

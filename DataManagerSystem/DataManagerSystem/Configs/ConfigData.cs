@@ -23,5 +23,13 @@ namespace DataManagerSystem.Configs
             get { return _dbConnectionString;}
             set { _dbConnectionString = value;}
         }
+
+        private string _saveDocxPath;
+
+        public string SaveDocxPath
+        {
+            get { return _saveDocxPath; }
+            set { _saveDocxPath = value; }
+        }
     }
 }

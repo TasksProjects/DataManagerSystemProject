@@ -168,40 +168,28 @@ namespace DataManagerSystem.Configs
 
         }
         // Function to remove UserData from the database
-        public void RemoveUser(int id, string username)
+        public void RemoveUser(int id)
         {
-            // check if the username already exist and return his value
-            Boolean response = SearchUser(username);
-            if (response == true)
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+
+            string query = "delete from  tab_User  where ID = " + id + "";
+            OleDbConnection UserConnection = new OleDbConnection();
+            UserConnection.ConnectionString = config.DbConnectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = UserConnection;
+            UserConnection.Open();
+            try
             {
-
-                config = XmlDataManager.XmlConfigDataReader("configs.xml");
-
-
-                string query = "delete from  tab_User  where ID = " + id + "";
-                OleDbConnection UserConnection = new OleDbConnection();
-                UserConnection.ConnectionString = config.DbConnectionString;
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = query;
-                cmd.Connection = UserConnection;
-                UserConnection.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data Removed Successful");
-                    UserConnection.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex);
-                }
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data Removed Successful");
+                UserConnection.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username doesn't exist");
+                MessageBox.Show("Error " + ex);
             }
-
         }
 
         // Function to edit UserData as simple user in the database

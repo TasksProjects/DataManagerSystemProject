@@ -31,6 +31,7 @@ namespace DataManagerSystem.Modules
             {
                 config = XmlDataManager.XmlConfigDataReader("configs.xml");
                 DbPathTexbox.Text = config.DatabasePath;
+                DocxPathTB.Text = config.SaveDocxPath;
             }
         }
 
@@ -41,15 +42,16 @@ namespace DataManagerSystem.Modules
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (DbPathTexbox.Text == string.Empty)
+            if (DbPathTexbox.Text == string.Empty && DocxPathTB.Text == string.Empty)
             {
-                MessageBox.Show("Database Path Empty!!");
+                MessageBox.Show("Please Fill All Boxes Before Saving");
             }
             else
             {
                 try
                 {
-                    config.DbConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+config.DatabasePath+";Persist Security Info = False;";
+                    config.DbConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + config.DatabasePath + ";Persist Security Info = False;";
+                    config.SaveDocxPath = @DocxPathTB.Text.Trim();
                     XmlDataManager.XmlDataWriter(config, "configs.xml");
                     this.Hide();
                 }
@@ -57,6 +59,17 @@ namespace DataManagerSystem.Modules
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void DocxPathBtn_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+
+            if (folderDialog.ShowDialog() == DialogResult.OK)
+            {
+                config.SaveDocxPath = folderDialog.SelectedPath;
+                DocxPathTB.Text = config.SaveDocxPath;
             }
         }
     }

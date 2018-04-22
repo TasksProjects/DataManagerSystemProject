@@ -242,7 +242,7 @@
             this.LogoutButton.ImagePosition = 15;
             this.LogoutButton.ImageZoom = 50;
             this.LogoutButton.LabelPosition = 44;
-            this.LogoutButton.LabelText = "Logout";
+            this.LogoutButton.LabelText = "Exit";
             this.LogoutButton.Location = new System.Drawing.Point(625, 201);
             this.LogoutButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.LogoutButton.Name = "LogoutButton";

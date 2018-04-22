@@ -10,7 +10,7 @@ namespace DataManagerSystem
 {
     public partial class MainWindow : Form
     {
-        string Online_benutzer;
+        string User_online;
         DatabaseManager databaseManager = new DatabaseManager();
         ConfigData config = new ConfigData();
         SettingsUI settingUI = new SettingsUI();
@@ -20,9 +20,9 @@ namespace DataManagerSystem
             InitializeComponent();
             Disable(status);
             labelStatus.Text = status;
-            Online_benutzer = benutzerName;
+            User_online = benutzerName;
 
-            // to display the time
+            //display the time
             timer1.Start();
         }
 
@@ -34,29 +34,24 @@ namespace DataManagerSystem
             if (File.Exists("userData.xml"))
             {
                 user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-            if ( user.UserAttribut != "SuperAdmin")
-            {
-                Disconnect_USer(Online_benutzer);
-                FormLogin formLogin = new FormLogin();
-                formLogin.Show();
-                this.Close();
-            }
-            else
-            {
-                if (File.Exists("SuperUserStatut.xml"))
+                if (user.UserAttribut != "SuperAdmin")
                 {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-
-                    superUser.SuperUserstatut = 0;
-                    XmlDataManager.XmlDataWriter(superUser, "SuperUserStatut.xml");
-                    FormLogin formLogin = new FormLogin();
-                    formLogin.Show();
-                    this.Close();
+                    Disconnect_USer(User_online);
+                    Application.Exit();
                 }
-               
+                else
+                {
+                    if (File.Exists("SuperUserStatut.xml"))
+                    {
+                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
+
+                        superUser.SuperUserstatut = 0;
+                        XmlDataManager.XmlDataWriter(superUser, "SuperUserStatut.xml");
+                        Application.Exit();
+                    }
+                }
             }
-            
+           
         }
 
         private void SettingButton_Click(object sender, EventArgs e)
@@ -67,21 +62,19 @@ namespace DataManagerSystem
         //Exit button
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Disconnect_USer(Online_benutzer);
             Environment.Exit(1);
         }
      
         private void AddButton_Click(object sender, EventArgs e)
         {
-            NewStudentUI newStudentUI = new NewStudentUI(Online_benutzer);
+            NewStudentUI newStudentUI = new NewStudentUI(User_online);
             newStudentUI.Show();
         }
 
         private void AdminButton_Click(object sender, EventArgs e)
         {
-            AdminUI adminUI = new AdminUI(Online_benutzer);
+            AdminUI adminUI = new AdminUI(User_online);
             adminUI.Show();
-            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void ShowDbButton_Click(object sender, EventArgs e)
@@ -118,7 +111,7 @@ namespace DataManagerSystem
         private void StudiengangButton_Click(object sender, EventArgs e)
         {
             string studuengang = "";
-            StudiengangUI studiengangUI = new StudiengangUI(Online_benutzer,studuengang );
+            StudiengangUI studiengangUI = new StudiengangUI(User_online, studuengang );
             studiengangUI.Show();
         }
 
@@ -147,7 +140,6 @@ namespace DataManagerSystem
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    // MessageBox.Show("Data Edit Successful");
                     UserConnection.Close();
 
                 }

@@ -44,8 +44,6 @@ namespace DataManagerSystem.Configs
             object matchDiactitics = false;
             object matchAlefHamza = false;
             object matchControl = false;
-            object read_only = false;
-            object visible = true;
             object replace = 2;
             object wrap = 1;
 
@@ -66,21 +64,16 @@ namespace DataManagerSystem.Configs
         {
             if (File.Exists((string)filename))
             {
-                WordDocx.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing);
-
-                WordDocx.Close();
-                wordApp.Quit();
-
+                WordDocx.SaveAs2(ref SaveAs);
                 MessageBox.Show("File Created!");
             }
             else
             {
                 MessageBox.Show("No able To Save File!");
             }
+        
+            WordDocx.Close();
+            wordApp.Quit();
         }
     }
 }

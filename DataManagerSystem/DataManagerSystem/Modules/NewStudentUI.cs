@@ -1081,7 +1081,8 @@ namespace DataManagerSystem.Modules
 
         private void ExportDocx()
         {
-            WordDocCreator Docx = new WordDocCreator(@"C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\template\BCI.docx");
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+            WordDocCreator Docx = new WordDocCreator(@"C:\Users\william\Desktop\DataManagerSystemProject\DataManagerSystem\template\BCI.docx");
 
             Docx.FindAndReplace("<name>", NameTB.Text.Trim());
             Docx.FindAndReplace("<vorname>", FirstnameTB.Text.Trim());
@@ -1096,7 +1097,9 @@ namespace DataManagerSystem.Modules
             Docx.FindAndReplace("<kommentar>", KommentarTB.Text.Trim());
             Docx.FindAndReplace("<date>", DateTime.Now.ToShortDateString());
 
-            Docx.CreateDocx(@"C:\Users\william\Desktop\DataManagerSystem\DataManagerSystem\template\Bewerbung.docx");
+            string filename = "\\" + NameTB.Text.Trim() + DateTime.Now.ToShortDateString().Trim() + ".docx";
+
+            Docx.CreateDocx(config.SaveDocxPath.Trim() + filename.Trim());
         }
     }
 }
