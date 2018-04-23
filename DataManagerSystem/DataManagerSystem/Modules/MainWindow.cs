@@ -83,10 +83,11 @@ namespace DataManagerSystem
             bewerbungUI.Show();
         }
 
+
         private void EditButton_Click(object sender, EventArgs e)
         {
-            EditPerson editPerson = new EditPerson();
-            editPerson.Show();
+           // EditPerson editPerson = new EditPerson();
+           // editPerson.Show();
         }
 
         private void Helpbutton_Click(object sender, EventArgs e)
@@ -185,18 +186,6 @@ namespace DataManagerSystem
             else
             {
                 return false;
-            }
-        }
-
-        private void MinimizeBtn_Click(object sender, EventArgs e)
-        {
-            if(this.WindowState == FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Minimized;
             }
         }
     }

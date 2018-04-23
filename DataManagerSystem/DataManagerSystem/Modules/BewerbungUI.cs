@@ -11,6 +11,7 @@ namespace DataManagerSystem.Modules
         int bewerbungsnummer;
         string BewerbungsNationalitaet;
         string BewerbungsBachelor;
+        string[] StudentInfo = new String[5];
         StudentData studentData = new StudentData();
         Bewerbungsdata bewerbungsdata = new Bewerbungsdata();
         private ConfigData config = new ConfigData();
@@ -70,18 +71,26 @@ namespace DataManagerSystem.Modules
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            int id;
-            bool result = int.TryParse(BewerbungsnummerTextBox.Text.Trim(), out id);
-            if(result == true)
+            if (BewerbungsnummerTextBox.Text != string.Empty)
             {
-                bewerbungsnummer = id;
-                SearchStudentenWithBewerbungID(bewerbungsnummer);
-               // EditPerson editPerson(bewerbungsnummer, sewerbungsdata, studentData);
+                int idNummer;
+                bool result = int.TryParse(BewerbungsnummerTextBox.Text.Trim(), out idNummer);
+                if (result == true)
+                {
+                    bewerbungsnummer = idNummer;
+                    SearchStudentenWithBewerbungID(bewerbungsnummer);
+
+                }
+                else
+                {
+                    MessageBox.Show("Bewerbungsnummer doesn't exist!");
+                }
             }
             else
             {
-                MessageBox.Show("Bewerbungsnummer doesn't exist!");
+                MessageBox.Show("Please give a IDNummer!");
             }
+           
             
 
 
@@ -92,70 +101,79 @@ namespace DataManagerSystem.Modules
             bool resultat = false;
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
             int bewerbungID = idBewerbung;
-            
-           
-                string query = "SELECT ID, intPerson, intMasterstudiengang, intSemester, blnProf, blnVerwltung, blnAngenommen" +
-                        "FROM tab_bewerbung" +
-                        "WHERE ID = bewerbungID";
-
-                OleDbConnection UserConnection1 = new OleDbConnection();
-                UserConnection1.ConnectionString = config.DbConnectionString;
-                UserConnection1.Open();
-                OleDbCommand cmd1 = new OleDbCommand();
-                cmd1.Connection = UserConnection1;
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = query;
-                OleDbDataReader reader = cmd1.ExecuteReader();
 
 
-                if (reader.HasRows)
+            // string query = "SELECT ID,intPerson,intMasterstudiengang,intSemester,blnProf,blnVerwaltung,blnAngenommen FROM tab_bewerbung WHERE ID = bewerbungID";
+
+            string query = "SELECT a.ID AS IDs, a.intPerson AS intPerson, b.txtName As Masterstudiengang, c.txtSemester AS Semester, a.blnProf AS blnProf, a.blnVerwaltung As blnVerwaltung, a.blnAngenommen AS blnAngenommen FROM tab_bewerbung AS a, tab_masterstudiengang AS b, tab_semester AS c WHERE b.ID = a.intMasterstudiengang AND c.ID = a.intSemester AND a.ID = " +bewerbungID+ ""; 
+
+            OleDbConnection UserConnection1 = new OleDbConnection();
+            UserConnection1.ConnectionString = config.DbConnectionString;
+            UserConnection1.Open();
+            OleDbCommand cmd1 = new OleDbCommand();
+            cmd1.Connection = UserConnection1;
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = query;
+            OleDbDataReader reader = cmd1.ExecuteReader();
+
+
+            if (reader.HasRows)
                 {
                     reader.Read();
-                    string ID = reader["ID"].ToString();
+                    string ID = reader["IDs"].ToString();
+                
                     string IntPerson = reader["intPerson"].ToString();
-                    string IntMasterstudiengang = reader["intMasterstudiengang"].ToString();
-                    string IntSemester = reader["intSemester"].ToString();
+                    string Masterstudiengang = reader["Masterstudiengang"].ToString();
+                    string Semester = reader["Semester"].ToString();
                     string BoolAnProf = reader["blnProf"].ToString();
                     string BoolAnHA_4_1 = reader["blnVerwaltung"].ToString();
                     string BoolAngenommen = reader["blnAngenommen"].ToString();
-                    UserConnection1.Close();
-                    int id = Convert.ToInt32(ID);
-                    int idPerson = Convert.ToInt32(IntPerson);
-                    int intMasterstudiengang = Convert.ToInt32(IntMasterstudiengang);
-                    int intSemester = Convert.ToInt32(IntSemester);
-                    bool boolAnprof = Convert.ToBoolean(BoolAnProf);
-                    bool boolAnA_4_1 = Convert.ToBoolean(BoolAnHA_4_1);
-                    bool boolAngenommen = Convert.ToBoolean(BoolAngenommen);
+                UserConnection1.Close(); 
+                int id = Convert.ToInt32(ID);
+                Console.WriteLine(ID);
 
-                    bewerbungsdata.StudentID = idPerson;
-                    bewerbungsdata.Master_StudiengangID = intMasterstudiengang;
-                    bewerbungsdata.SemesterID = intSemester;
-                    if(boolAnprof == false)
-                    {
-                        bewerbungsdata.Prof = 0;
-                    }
-                    else
-                    {
-                        bewerbungsdata.Prof = 1;
-                    }
-                    if (boolAnA_4_1 == false)
-                    {
-                        bewerbungsdata.Verwaltung = 0;
-                    }
-                    else
-                    {
-                        bewerbungsdata.Verwaltung = 1;
-                    }
-                    if (boolAngenommen == false)
-                    {
-                        bewerbungsdata.Angenommen = 0;
-                    }
-                    else
-                    {
-                        bewerbungsdata.Angenommen = 1;
-                    }
+                
+                int idPerson = Convert.ToInt32(IntPerson);
+                StudentInfo[0] = Masterstudiengang;
+                StudentInfo[1] = Semester;
 
-                    resultat = true;
+                int intMasterstudiengang; ;
+                bool result = int.TryParse(Masterstudiengang, out intMasterstudiengang);
+                int intSemester;
+                bool result1= int.TryParse(Semester, out intSemester);
+                bool boolAnprof = Convert.ToBoolean(BoolAnProf);
+                bool boolAnA_4_1 = Convert.ToBoolean(BoolAnHA_4_1);
+                bool boolAngenommen = Convert.ToBoolean(BoolAngenommen); 
+
+                bewerbungsdata.StudentID = idPerson;
+                bewerbungsdata.Master_StudiengangID = intMasterstudiengang;
+                bewerbungsdata.SemesterID = intSemester;
+                if(boolAnprof == false)
+                {
+                    bewerbungsdata.Prof = 0;
+                }
+                else
+                {
+                    bewerbungsdata.Prof = 1;
+                }
+                if (boolAnA_4_1 == false)
+                {
+                    bewerbungsdata.Verwaltung = 0;
+                }
+                else
+                {
+                    bewerbungsdata.Verwaltung = 1;
+                }
+                if (boolAngenommen == false)
+                {
+                    bewerbungsdata.Angenommen = 0;
+                }
+                else
+                {
+                    bewerbungsdata.Angenommen = 1;
+                }
+
+                resultat = true;
                 }
                 else
                 {
@@ -173,10 +191,7 @@ namespace DataManagerSystem.Modules
                 config = XmlDataManager.XmlConfigDataReader("configs.xml");
                 int Bewerbungsnummer = bewerbungsdata.StudentID;
 
-                string query = "SELECT a.ID, a.txtVorname, a.txtName, a.txtGeschlecht, a.dblNote, a.blnNoteVorläufig," +
-                    " a.intCP, b.txtNationalität, c.txtName" +
-                        "FROM tab_person AS a, tab_land As b, tab_studiengang AS c" +
-                        "WHERE b.ID = a.intNationalität AND c.ID = a.intBachelor";
+                string query = "SELECT a.ID AS ID, a.txtVorname AS Vorname, a.txtName, a.txtGeschlecht AS Geschlecht, a.dblNote AS AbschlussNote, a.blnNoteVorläufig AS NoteVorläufig, a.intCP AS CreditPunkt, b.txtNationalität AS Nationalitaet, c.txtName FROM tab_person AS a, tab_land As b, tab_studiengang AS c WHERE a.ID = " + Bewerbungsnummer + " AND b.ID = a.intNationalität AND c.ID = a.intBachelor";
 
                 OleDbConnection UserConnection1 = new OleDbConnection();
                 UserConnection1.ConnectionString = config.DbConnectionString;
@@ -191,24 +206,30 @@ namespace DataManagerSystem.Modules
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    string ID = reader["a.ID"].ToString();
-                    string Vorname = reader["a.txtVorname"].ToString();
+                    string ID = reader["ID"].ToString();
+                    string Vorname = reader["Vorname"].ToString();
                     string Name = reader["a.txtName"].ToString();
-                    BewerbungsNationalitaet = reader["b.txtNationalität"].ToString();
-                    string Geschlecht = reader["a.txtGeschlecht"].ToString();
+                    BewerbungsNationalitaet = reader["Nationalitaet"].ToString();
+                    string Geschlecht = reader["Geschlecht"].ToString();
                     BewerbungsBachelor = reader["c.txtName"].ToString();
-                    string DoubleNote = reader["a.dblNote"].ToString();
-                    string BoolNoteVorläufig = reader["a.blnNoteVorläufig"].ToString();
-                    string IntCP = reader["a.intCP"].ToString();
+                    string DoubleNote = reader["AbschlussNote"].ToString();
+                    string BoolNoteVorläufig = reader["NoteVorläufig"].ToString();
+                    string IntCP = reader["CreditPunkt"].ToString();
+                    StudentInfo[2] = BewerbungsNationalitaet;
+                    StudentInfo[3] = BewerbungsBachelor;
                    
                     UserConnection1.Close();
 
-                    int id = Convert.ToInt32(ID);
+                   // int id = Convert.ToInt32(ID);
                     double doubleNote = Convert.ToDouble(DoubleNote);
                     bool boolNoteVorläufig = Convert.ToBoolean(BoolNoteVorläufig);
-                    int intCP = Convert.ToInt32(IntCP);
-                    int IntNationalität = Convert.ToInt32(BewerbungsNationalitaet);
-                    int IntBachelor = Convert.ToInt32(BewerbungsBachelor);
+                   
+                    int intCP = Convert.ToInt32 (IntCP);
+                    bool result1 = int.TryParse(IntCP, out intCP);
+                    int IntNationalität;
+                    bool result = int.TryParse(BewerbungsNationalitaet, out IntNationalität);
+                    int IntBachelor;
+                    bool resulte = int.TryParse(BewerbungsBachelor, out IntBachelor);
 
 
                     studentData.Vorname = Vorname;
@@ -227,6 +248,10 @@ namespace DataManagerSystem.Modules
                     {
                         studentData.NoteVorlaefig = 1;
                     }
+
+                    EditPerson editPerson = new EditPerson(bewerbungsnummer, StudentInfo, bewerbungsdata, studentData);
+                    editPerson.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -236,9 +261,10 @@ namespace DataManagerSystem.Modules
 
 
             }
-            
-            
-           
+            else
+            {
+                MessageBox.Show("Bewerbungsnummer doesn't exist!");
+            }     
         }
 
     }

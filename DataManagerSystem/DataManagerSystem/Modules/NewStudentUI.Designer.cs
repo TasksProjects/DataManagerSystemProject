@@ -60,6 +60,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.AngenommenBtn = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.AnProfBtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -84,9 +85,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.WeiblichRadioButton);
@@ -119,6 +117,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.AngenommenBtn);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.AnProfBtn);
             this.panel1.Controls.Add(this.button7);
@@ -138,9 +137,10 @@
             this.panel1.Controls.Add(this.AbschlussnoteTB);
             this.panel1.Controls.Add(this.NameTB);
             this.panel1.Controls.Add(this.FirstnameTB);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 841);
+            this.panel1.Size = new System.Drawing.Size(1015, 827);
             this.panel1.TabIndex = 0;
             // 
             // WeiblichRadioButton
@@ -173,7 +173,7 @@
             // 
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(64, 167);
+            this.label77.Location = new System.Drawing.Point(60, 164);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(89, 16);
             this.label77.TabIndex = 59;
@@ -264,7 +264,7 @@
             // 
             // SemesterBtn
             // 
-            this.SemesterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.SemesterBtn.BackColor = System.Drawing.Color.MidnightBlue;
             this.SemesterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SemesterBtn.ForeColor = System.Drawing.Color.White;
             this.SemesterBtn.Location = new System.Drawing.Point(800, 583);
@@ -323,7 +323,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.ForeColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.bunifuSeparator2.LineThickness = 2;
+            this.bunifuSeparator2.LineThickness = 1;
             this.bunifuSeparator2.Location = new System.Drawing.Point(12, 42);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(991, 10);
@@ -445,7 +445,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(64, 121);
+            this.label2.Location = new System.Drawing.Point(60, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
             this.label2.TabIndex = 25;
@@ -460,6 +460,18 @@
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 24;
             this.label1.Text = "Vorname:";
+            // 
+            // AngenommenBtn
+            // 
+            this.AngenommenBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AngenommenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AngenommenBtn.ForeColor = System.Drawing.Color.White;
+            this.AngenommenBtn.Location = new System.Drawing.Point(800, 707);
+            this.AngenommenBtn.Name = "AngenommenBtn";
+            this.AngenommenBtn.Size = new System.Drawing.Size(139, 23);
+            this.AngenommenBtn.TabIndex = 23;
+            this.AngenommenBtn.Text = "Angenommen";
+            this.AngenommenBtn.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -490,7 +502,7 @@
             this.button7.BackColor = System.Drawing.Color.MidnightBlue;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(800, 704);
+            this.button7.Location = new System.Drawing.Point(800, 542);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 23);
             this.button7.TabIndex = 19;
@@ -577,10 +589,10 @@
             // 
             // CanceledBtn
             // 
-            this.CanceledBtn.BackColor = System.Drawing.Color.White;
+            this.CanceledBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.CanceledBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CanceledBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CanceledBtn.ForeColor = System.Drawing.Color.Black;
+            this.CanceledBtn.ForeColor = System.Drawing.Color.White;
             this.CanceledBtn.Location = new System.Drawing.Point(429, 766);
             this.CanceledBtn.Name = "CanceledBtn";
             this.CanceledBtn.Size = new System.Drawing.Size(126, 35);
@@ -664,9 +676,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1015, 841);
+            this.ClientSize = new System.Drawing.Size(1015, 827);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewStudentUI";
             this.Text = "Neue Bewerbung";
             this.Load += new System.EventHandler(this.NewStudentUI_Load);
@@ -708,6 +722,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button AngenommenBtn;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button AnProfBtn;
         private System.Windows.Forms.Button button7;

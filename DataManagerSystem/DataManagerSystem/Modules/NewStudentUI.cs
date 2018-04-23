@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.OleDb;
 using System.IO;
 using System.Windows.Forms;
+using System.Reflection;
+using Word = Microsoft.Office.Interop.Word;
 
 
 namespace DataManagerSystem.Modules
@@ -661,17 +663,13 @@ namespace DataManagerSystem.Modules
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
             string query = "SELECT ID FROM tab_land where txtNationalität = '" + nationalitaet + "'";
 
-            OleDbConnection UserConnection1 = new OleDbConnection
-            {
-                ConnectionString = config.DbConnectionString
-            };
+            OleDbConnection UserConnection1 = new OleDbConnection();
+            UserConnection1.ConnectionString = config.DbConnectionString;
             UserConnection1.Open();
-            OleDbCommand cmd1 = new OleDbCommand
-            {
-                Connection = UserConnection1,
-                CommandType = CommandType.Text,
-                CommandText = query
-            };
+            OleDbCommand cmd1 = new OleDbCommand();
+            cmd1.Connection = UserConnection1;
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = query;
             OleDbDataReader reader = cmd1.ExecuteReader();
 
 
@@ -1080,7 +1078,7 @@ namespace DataManagerSystem.Modules
         private void ExportDocx()
         {
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
-            WordDocCreator Docx = new WordDocCreator(@Path.GetDirectoryName(Application.ExecutablePath).Trim() + "\\template\\BCI.docx");
+            WordDocCreator Docx = new WordDocCreator(@"G:\GitProjects\DataManagerSystem\template\BCI.docx");
 
             Docx.FindAndReplace("<name>", NameTB.Text.Trim());
             Docx.FindAndReplace("<vorname>", FirstnameTB.Text.Trim());

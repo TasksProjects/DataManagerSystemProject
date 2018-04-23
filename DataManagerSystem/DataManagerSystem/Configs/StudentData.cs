@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataManagerSystem.Configs
 {
-    class StudentData
+    public class StudentData
     {
         private string _vorname; // the Username
         public string Vorname

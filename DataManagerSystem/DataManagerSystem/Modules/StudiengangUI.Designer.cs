@@ -45,8 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.Cancelbutton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.StudiengangGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -58,9 +56,10 @@
             this.StudiengangGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.StudiengangGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StudiengangGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StudiengangGridView.Location = new System.Drawing.Point(9, 48);
+            this.StudiengangGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.StudiengangGridView.Location = new System.Drawing.Point(0, 0);
             this.StudiengangGridView.Name = "StudiengangGridView";
-            this.StudiengangGridView.Size = new System.Drawing.Size(765, 397);
+            this.StudiengangGridView.Size = new System.Drawing.Size(775, 374);
             this.StudiengangGridView.TabIndex = 0;
             // 
             // StudyTextBox
@@ -74,10 +73,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.AddButton);
-            this.groupBox1.Controls.Add(this.Cancelbutton);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.HochschuleComboBox);
             this.groupBox1.Controls.Add(this.numericUpDown1);
@@ -90,9 +85,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.StudyTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(0, 451);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 374);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(789, 191);
+            this.groupBox1.Size = new System.Drawing.Size(775, 151);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Neue Studiengang";
@@ -125,7 +121,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(523, 25);
+            this.numericUpDown1.Location = new System.Drawing.Point(509, 25);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             300,
             0,
@@ -148,7 +144,7 @@
             "Prof. Dr.-Ing",
             "Prof. Dr. rer. nat.",
             "Prof. Dr. techn. Dipl.-Ing"});
-            this.TitelComboBox.Location = new System.Drawing.Point(523, 59);
+            this.TitelComboBox.Location = new System.Drawing.Point(509, 59);
             this.TitelComboBox.Name = "TitelComboBox";
             this.TitelComboBox.Size = new System.Drawing.Size(254, 21);
             this.TitelComboBox.TabIndex = 35;
@@ -156,7 +152,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(523, 94);
+            this.checkBox1.Location = new System.Drawing.Point(509, 94);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 34;
@@ -222,9 +218,9 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Location = new System.Drawing.Point(666, 151);
+            this.AddButton.Location = new System.Drawing.Point(640, 531);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(108, 30);
+            this.AddButton.Size = new System.Drawing.Size(123, 26);
             this.AddButton.TabIndex = 22;
             this.AddButton.Text = "Hinzufügen";
             this.AddButton.UseVisualStyleBackColor = false;
@@ -232,50 +228,25 @@
             // 
             // Cancelbutton
             // 
-            this.Cancelbutton.BackColor = System.Drawing.Color.White;
+            this.Cancelbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.Cancelbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelbutton.ForeColor = System.Drawing.Color.Black;
-            this.Cancelbutton.Location = new System.Drawing.Point(523, 151);
+            this.Cancelbutton.ForeColor = System.Drawing.Color.White;
+            this.Cancelbutton.Location = new System.Drawing.Point(509, 531);
             this.Cancelbutton.Name = "Cancelbutton";
-            this.Cancelbutton.Size = new System.Drawing.Size(108, 30);
+            this.Cancelbutton.Size = new System.Drawing.Size(115, 26);
             this.Cancelbutton.TabIndex = 24;
             this.Cancelbutton.Text = "Cancel";
             this.Cancelbutton.UseVisualStyleBackColor = false;
             this.Cancelbutton.Click += new System.EventHandler(this.Cancelbutton_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label7.Location = new System.Drawing.Point(5, 9);
-            this.label7.Margin = new System.Windows.Forms.Padding(3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 24);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Studiengang";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.bunifuSeparator1.LineThickness = 2;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(8, 32);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(768, 10);
-            this.bunifuSeparator1.TabIndex = 22;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
             // StudiengangUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 646);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.bunifuSeparator1);
+            this.ClientSize = new System.Drawing.Size(775, 569);
+            this.Controls.Add(this.Cancelbutton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.StudiengangGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -291,7 +262,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -313,7 +283,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Cancelbutton;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }
