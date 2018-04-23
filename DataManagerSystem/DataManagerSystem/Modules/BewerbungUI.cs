@@ -71,7 +71,7 @@ namespace DataManagerSystem.Modules
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (BewerbungsnummerTextBox.Text != string.Empty)
+            if (BewerbungsnummerTextBox.Text.Trim() != string.Empty)
             {
                 int idNummer;
                 bool result = int.TryParse(BewerbungsnummerTextBox.Text.Trim(), out idNummer);
@@ -90,10 +90,6 @@ namespace DataManagerSystem.Modules
             {
                 MessageBox.Show("Please give a IDNummer!");
             }
-           
-            
-
-
         }
 
         public bool SearchBewerbungId(int idBewerbung)
@@ -265,6 +261,102 @@ namespace DataManagerSystem.Modules
             {
                 MessageBox.Show("Bewerbungsnummer doesn't exist!");
             }     
+        }
+
+        private void Deletebtn_Click(object sender, EventArgs e)
+        {
+            if (BewerbungsnummerTextBox.Text.Trim() != string.Empty)
+            {
+                int idNummer;
+                bool result = int.TryParse(BewerbungsnummerTextBox.Text.Trim(), out idNummer);
+                if (result == true)
+                {
+                    bewerbungsnummer = idNummer;
+                    // SearchStudentenWithBewerbungID(bewerbungsnummer);
+                    if (SearchBewerbungId(bewerbungsnummer)==true)
+                       
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Do you really want to remove Registration with nummer " +bewerbungsnummer+" " , "Confirm Remove Registration", MessageBoxButtons.YesNo);
+                        if ((dialogResult == DialogResult.Yes)&&((RemoveBewerbung(bewerbungsnummer) == true) && (RemoveStudent(bewerbungsdata.StudentID) == true)))
+                        {
+                            MessageBox.Show("Bewerbung  Removed Successful!");
+                            BewerbungsnummerTextBox.Text = "";
+                            Show_Database();
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            Show_Database();
+                        }
+   
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bewerbungsnummer doesn't exist!");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Bewerbungsnummer doesn't exist!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please give a IDNummer!");
+            }
+
+        }
+
+        public bool RemoveBewerbung(int bewerbungsnummer)
+        {
+            bool resp = false;
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+
+            string query = "delete from  tab_bewerbung  where ID = " + bewerbungsnummer + "";
+            OleDbConnection UserConnection = new OleDbConnection();
+            UserConnection.ConnectionString = config.DbConnectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = UserConnection;
+            UserConnection.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                UserConnection.Close();
+                resp = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            return resp;
+        }
+
+        public bool RemoveStudent(int IDStudent)
+        {
+            bool resp = false;
+            config = XmlDataManager.XmlConfigDataReader("configs.xml");
+
+            string query = "delete from  tab_person  where ID = " + IDStudent + "";
+            OleDbConnection UserConnection = new OleDbConnection();
+            UserConnection.ConnectionString = config.DbConnectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = UserConnection;
+            UserConnection.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                UserConnection.Close();
+                resp = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            return resp;
         }
 
     }

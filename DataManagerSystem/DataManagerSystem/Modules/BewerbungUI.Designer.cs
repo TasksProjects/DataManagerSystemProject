@@ -35,6 +35,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.EditBtn = new System.Windows.Forms.Button();
             this.BewerbungsnummerTextBox = new System.Windows.Forms.TextBox();
+            this.Deletebtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(737, 19);
+            this.label2.Location = new System.Drawing.Point(582, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 16);
             this.label2.TabIndex = 40;
@@ -92,7 +93,7 @@
             this.EditBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.EditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditBtn.ForeColor = System.Drawing.Color.White;
-            this.EditBtn.Location = new System.Drawing.Point(961, 13);
+            this.EditBtn.Location = new System.Drawing.Point(816, 15);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(139, 23);
             this.EditBtn.TabIndex = 52;
@@ -103,10 +104,24 @@
             // BewerbungsnummerTextBox
             // 
             this.BewerbungsnummerTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BewerbungsnummerTextBox.Location = new System.Drawing.Point(855, 15);
+            this.BewerbungsnummerTextBox.Location = new System.Drawing.Point(700, 17);
             this.BewerbungsnummerTextBox.Name = "BewerbungsnummerTextBox";
             this.BewerbungsnummerTextBox.Size = new System.Drawing.Size(100, 20);
             this.BewerbungsnummerTextBox.TabIndex = 53;
+            // 
+            // Deletebtn
+            // 
+            this.Deletebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Deletebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Deletebtn.ForeColor = System.Drawing.Color.White;
+            this.Deletebtn.Location = new System.Drawing.Point(961, 13);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(139, 23);
+            this.Deletebtn.TabIndex = 54;
+            this.Deletebtn.Text = "Remove";
+            this.Deletebtn.UseVisualStyleBackColor = false;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
             // 
             // BewerbungUI
             // 
@@ -114,6 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1112, 793);
+            this.Controls.Add(this.Deletebtn);
             this.Controls.Add(this.BewerbungsnummerTextBox);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.panel1);
@@ -138,5 +154,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.TextBox BewerbungsnummerTextBox;
+        private System.Windows.Forms.Button Deletebtn;
     }
 }

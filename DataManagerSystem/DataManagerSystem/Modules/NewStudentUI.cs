@@ -724,8 +724,9 @@ namespace DataManagerSystem.Modules
         }
 
         //Function to save Student's information
-        public void Add_New_Student()
+        public bool Add_New_Student()
         {
+            bool response = false;
             int check_NoteVorläufing;
 
             
@@ -750,10 +751,9 @@ namespace DataManagerSystem.Modules
             bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
             bool result = int.TryParse(CpTB.Text.Trim(), out CP);
 
-            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0))
+            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0)&& ((res == true) && (result == true)))
             {
-                if ((res == true) && (result == true))
-                {
+                
                     StudentData studentData = new StudentData
                     {
                         Vorname = FirstnameTB.Text.Trim(),
@@ -783,21 +783,14 @@ namespace DataManagerSystem.Modules
                         cmd.ExecuteNonQuery();
                         // MessageBox.Show("Data Saved Successful");
                         UserConnection.Close();
+                        response = true;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error " + ex);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter correct Abschlussnote or CP! " + CP + " or " + AbschlussNote + " has bad format!");
-                }
             }
-            else
-            {
-                MessageBox.Show("Please check the nationality! " + NationalityTB.Text.Trim() + " doesn't exist!" );
-            }
+            return response;
         }
         
         // function to search a Student_ID in database
@@ -902,89 +895,96 @@ namespace DataManagerSystem.Modules
         // Add a New Bewerbung in Database
         public void Add_New_Bewerbung()
         {
-            int check_Prof ;
-            int check_Verwaltung ;
-            int check_Angenommen ;
+            if (Add_New_Student() == true)
+            {
+                int check_Prof;
+                int check_Verwaltung;
+                int check_Angenommen;
 
-            if (AnProfCheckBox.Checked == true)
-            {
-                check_Prof = 1;
-            }
-            else
-            {
-                check_Prof = 0;
-            }
-
-            if (AngenommenCheckBox.Checked == true)
-            {
-                check_Angenommen = 1;
-            }
-            else
-            {
-                check_Angenommen = 0;
-            }
-
-            if (AnHaCheckBox.Checked == true)
-            {
-                check_Verwaltung = 1;
-            }
-            else
-            {
-                check_Verwaltung = 0;
-            }
-            config = XmlDataManager.XmlConfigDataReader("configs.xml");
-
-        
-
-            int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
-            int Studenten_ID = Search_ID_Student(NameTB.Text.Trim());
-            int MasterstudiengangID = Search_ID_Masterstudiengang(MasterstudiengangCB.Text.Trim());
-            int Studenten_SemesterID = Search_ID_Smester(SemesterCB.Text.Trim());
-
-            if ((Student_nationalitaet!=0)&&(Studenten_ID != 0)&&(MasterstudiengangID !=0)&&(Studenten_SemesterID !=0))
-            {
-                Bewerbungsdata bewerbungsdata = new Bewerbungsdata
+                if (AnProfCheckBox.Checked == true)
                 {
-                    StudentID = Studenten_ID,
-                    Master_StudiengangID = MasterstudiengangID,
-                    SemesterID = Studenten_SemesterID,
-                    Comment1 = ZusatzTB.Text.Trim(),
-                    Comment2 = AblehnungsgrundTB.Text.Trim(),
-                    Comment3 = KommentarTB.Text.Trim(),
-                    Prof = check_Prof,
-                    Verwaltung = check_Verwaltung,
-                    Angenommen = check_Angenommen
-
-                };
-
-                string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
-                             " values ('" + bewerbungsdata.StudentID + "','" + bewerbungsdata.Master_StudiengangID + "','" + bewerbungsdata.SemesterID + "'," +
-                             "'" + bewerbungsdata.Comment1 + "','" + bewerbungsdata.Comment2 + "', '" + bewerbungsdata.Comment3 + "', '" + check_Prof + "', '" + check_Verwaltung + "', '" + check_Angenommen + "')";
-                OleDbConnection UserConnection = new OleDbConnection();
-                UserConnection.ConnectionString = config.DbConnectionString;
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = query;
-                cmd.Connection = UserConnection;
-                UserConnection.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data Saved Successful");
-                    UserConnection.Close();
+                    check_Prof = 1;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error " + ex);
+                    check_Prof = 0;
                 }
+
+                if (AngenommenCheckBox.Checked == true)
+                {
+                    check_Angenommen = 1;
+                }
+                else
+                {
+                    check_Angenommen = 0;
+                }
+
+                if (AnHaCheckBox.Checked == true)
+                {
+                    check_Verwaltung = 1;
+                }
+                else
+                {
+                    check_Verwaltung = 0;
+                }
+                config = XmlDataManager.XmlConfigDataReader("configs.xml");
+
+
+
+                int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
+                int Studenten_ID = Search_ID_Student(NameTB.Text.Trim());
+                int MasterstudiengangID = Search_ID_Masterstudiengang(MasterstudiengangCB.Text.Trim());
+                int Studenten_SemesterID = Search_ID_Smester(SemesterCB.Text.Trim());
+
+                if ((Student_nationalitaet != 0) && (Studenten_ID != 0) && (MasterstudiengangID != 0) && (Studenten_SemesterID != 0))
+                {
+                    Bewerbungsdata bewerbungsdata = new Bewerbungsdata
+                    {
+                        StudentID = Studenten_ID,
+                        Master_StudiengangID = MasterstudiengangID,
+                        SemesterID = Studenten_SemesterID,
+                        Comment1 = ZusatzTB.Text.Trim(),
+                        Comment2 = AblehnungsgrundTB.Text.Trim(),
+                        Comment3 = KommentarTB.Text.Trim(),
+                        Prof = check_Prof,
+                        Verwaltung = check_Verwaltung,
+                        Angenommen = check_Angenommen
+
+                    };
+
+                    string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
+                                 " values ('" + bewerbungsdata.StudentID + "','" + bewerbungsdata.Master_StudiengangID + "','" + bewerbungsdata.SemesterID + "'," +
+                                 "'" + bewerbungsdata.Comment1 + "','" + bewerbungsdata.Comment2 + "', '" + bewerbungsdata.Comment3 + "', '" + check_Prof + "', '" + check_Verwaltung + "', '" + check_Angenommen + "')";
+                    OleDbConnection UserConnection = new OleDbConnection();
+                    UserConnection.ConnectionString = config.DbConnectionString;
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = UserConnection;
+                    UserConnection.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Saved Successful");
+                        UserConnection.Close();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(" Data can not be save, Please check the student'daten!");
+                  
+                }
+
             }
             else
             {
-                MessageBox.Show("Please check the student'daten! " + MasterstudiengangCB.Text.Trim() + " or " + SemesterCB.Text.Trim() + " has bad format!");
-                NewStudentUI newStudent = new NewStudentUI(benutzer_Name);
-                newStudent.Show();
+                MessageBox.Show("Please check the student'daten!");
             }
-
            
         }
 
@@ -1019,7 +1019,7 @@ namespace DataManagerSystem.Modules
                       && CpTB.Text != string.Empty && MasterstudiengangCB.Text != string.Empty && SemesterCB.Text != string.Empty && (MannlichRadioButton.Checked != false && WeiblichRadioButton.Checked == false)
                       || (MannlichRadioButton.Checked == false && WeiblichRadioButton.Checked != false))
                     {
-                        Add_New_Student();
+                       
                         Add_New_Bewerbung();
                         this.Close();
                     }
@@ -1048,9 +1048,7 @@ namespace DataManagerSystem.Modules
                       && CpTB.Text != string.Empty && MasterstudiengangCB.Text != string.Empty && SemesterCB.Text != string.Empty && (MannlichRadioButton.Checked != false && WeiblichRadioButton.Checked == false)
                       || (MannlichRadioButton.Checked == false && WeiblichRadioButton.Checked != false))
                     {
-                        Add_New_Student();
                         Add_New_Bewerbung();
-                        this.Close();
                     }
                     else
                     {
