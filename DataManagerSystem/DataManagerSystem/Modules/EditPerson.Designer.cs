@@ -28,26 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label14 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPerson));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label77 = new System.Windows.Forms.Label();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.AnProfBtn = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.ExportBtn = new System.Windows.Forms.Button();
+            this.WeiblichRadioButton = new System.Windows.Forms.RadioButton();
+            this.MannlichRadioButton = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.comboBox19 = new System.Windows.Forms.ComboBox();
-            this.comboBox20 = new System.Windows.Forms.ComboBox();
+            this.Masterstudiengang2CB = new System.Windows.Forms.ComboBox();
+            this.Masterstudiengang1CB = new System.Windows.Forms.ComboBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.label60 = new System.Windows.Forms.Label();
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.label61 = new System.Windows.Forms.Label();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.comboBox21 = new System.Windows.Forms.ComboBox();
-            this.button17 = new System.Windows.Forms.Button();
+            this.SemersterCB = new System.Windows.Forms.ComboBox();
             this.button18 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.ZusatzTB = new System.Windows.Forms.TextBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.label62 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
@@ -63,33 +67,37 @@
             this.label74 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
-            this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.comboBox22 = new System.Windows.Forms.ComboBox();
+            this.KommentarTB = new System.Windows.Forms.TextBox();
+            this.AblehnungsgrundTB = new System.Windows.Forms.TextBox();
+            this.MasterstudiengangCB = new System.Windows.Forms.ComboBox();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.comboBox23 = new System.Windows.Forms.ComboBox();
-            this.comboBox24 = new System.Windows.Forms.ComboBox();
-            this.comboBox25 = new System.Windows.Forms.ComboBox();
-            this.comboBox26 = new System.Windows.Forms.ComboBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.SearchBtn = new System.Windows.Forms.Button();
-            this.EingabeTB = new System.Windows.Forms.TextBox();
-            this.FilterCB = new System.Windows.Forms.ComboBox();
+            this.CpTB = new System.Windows.Forms.TextBox();
+            this.StudienCB = new System.Windows.Forms.ComboBox();
+            this.HochshuleCB = new System.Windows.Forms.ComboBox();
+            this.StudienlandCB = new System.Windows.Forms.ComboBox();
+            this.NationalitaetCB = new System.Windows.Forms.ComboBox();
+            this.AbschlussnoteTB = new System.Windows.Forms.TextBox();
+            this.NameTB = new System.Windows.Forms.TextBox();
+            this.FirstnameTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(982, 881);
+            this.panel1.TabIndex = 1;
             // 
             // label14
             // 
@@ -97,46 +105,40 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Bauhaus 93", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label14.Location = new System.Drawing.Point(6, 15);
+            this.label14.Location = new System.Drawing.Point(3, 12);
             this.label14.Margin = new System.Windows.Forms.Padding(3);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(234, 33);
-            this.label14.TabIndex = 39;
+            this.label14.TabIndex = 57;
             this.label14.Text = "Bewerber daten";
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 881);
-            this.panel1.TabIndex = 1;
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.label77);
-            this.panel4.Controls.Add(this.checkBox14);
-            this.panel4.Controls.Add(this.checkBox13);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.AnProfBtn);
+            this.panel4.Controls.Add(this.button7);
+            this.panel4.Controls.Add(this.ExportBtn);
+            this.panel4.Controls.Add(this.WeiblichRadioButton);
+            this.panel4.Controls.Add(this.MannlichRadioButton);
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label58);
             this.panel4.Controls.Add(this.label59);
-            this.panel4.Controls.Add(this.comboBox19);
-            this.panel4.Controls.Add(this.comboBox20);
+            this.panel4.Controls.Add(this.Masterstudiengang2CB);
+            this.panel4.Controls.Add(this.Masterstudiengang1CB);
             this.panel4.Controls.Add(this.checkBox10);
             this.panel4.Controls.Add(this.label60);
             this.panel4.Controls.Add(this.checkBox11);
             this.panel4.Controls.Add(this.label61);
             this.panel4.Controls.Add(this.checkBox9);
             this.panel4.Controls.Add(this.label57);
-            this.panel4.Controls.Add(this.comboBox21);
-            this.panel4.Controls.Add(this.button17);
+            this.panel4.Controls.Add(this.SemersterCB);
             this.panel4.Controls.Add(this.button18);
-            this.panel4.Controls.Add(this.textBox15);
+            this.panel4.Controls.Add(this.ZusatzTB);
             this.panel4.Controls.Add(this.checkBox12);
             this.panel4.Controls.Add(this.label62);
             this.panel4.Controls.Add(this.label64);
@@ -152,59 +154,110 @@
             this.panel4.Controls.Add(this.label74);
             this.panel4.Controls.Add(this.label75);
             this.panel4.Controls.Add(this.label76);
-            this.panel4.Controls.Add(this.button19);
             this.panel4.Controls.Add(this.button20);
             this.panel4.Controls.Add(this.button21);
             this.panel4.Controls.Add(this.button22);
-            this.panel4.Controls.Add(this.textBox16);
-            this.panel4.Controls.Add(this.textBox17);
-            this.panel4.Controls.Add(this.comboBox22);
+            this.panel4.Controls.Add(this.KommentarTB);
+            this.panel4.Controls.Add(this.AblehnungsgrundTB);
+            this.panel4.Controls.Add(this.MasterstudiengangCB);
             this.panel4.Controls.Add(this.button23);
             this.panel4.Controls.Add(this.button24);
-            this.panel4.Controls.Add(this.textBox18);
-            this.panel4.Controls.Add(this.comboBox23);
-            this.panel4.Controls.Add(this.comboBox24);
-            this.panel4.Controls.Add(this.comboBox25);
-            this.panel4.Controls.Add(this.comboBox26);
-            this.panel4.Controls.Add(this.textBox19);
-            this.panel4.Controls.Add(this.textBox20);
-            this.panel4.Controls.Add(this.textBox21);
-            this.panel4.Location = new System.Drawing.Point(8, 79);
+            this.panel4.Controls.Add(this.CpTB);
+            this.panel4.Controls.Add(this.StudienCB);
+            this.panel4.Controls.Add(this.HochshuleCB);
+            this.panel4.Controls.Add(this.StudienlandCB);
+            this.panel4.Controls.Add(this.NationalitaetCB);
+            this.panel4.Controls.Add(this.AbschlussnoteTB);
+            this.panel4.Controls.Add(this.NameTB);
+            this.panel4.Controls.Add(this.FirstnameTB);
+            this.panel4.Location = new System.Drawing.Point(8, 51);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(962, 809);
+            this.panel4.Size = new System.Drawing.Size(974, 830);
             this.panel4.TabIndex = 56;
             // 
-            // label77
+            // button10
             // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(54, 14);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(89, 16);
-            this.label77.TabIndex = 56;
-            this.label77.Text = "Geschlecht:";
+            this.button10.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(794, 646);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(139, 23);
+            this.button10.TabIndex = 68;
+            this.button10.Text = "An Ha 4.1";
+            this.button10.UseVisualStyleBackColor = false;
             // 
-            // checkBox14
+            // AnProfBtn
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox14.Location = new System.Drawing.Point(356, 15);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(75, 17);
-            this.checkBox14.TabIndex = 55;
-            this.checkBox14.Text = "Weiblich";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.AnProfBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AnProfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AnProfBtn.ForeColor = System.Drawing.Color.White;
+            this.AnProfBtn.Location = new System.Drawing.Point(794, 605);
+            this.AnProfBtn.Name = "AnProfBtn";
+            this.AnProfBtn.Size = new System.Drawing.Size(139, 23);
+            this.AnProfBtn.TabIndex = 67;
+            this.AnProfBtn.Text = "An Prof";
+            this.AnProfBtn.UseVisualStyleBackColor = false;
             // 
-            // checkBox13
+            // button7
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox13.Location = new System.Drawing.Point(207, 15);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(77, 17);
-            this.checkBox13.TabIndex = 54;
-            this.checkBox13.Text = "Mannlich";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.button7.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(794, 683);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(139, 23);
+            this.button7.TabIndex = 66;
+            this.button7.Text = "Einstufen";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // ExportBtn
+            // 
+            this.ExportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.ExportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportBtn.ForeColor = System.Drawing.Color.White;
+            this.ExportBtn.Location = new System.Drawing.Point(655, 744);
+            this.ExportBtn.Name = "ExportBtn";
+            this.ExportBtn.Size = new System.Drawing.Size(126, 35);
+            this.ExportBtn.TabIndex = 65;
+            this.ExportBtn.Text = "Docx Exportieren";
+            this.ExportBtn.UseVisualStyleBackColor = false;
+            this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
+            // 
+            // WeiblichRadioButton
+            // 
+            this.WeiblichRadioButton.AutoSize = true;
+            this.WeiblichRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeiblichRadioButton.Location = new System.Drawing.Point(546, 12);
+            this.WeiblichRadioButton.Name = "WeiblichRadioButton";
+            this.WeiblichRadioButton.Size = new System.Drawing.Size(86, 20);
+            this.WeiblichRadioButton.TabIndex = 64;
+            this.WeiblichRadioButton.TabStop = true;
+            this.WeiblichRadioButton.Text = "Weiblich";
+            this.WeiblichRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MannlichRadioButton
+            // 
+            this.MannlichRadioButton.AutoSize = true;
+            this.MannlichRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MannlichRadioButton.Location = new System.Drawing.Point(356, 12);
+            this.MannlichRadioButton.Name = "MannlichRadioButton";
+            this.MannlichRadioButton.Size = new System.Drawing.Size(87, 20);
+            this.MannlichRadioButton.TabIndex = 63;
+            this.MannlichRadioButton.TabStop = true;
+            this.MannlichRadioButton.Text = "Mannlich";
+            this.MannlichRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(56, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Geschlecht:";
             // 
             // label58
             // 
@@ -226,23 +279,23 @@
             this.label59.TabIndex = 52;
             this.label59.Text = "2.Studiengang:";
             // 
-            // comboBox19
+            // Masterstudiengang2CB
             // 
-            this.comboBox19.FormattingEnabled = true;
-            this.comboBox19.Location = new System.Drawing.Point(207, 523);
-            this.comboBox19.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox19.Name = "comboBox19";
-            this.comboBox19.Size = new System.Drawing.Size(574, 21);
-            this.comboBox19.TabIndex = 51;
+            this.Masterstudiengang2CB.FormattingEnabled = true;
+            this.Masterstudiengang2CB.Location = new System.Drawing.Point(207, 523);
+            this.Masterstudiengang2CB.Margin = new System.Windows.Forms.Padding(10);
+            this.Masterstudiengang2CB.Name = "Masterstudiengang2CB";
+            this.Masterstudiengang2CB.Size = new System.Drawing.Size(574, 21);
+            this.Masterstudiengang2CB.TabIndex = 51;
             // 
-            // comboBox20
+            // Masterstudiengang1CB
             // 
-            this.comboBox20.FormattingEnabled = true;
-            this.comboBox20.Location = new System.Drawing.Point(207, 482);
-            this.comboBox20.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox20.Name = "comboBox20";
-            this.comboBox20.Size = new System.Drawing.Size(574, 21);
-            this.comboBox20.TabIndex = 50;
+            this.Masterstudiengang1CB.FormattingEnabled = true;
+            this.Masterstudiengang1CB.Location = new System.Drawing.Point(207, 482);
+            this.Masterstudiengang1CB.Margin = new System.Windows.Forms.Padding(10);
+            this.Masterstudiengang1CB.Name = "Masterstudiengang1CB";
+            this.Masterstudiengang1CB.Size = new System.Drawing.Size(574, 21);
+            this.Masterstudiengang1CB.TabIndex = 50;
             // 
             // checkBox10
             // 
@@ -304,27 +357,14 @@
             this.label57.TabIndex = 45;
             this.label57.Text = "An Prof:";
             // 
-            // comboBox21
+            // SemersterCB
             // 
-            this.comboBox21.FormattingEnabled = true;
-            this.comboBox21.Location = new System.Drawing.Point(207, 564);
-            this.comboBox21.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox21.Name = "comboBox21";
-            this.comboBox21.Size = new System.Drawing.Size(574, 21);
-            this.comboBox21.TabIndex = 11;
-            // 
-            // button17
-            // 
-            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.White;
-            this.button17.Location = new System.Drawing.Point(506, 744);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(126, 35);
-            this.button17.TabIndex = 17;
-            this.button17.Text = "Drucken";
-            this.button17.UseVisualStyleBackColor = false;
+            this.SemersterCB.FormattingEnabled = true;
+            this.SemersterCB.Location = new System.Drawing.Point(207, 564);
+            this.SemersterCB.Margin = new System.Windows.Forms.Padding(10);
+            this.SemersterCB.Name = "SemersterCB";
+            this.SemersterCB.Size = new System.Drawing.Size(574, 21);
+            this.SemersterCB.TabIndex = 11;
             // 
             // button18
             // 
@@ -338,13 +378,13 @@
             this.button18.Text = "Hinzufügen";
             this.button18.UseVisualStyleBackColor = false;
             // 
-            // textBox15
+            // ZusatzTB
             // 
-            this.textBox15.Location = new System.Drawing.Point(207, 604);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(574, 20);
-            this.textBox15.TabIndex = 12;
+            this.ZusatzTB.Location = new System.Drawing.Point(207, 604);
+            this.ZusatzTB.Margin = new System.Windows.Forms.Padding(10);
+            this.ZusatzTB.Name = "ZusatzTB";
+            this.ZusatzTB.Size = new System.Drawing.Size(574, 20);
+            this.ZusatzTB.TabIndex = 12;
             // 
             // checkBox12
             // 
@@ -496,19 +536,6 @@
             this.label76.TabIndex = 24;
             this.label76.Text = "Vorname:";
             // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.Color.White;
-            this.button19.Location = new System.Drawing.Point(655, 744);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(126, 35);
-            this.button19.TabIndex = 19;
-            this.button19.Text = "Einstufen";
-            this.button19.UseVisualStyleBackColor = false;
-            // 
             // button20
             // 
             this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
@@ -545,30 +572,30 @@
             this.button22.Text = "Hinzufügen";
             this.button22.UseVisualStyleBackColor = false;
             // 
-            // textBox16
+            // KommentarTB
             // 
-            this.textBox16.Location = new System.Drawing.Point(207, 685);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(574, 20);
-            this.textBox16.TabIndex = 14;
+            this.KommentarTB.Location = new System.Drawing.Point(207, 685);
+            this.KommentarTB.Margin = new System.Windows.Forms.Padding(10);
+            this.KommentarTB.Name = "KommentarTB";
+            this.KommentarTB.Size = new System.Drawing.Size(574, 20);
+            this.KommentarTB.TabIndex = 14;
             // 
-            // textBox17
+            // AblehnungsgrundTB
             // 
-            this.textBox17.Location = new System.Drawing.Point(207, 645);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(574, 20);
-            this.textBox17.TabIndex = 13;
+            this.AblehnungsgrundTB.Location = new System.Drawing.Point(207, 645);
+            this.AblehnungsgrundTB.Margin = new System.Windows.Forms.Padding(10);
+            this.AblehnungsgrundTB.Name = "AblehnungsgrundTB";
+            this.AblehnungsgrundTB.Size = new System.Drawing.Size(574, 20);
+            this.AblehnungsgrundTB.TabIndex = 13;
             // 
-            // comboBox22
+            // MasterstudiengangCB
             // 
-            this.comboBox22.FormattingEnabled = true;
-            this.comboBox22.Location = new System.Drawing.Point(207, 441);
-            this.comboBox22.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox22.Name = "comboBox22";
-            this.comboBox22.Size = new System.Drawing.Size(574, 21);
-            this.comboBox22.TabIndex = 10;
+            this.MasterstudiengangCB.FormattingEnabled = true;
+            this.MasterstudiengangCB.Location = new System.Drawing.Point(207, 441);
+            this.MasterstudiengangCB.Margin = new System.Windows.Forms.Padding(10);
+            this.MasterstudiengangCB.Name = "MasterstudiengangCB";
+            this.MasterstudiengangCB.Size = new System.Drawing.Size(574, 21);
+            this.MasterstudiengangCB.TabIndex = 10;
             // 
             // button23
             // 
@@ -585,151 +612,86 @@
             // 
             // button24
             // 
-            this.button24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button24.BackColor = System.Drawing.Color.White;
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.Color.White;
-            this.button24.Location = new System.Drawing.Point(356, 744);
+            this.button24.ForeColor = System.Drawing.Color.Black;
+            this.button24.Location = new System.Drawing.Point(420, 744);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(126, 35);
             this.button24.TabIndex = 16;
             this.button24.Text = "Abbrechen";
             this.button24.UseVisualStyleBackColor = false;
             // 
-            // textBox18
+            // CpTB
             // 
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(207, 329);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(574, 20);
-            this.textBox18.TabIndex = 8;
+            this.CpTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CpTB.Location = new System.Drawing.Point(207, 329);
+            this.CpTB.Margin = new System.Windows.Forms.Padding(10);
+            this.CpTB.Name = "CpTB";
+            this.CpTB.Size = new System.Drawing.Size(574, 20);
+            this.CpTB.TabIndex = 8;
             // 
-            // comboBox23
+            // StudienCB
             // 
-            this.comboBox23.FormattingEnabled = true;
-            this.comboBox23.Location = new System.Drawing.Point(207, 248);
-            this.comboBox23.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox23.Name = "comboBox23";
-            this.comboBox23.Size = new System.Drawing.Size(574, 21);
-            this.comboBox23.TabIndex = 6;
+            this.StudienCB.FormattingEnabled = true;
+            this.StudienCB.Location = new System.Drawing.Point(207, 248);
+            this.StudienCB.Margin = new System.Windows.Forms.Padding(10);
+            this.StudienCB.Name = "StudienCB";
+            this.StudienCB.Size = new System.Drawing.Size(574, 21);
+            this.StudienCB.TabIndex = 6;
             // 
-            // comboBox24
+            // HochshuleCB
             // 
-            this.comboBox24.FormattingEnabled = true;
-            this.comboBox24.Location = new System.Drawing.Point(207, 207);
-            this.comboBox24.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox24.Name = "comboBox24";
-            this.comboBox24.Size = new System.Drawing.Size(574, 21);
-            this.comboBox24.TabIndex = 5;
+            this.HochshuleCB.FormattingEnabled = true;
+            this.HochshuleCB.Location = new System.Drawing.Point(207, 207);
+            this.HochshuleCB.Margin = new System.Windows.Forms.Padding(10);
+            this.HochshuleCB.Name = "HochshuleCB";
+            this.HochshuleCB.Size = new System.Drawing.Size(574, 21);
+            this.HochshuleCB.TabIndex = 5;
             // 
-            // comboBox25
+            // StudienlandCB
             // 
-            this.comboBox25.FormattingEnabled = true;
-            this.comboBox25.Location = new System.Drawing.Point(207, 166);
-            this.comboBox25.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox25.Name = "comboBox25";
-            this.comboBox25.Size = new System.Drawing.Size(574, 21);
-            this.comboBox25.TabIndex = 4;
+            this.StudienlandCB.FormattingEnabled = true;
+            this.StudienlandCB.Location = new System.Drawing.Point(207, 166);
+            this.StudienlandCB.Margin = new System.Windows.Forms.Padding(10);
+            this.StudienlandCB.Name = "StudienlandCB";
+            this.StudienlandCB.Size = new System.Drawing.Size(574, 21);
+            this.StudienlandCB.TabIndex = 4;
             // 
-            // comboBox26
+            // NationalitaetCB
             // 
-            this.comboBox26.FormattingEnabled = true;
-            this.comboBox26.Location = new System.Drawing.Point(207, 125);
-            this.comboBox26.Margin = new System.Windows.Forms.Padding(10);
-            this.comboBox26.Name = "comboBox26";
-            this.comboBox26.Size = new System.Drawing.Size(574, 21);
-            this.comboBox26.TabIndex = 3;
+            this.NationalitaetCB.FormattingEnabled = true;
+            this.NationalitaetCB.Location = new System.Drawing.Point(207, 125);
+            this.NationalitaetCB.Margin = new System.Windows.Forms.Padding(10);
+            this.NationalitaetCB.Name = "NationalitaetCB";
+            this.NationalitaetCB.Size = new System.Drawing.Size(574, 21);
+            this.NationalitaetCB.TabIndex = 3;
             // 
-            // textBox19
+            // AbschlussnoteTB
             // 
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(207, 289);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(574, 21);
-            this.textBox19.TabIndex = 7;
+            this.AbschlussnoteTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AbschlussnoteTB.Location = new System.Drawing.Point(207, 289);
+            this.AbschlussnoteTB.Margin = new System.Windows.Forms.Padding(10);
+            this.AbschlussnoteTB.Name = "AbschlussnoteTB";
+            this.AbschlussnoteTB.Size = new System.Drawing.Size(574, 21);
+            this.AbschlussnoteTB.TabIndex = 7;
             // 
-            // textBox20
+            // NameTB
             // 
-            this.textBox20.Location = new System.Drawing.Point(207, 85);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(574, 20);
-            this.textBox20.TabIndex = 2;
+            this.NameTB.Location = new System.Drawing.Point(207, 85);
+            this.NameTB.Margin = new System.Windows.Forms.Padding(10);
+            this.NameTB.Name = "NameTB";
+            this.NameTB.Size = new System.Drawing.Size(574, 20);
+            this.NameTB.TabIndex = 2;
             // 
-            // textBox21
+            // FirstnameTB
             // 
-            this.textBox21.Location = new System.Drawing.Point(207, 45);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(574, 20);
-            this.textBox21.TabIndex = 1;
-            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.SearchBtn);
-            this.groupBox1.Controls.Add(this.EingabeTB);
-            this.groupBox1.Controls.Add(this.FilterCB);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(8, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(962, 70);
-            this.groupBox1.TabIndex = 50;
-            this.groupBox1.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(499, 28);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 53;
-            this.label16.Text = "Eingabefeld:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(318, 28);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Filter:";
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(790, 23);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(139, 23);
-            this.SearchBtn.TabIndex = 51;
-            this.SearchBtn.Text = "Suchen";
-            this.SearchBtn.UseVisualStyleBackColor = false;
-            // 
-            // EingabeTB
-            // 
-            this.EingabeTB.Location = new System.Drawing.Point(575, 25);
-            this.EingabeTB.Margin = new System.Windows.Forms.Padding(10);
-            this.EingabeTB.Name = "EingabeTB";
-            this.EingabeTB.Size = new System.Drawing.Size(202, 20);
-            this.EingabeTB.TabIndex = 51;
-            // 
-            // FilterCB
-            // 
-            this.FilterCB.FormattingEnabled = true;
-            this.FilterCB.Items.AddRange(new object[] {
-            "ID-Bewerbung",
-            "Name/vorname"});
-            this.FilterCB.Location = new System.Drawing.Point(353, 25);
-            this.FilterCB.Margin = new System.Windows.Forms.Padding(10);
-            this.FilterCB.Name = "FilterCB";
-            this.FilterCB.Size = new System.Drawing.Size(125, 21);
-            this.FilterCB.TabIndex = 51;
+            this.FirstnameTB.Location = new System.Drawing.Point(207, 45);
+            this.FirstnameTB.Margin = new System.Windows.Forms.Padding(10);
+            this.FirstnameTB.Name = "FirstnameTB";
+            this.FirstnameTB.Size = new System.Drawing.Size(574, 20);
+            this.FirstnameTB.TabIndex = 1;
             // 
             // EditPerson
             // 
@@ -737,44 +699,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 881);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditPerson";
             this.Text = "EditPerson";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.TextBox EingabeTB;
-        private System.Windows.Forms.ComboBox FilterCB;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox13;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.ComboBox comboBox19;
-        private System.Windows.Forms.ComboBox comboBox20;
+        private System.Windows.Forms.ComboBox Masterstudiengang2CB;
+        private System.Windows.Forms.ComboBox Masterstudiengang1CB;
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.CheckBox checkBox11;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.ComboBox comboBox21;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.ComboBox SemersterCB;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox ZusatzTB;
         private System.Windows.Forms.CheckBox checkBox12;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label64;
@@ -790,22 +741,29 @@
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.ComboBox comboBox22;
+        private System.Windows.Forms.TextBox KommentarTB;
+        private System.Windows.Forms.TextBox AblehnungsgrundTB;
+        private System.Windows.Forms.ComboBox MasterstudiengangCB;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.ComboBox comboBox23;
-        private System.Windows.Forms.ComboBox comboBox24;
-        private System.Windows.Forms.ComboBox comboBox25;
-        private System.Windows.Forms.ComboBox comboBox26;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox CpTB;
+        private System.Windows.Forms.ComboBox StudienCB;
+        private System.Windows.Forms.ComboBox HochshuleCB;
+        private System.Windows.Forms.ComboBox StudienlandCB;
+        private System.Windows.Forms.ComboBox NationalitaetCB;
+        private System.Windows.Forms.TextBox AbschlussnoteTB;
+        private System.Windows.Forms.TextBox NameTB;
+        private System.Windows.Forms.TextBox FirstnameTB;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RadioButton WeiblichRadioButton;
+        private System.Windows.Forms.RadioButton MannlichRadioButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ExportBtn;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button AnProfBtn;
+        private System.Windows.Forms.Button button7;
     }
 }

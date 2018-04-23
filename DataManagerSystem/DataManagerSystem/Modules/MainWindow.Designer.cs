@@ -50,6 +50,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelTime = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.MinimizeBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -338,12 +339,26 @@
             this.labelTime.TabIndex = 19;
             this.labelTime.Text = "Time:";
             // 
+            // MinimizeBtn
+            // 
+            this.MinimizeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.MinimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeBtn.ForeColor = System.Drawing.Color.White;
+            this.MinimizeBtn.Location = new System.Drawing.Point(789, 8);
+            this.MinimizeBtn.Name = "MinimizeBtn";
+            this.MinimizeBtn.Size = new System.Drawing.Size(32, 29);
+            this.MinimizeBtn.TabIndex = 20;
+            this.MinimizeBtn.Text = "---";
+            this.MinimizeBtn.UseVisualStyleBackColor = false;
+            this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(870, 490);
+            this.Controls.Add(this.MinimizeBtn);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelStatut);
@@ -384,6 +399,7 @@
         private System.Windows.Forms.Label labelStatut;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button MinimizeBtn;
     }
 }
 

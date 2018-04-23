@@ -187,5 +187,17 @@ namespace DataManagerSystem
                 return false;
             }
         }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
     }
 }
