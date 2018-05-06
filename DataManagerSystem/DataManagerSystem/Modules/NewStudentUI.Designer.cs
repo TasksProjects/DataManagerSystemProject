@@ -323,7 +323,7 @@
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.ForeColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.LineThickness = 2;
             this.bunifuSeparator2.Location = new System.Drawing.Point(12, 42);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(991, 10);
