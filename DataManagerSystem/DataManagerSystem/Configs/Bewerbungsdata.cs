@@ -23,6 +23,20 @@ namespace DataManagerSystem.Configs
             set { _masterStudiengangID = value; }
         }
 
+        private int _masterStudiengangID2; // the password
+        public int Master_StudiengangID2
+        {
+            get { return _masterStudiengangID2; }
+            set { _masterStudiengangID2 = value; }
+        }
+
+        private int _masterStudiengangID3; // the password
+        public int Master_StudiengangID3
+        {
+            get { return _masterStudiengangID3; }
+            set { _masterStudiengangID3 = value; }
+        }
+
         private int _semesterID; // the user's Attribut
         public int SemesterID
         {

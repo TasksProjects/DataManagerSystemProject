@@ -37,6 +37,7 @@ namespace DataManagerSystem
                 if (user.UserAttribut != "SuperAdmin")
                 {
                     Disconnect_USer(User_online);
+                    //Application.ExitThread();
                     Application.Exit();
                 }
                 else

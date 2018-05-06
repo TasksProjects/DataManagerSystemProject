@@ -440,8 +440,8 @@ namespace DataManagerSystem.Modules
             {
                 string sName = reader["txtName"].ToString();
                 MasterstudiengangcomboBox.Items.Add(sName);
-                Studiengang2comboBox.Items.Add(sName);
-                Studiengang3comboBox.Items.Add(sName);
+                MasterstudiengangcomboBox2.Items.Add(sName);
+                MasterstudiengangcomboBox3.Items.Add(sName);
             }
             UserConnection1.Close();
         }
@@ -451,10 +451,10 @@ namespace DataManagerSystem.Modules
         {
             MasterstudiengangcomboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             MasterstudiengangcomboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            Studiengang2comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            Studiengang2comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            Studiengang3comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            Studiengang3comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            MasterstudiengangcomboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            MasterstudiengangcomboBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            MasterstudiengangcomboBox3.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            MasterstudiengangcomboBox3.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
 
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
@@ -487,8 +487,8 @@ namespace DataManagerSystem.Modules
                 MessageBox.Show(ex.Message);
             }
             MasterstudiengangcomboBox.AutoCompleteCustomSource = coll;
-            Studiengang2comboBox.AutoCompleteCustomSource = coll;
-            Studiengang3comboBox.AutoCompleteCustomSource = coll;
+            MasterstudiengangcomboBox2.AutoCompleteCustomSource = coll;
+            MasterstudiengangcomboBox3.AutoCompleteCustomSource = coll;
         }
 
 
@@ -1009,14 +1009,18 @@ namespace DataManagerSystem.Modules
                 int Student_nationalitaet = Search_NationalitaetID(NationalitaetcomboBox.Text.Trim());
                 int Studenten_ID = Search_ID_Student(NameTextbox.Text.Trim());
                 int MasterstudiengangID = Search_ID_Masterstudiengang(MasterstudiengangcomboBox.Text.Trim());
+                int MasterstudiengangID2 = Search_ID_Masterstudiengang(MasterstudiengangcomboBox2.Text.Trim());
+                int MasterstudiengangID3 = Search_ID_Masterstudiengang(MasterstudiengangcomboBox3.Text.Trim());
                 int Studenten_SemesterID = Search_ID_Smester(SemestercomboBox.Text.Trim());
 
-                if ((Student_nationalitaet != 0) && (Studenten_ID != 0) && (MasterstudiengangID != 0) && (Studenten_SemesterID != 0))
+                if ((Student_nationalitaet != 0) && (Studenten_ID != 0) && (MasterstudiengangID != 0) && (MasterstudiengangID2 != 0) && (MasterstudiengangID3 != 0) && (Studenten_SemesterID != 0))
                 {
                     Bewerbungsdata bewerbungsdata1 = new Bewerbungsdata
                     {
                         StudentID = Studenten_ID,
                         Master_StudiengangID = MasterstudiengangID,
+                        Master_StudiengangID2 = MasterstudiengangID2,
+                        Master_StudiengangID3 = MasterstudiengangID3,
                         SemesterID = Studenten_SemesterID,
                         Comment1 = ZusatztextBox.Text.Trim(),
                         Comment2 = AblehnungsgrungtextBox.Text.Trim(),
@@ -1030,7 +1034,7 @@ namespace DataManagerSystem.Modules
 
 
 
-                    string query = "Update  tab_bewerbung set [intPerson] = '" + bewerbungsdata.StudentID + "'  ,[intMasterstudiengang] = '" + bewerbungsdata1.Master_StudiengangID + "', " +
+                    string query = "Update  tab_bewerbung set [intPerson] = '" + bewerbungsdata.StudentID + "'  ,[intMasterstudiengang] = '" + bewerbungsdata1.Master_StudiengangID + "',[intMasterstudiengang2] = '" + bewerbungsdata1.Master_StudiengangID2 + "',[intMasterstudiengang3] = '" + bewerbungsdata1.Master_StudiengangID3 + "', " +
                     "[intSemester] = '" + bewerbungsdata1.SemesterID + "', [txtKommentar1] = '" + bewerbungsdata1.Comment1 + "'," +
                     " [txtKommentar2] = '" + bewerbungsdata1.Comment2 + "', [txtKommentar3] = '" + bewerbungsdata1.Comment3 + "'," +
                     " [blnProf] = '" + bewerbungsdata1.Prof + "', [blnVerwaltung] = '" + bewerbungsdata1.Verwaltung + "' , [blnAngenommen] = '" + bewerbungsdata1.Angenommen + "'  where ID = " + bewerbungsID + "";

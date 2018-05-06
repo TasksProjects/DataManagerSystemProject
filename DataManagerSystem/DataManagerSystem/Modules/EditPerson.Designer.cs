@@ -36,8 +36,8 @@
             this.label77 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.Studiengang3comboBox = new System.Windows.Forms.ComboBox();
-            this.Studiengang2comboBox = new System.Windows.Forms.ComboBox();
+            this.MasterstudiengangcomboBox3 = new System.Windows.Forms.ComboBox();
+            this.MasterstudiengangcomboBox2 = new System.Windows.Forms.ComboBox();
             this.AnHa41checkBox = new System.Windows.Forms.CheckBox();
             this.label60 = new System.Windows.Forms.Label();
             this.AngenommencheckBox = new System.Windows.Forms.CheckBox();
@@ -120,8 +120,8 @@
             this.panel4.Controls.Add(this.label77);
             this.panel4.Controls.Add(this.label58);
             this.panel4.Controls.Add(this.label59);
-            this.panel4.Controls.Add(this.Studiengang3comboBox);
-            this.panel4.Controls.Add(this.Studiengang2comboBox);
+            this.panel4.Controls.Add(this.MasterstudiengangcomboBox3);
+            this.panel4.Controls.Add(this.MasterstudiengangcomboBox2);
             this.panel4.Controls.Add(this.AnHa41checkBox);
             this.panel4.Controls.Add(this.label60);
             this.panel4.Controls.Add(this.AngenommencheckBox);
@@ -225,23 +225,23 @@
             this.label59.TabIndex = 52;
             this.label59.Text = "2.Studiengang:";
             // 
-            // Studiengang3comboBox
+            // MasterstudiengangcomboBox3
             // 
-            this.Studiengang3comboBox.FormattingEnabled = true;
-            this.Studiengang3comboBox.Location = new System.Drawing.Point(207, 490);
-            this.Studiengang3comboBox.Margin = new System.Windows.Forms.Padding(10);
-            this.Studiengang3comboBox.Name = "Studiengang3comboBox";
-            this.Studiengang3comboBox.Size = new System.Drawing.Size(574, 21);
-            this.Studiengang3comboBox.TabIndex = 16;
+            this.MasterstudiengangcomboBox3.FormattingEnabled = true;
+            this.MasterstudiengangcomboBox3.Location = new System.Drawing.Point(207, 490);
+            this.MasterstudiengangcomboBox3.Margin = new System.Windows.Forms.Padding(10);
+            this.MasterstudiengangcomboBox3.Name = "MasterstudiengangcomboBox3";
+            this.MasterstudiengangcomboBox3.Size = new System.Drawing.Size(574, 21);
+            this.MasterstudiengangcomboBox3.TabIndex = 16;
             // 
-            // Studiengang2comboBox
+            // MasterstudiengangcomboBox2
             // 
-            this.Studiengang2comboBox.FormattingEnabled = true;
-            this.Studiengang2comboBox.Location = new System.Drawing.Point(207, 449);
-            this.Studiengang2comboBox.Margin = new System.Windows.Forms.Padding(10);
-            this.Studiengang2comboBox.Name = "Studiengang2comboBox";
-            this.Studiengang2comboBox.Size = new System.Drawing.Size(574, 21);
-            this.Studiengang2comboBox.TabIndex = 15;
+            this.MasterstudiengangcomboBox2.FormattingEnabled = true;
+            this.MasterstudiengangcomboBox2.Location = new System.Drawing.Point(207, 449);
+            this.MasterstudiengangcomboBox2.Margin = new System.Windows.Forms.Padding(10);
+            this.MasterstudiengangcomboBox2.Name = "MasterstudiengangcomboBox2";
+            this.MasterstudiengangcomboBox2.Size = new System.Drawing.Size(574, 21);
+            this.MasterstudiengangcomboBox2.TabIndex = 15;
             // 
             // AnHa41checkBox
             // 
@@ -704,8 +704,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.ComboBox Studiengang3comboBox;
-        private System.Windows.Forms.ComboBox Studiengang2comboBox;
+        private System.Windows.Forms.ComboBox MasterstudiengangcomboBox3;
+        private System.Windows.Forms.ComboBox MasterstudiengangcomboBox2;
         private System.Windows.Forms.CheckBox AnHa41checkBox;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.CheckBox AngenommencheckBox;

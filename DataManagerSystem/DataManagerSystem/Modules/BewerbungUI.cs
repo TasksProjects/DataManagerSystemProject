@@ -40,17 +40,19 @@ namespace DataManagerSystem.Modules
                 cmd.Connection = UserConnection;
 
 
-                string query = "SELECT b.ID AS BewerbungsNummer, a.txtVorname AS Vorname, a.txtName AS Name, a.txtGeschlecht AS Geschlecht," +
-                    " l.txtNationalität AS Nationalität, s.txtName AS Bachelorstudiengang, m.txtName AS Masterstudiengang, w.txtSemester AS Semester," +
-                    " a.dblNote AS Abschlussnote, a.intCP AS Erworbene_CP, b.txtKommentar1 AS Zusatz, b.txtKommentar2 AS Ablehnungsgrung," +
-                    " b.txtKommentar3 AS Kommentare, a.blnNoteVorläufig AS Note_Vorläufig, b.blnProf AS An_Prof , b.blnVerwaltung AS Ha_4_1," +
-                    " b.blnAngenommen As Angenommen" +
-                    " FROM tab_person AS a, tab_bewerbung AS b, tab_land AS l, tab_studiengang AS s, tab_masterstudiengang AS m, tab_semester AS w" +
-                    " WHERE a.ID = b.intPerson AND l.ID = a.intNationalität AND s.ID = a.intBachelor AND m.ID = b.intMasterstudiengang AND w.ID = b.intSemester";
+                 string query = "SELECT b.ID AS BewerbungsNummer, a.txtVorname AS Vorname, a.txtName AS Name, a.txtGeschlecht AS Geschlecht," +
+                     " l.txtNationalität AS Nationalität, s.txtName AS Bachelorstudiengang, m.txtName AS Masterstudiengang1, p.txtName AS Masterstudiengang2, q.txtName AS Masterstudiengang3, w.txtSemester AS Semester," +
+                     " a.dblNote AS Abschlussnote, a.intCP AS Erworbene_CP, b.txtKommentar1 AS Zusatz, b.txtKommentar2 AS Ablehnungsgrung," +
+                     " b.txtKommentar3 AS Kommentare, a.blnNoteVorläufig AS Note_Vorläufig, b.blnProf AS An_Prof , b.blnVerwaltung AS Ha_4_1," +
+                     " b.blnAngenommen As Angenommen" +
+                     " FROM tab_person AS a, tab_bewerbung AS b, tab_land AS l, tab_studiengang AS s, tab_masterstudiengang AS m, tab_masterstudiengang AS p, tab_masterstudiengang AS q, tab_semester AS w" +
+                     " WHERE a.ID = b.intPerson AND l.ID = a.intNationalität AND s.ID = a.intBachelor AND m.ID = b.intMasterstudiengang AND w.ID = b.intSemester AND p.ID = b.intMasterstudiengang2 AND q.ID = b.intMasterstudiengang3";
+                 
 
+                // string query = "SELECT b.ID AS BewerbungsNummer, m.txtName AS Masterstudiengang1 FROM tab_bewerbung AS b, tab_studiengang AS m WHERE m.ID = b.intMasterstudiengang2 AND b.intMasterstudiengang IS NOT NULL";
 
-
-
+                //string query = "SELECT b.ID, b.intmasterstudiengang, b.intmasterstudiengang2, m.txtName FROM tab_bewerbung AS b, tab_masterstudiengang AS m WHERE m.ID = b.intmasterstudiengang2 OR m.ID = b.intmasterstudiengang ";
+               // string query = "SELECT b.ID, b.intmasterstudiengang, b.intmasterstudiengang2, m.txtName, p.txtName FROM tab_bewerbung AS b, tab_masterstudiengang AS m, tab_masterstudiengang AS p WHERE p.ID = b.intmasterstudiengang AND m.ID = b.intmasterstudiengang2 ";
 
                 cmd.CommandText = query;
 

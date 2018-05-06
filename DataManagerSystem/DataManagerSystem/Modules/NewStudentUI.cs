@@ -443,7 +443,7 @@ namespace DataManagerSystem.Modules
             StudiengangCB.AutoCompleteCustomSource = coll;
         }
 
-        //Load Hochschule in MasterStudiengangComboBox
+        //Load Masterstudiengang in MasterStudiengangComboBox
         private void Load_Master_Studiengang_Database()
         {
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
@@ -465,6 +465,8 @@ namespace DataManagerSystem.Modules
             {
                 string sName = reader["txtName"].ToString();
                 MasterstudiengangCB.Items.Add(sName);
+                MasterstudiengangCB2.Items.Add(sName);
+                MasterstudiengangCB3.Items.Add(sName);
             }
             UserConnection1.Close();
         }
@@ -474,6 +476,10 @@ namespace DataManagerSystem.Modules
         {
             MasterstudiengangCB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             MasterstudiengangCB.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            MasterstudiengangCB2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            MasterstudiengangCB2.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            MasterstudiengangCB3.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            MasterstudiengangCB3.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
 
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
@@ -506,6 +512,8 @@ namespace DataManagerSystem.Modules
                 MessageBox.Show(ex.Message);
             }
             MasterstudiengangCB.AutoCompleteCustomSource = coll;
+            MasterstudiengangCB2.AutoCompleteCustomSource = coll;
+            MasterstudiengangCB3.AutoCompleteCustomSource = coll;
         }
 
         // fill the textbox Vorname with Database
@@ -934,6 +942,8 @@ namespace DataManagerSystem.Modules
                 int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
                 int Studenten_ID = Search_ID_Student(NameTB.Text.Trim());
                 int MasterstudiengangID = Search_ID_Masterstudiengang(MasterstudiengangCB.Text.Trim());
+                int MasterstudiengangID2 = Search_ID_Masterstudiengang(MasterstudiengangCB2.Text.Trim());
+                int MasterstudiengangID3 = Search_ID_Masterstudiengang(MasterstudiengangCB3.Text.Trim());
                 int Studenten_SemesterID = Search_ID_Smester(SemesterCB.Text.Trim());
 
                 if ((Student_nationalitaet != 0) && (Studenten_ID != 0) && (MasterstudiengangID != 0) && (Studenten_SemesterID != 0))
@@ -942,6 +952,8 @@ namespace DataManagerSystem.Modules
                     {
                         StudentID = Studenten_ID,
                         Master_StudiengangID = MasterstudiengangID,
+                        Master_StudiengangID2 = MasterstudiengangID2,
+                        Master_StudiengangID3 = MasterstudiengangID3,
                         SemesterID = Studenten_SemesterID,
                         Comment1 = ZusatzTB.Text.Trim(),
                         Comment2 = AblehnungsgrundTB.Text.Trim(),
@@ -952,8 +964,8 @@ namespace DataManagerSystem.Modules
 
                     };
 
-                    string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
-                                 " values ('" + bewerbungsdata.StudentID + "','" + bewerbungsdata.Master_StudiengangID + "','" + bewerbungsdata.SemesterID + "'," +
+                    string query = "insert into  tab_bewerbung([intPerson],[intMasterstudiengang],[intMasterstudiengang2],[intMasterstudiengang3],[intSemester],[txtKommentar1],[txtKommentar2],[txtKommentar3],[blnProf],[blnVerwaltung],[blnAngenommen])" +
+                                 " values ('" + bewerbungsdata.StudentID + "','" + bewerbungsdata.Master_StudiengangID + "','" + bewerbungsdata.Master_StudiengangID2 + "', '" + bewerbungsdata.Master_StudiengangID3 + "', '" + bewerbungsdata.SemesterID + "'," +
                                  "'" + bewerbungsdata.Comment1 + "','" + bewerbungsdata.Comment2 + "', '" + bewerbungsdata.Comment3 + "', '" + check_Prof + "', '" + check_Verwaltung + "', '" + check_Angenommen + "')";
                     OleDbConnection UserConnection = new OleDbConnection();
                     UserConnection.ConnectionString = config.DbConnectionString;
@@ -1095,5 +1107,6 @@ namespace DataManagerSystem.Modules
 
             Docx.CreateDocx(config.SaveDocxPath.Trim() + filename.Trim());
         }
+
     }
 }
