@@ -8,79 +8,139 @@ namespace DataManagerSystem.Configs
 {
     public class Bewerbungsdata
     {
+        public Bewerbungsdata()
+        {
 
-        private int _studentID; // the Username
+        }
+
+        private string _vorname;
+        public string Vorname
+        {
+            get { return _vorname; }
+            set { _vorname = value; }
+        }
+
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        private string _nationalitaet;
+        public string Nationalitaet
+        {
+            get { return _nationalitaet; }
+            set { _nationalitaet = value; }
+        }
+
+        private string _bachelor;
+        public string Bachelor
+        {
+            get { return _bachelor; }
+            set { _bachelor = value; }
+        }
+
+        private string _studentNote;
+        public string Student_Note
+        {
+            get { return _studentNote; }
+            set { _studentNote = value; }
+        }
+
+        private string _creditpunkte;
+        public string Creditpunkte
+        {
+            get { return _creditpunkte; }
+            set { _creditpunkte = value; }
+        }
+
+        private bool _noteVorlaeufig;
+        public bool NoteVorlaeufig
+        {
+            get { return _noteVorlaeufig; }
+            set { _noteVorlaeufig = value; }
+        }
+
+        private string _geschlecht;
+        public string Geschlecht
+        {
+            get { return _geschlecht; }
+            set { _geschlecht = value; }
+        }
+
+        private int _studentID;
         public int StudentID
         {
             get { return _studentID; }
             set { _studentID = value; }
         }
 
-        private int _masterStudiengangID; // the password
-        public int Master_StudiengangID
+        private string _masterstudiengang; 
+        public string Masterstudiengang
         {
-            get { return _masterStudiengangID; }
-            set { _masterStudiengangID = value; }
+            get { return _masterstudiengang; }
+            set { _masterstudiengang = value; }
         }
 
-        private int _masterStudiengangID2; // the password
-        public int Master_StudiengangID2
+        private string _masterstudiengang_2;
+        public string Masterstudiengang_2
         {
-            get { return _masterStudiengangID2; }
-            set { _masterStudiengangID2 = value; }
+            get { return _masterstudiengang_2; }
+            set { _masterstudiengang_2 = value; }
         }
 
-        private int _masterStudiengangID3; // the password
-        public int Master_StudiengangID3
+        private string _masterstudiengang_3;
+        public string Masterstudiengang_3
         {
-            get { return _masterStudiengangID3; }
-            set { _masterStudiengangID3 = value; }
+            get { return _masterstudiengang_3; }
+            set { _masterstudiengang_3 = value; }
         }
 
-        private int _semesterID; // the user's Attribut
-        public int SemesterID
+        private string _semester;
+        public string Semester
         {
-            get { return _semesterID; }
-            set { _semesterID = value; }
+            get { return _semester; }
+            set { _semester = value; }
         }
 
-        private string _comment1;
-        public string Comment1
+        private string _zusatz;
+        public string Zusatz
         {
-            get { return _comment1; }
-            set { _comment1 = value; }
+            get { return _zusatz; }
+            set { _zusatz = value; }
         }
 
-        private string _comment2;
-        public string Comment2
+        private string _ablehnungsgrund;
+        public string Ablehnungsgrund
         {
-            get { return _comment2; }
-            set { _comment2 = value; }
+            get { return _ablehnungsgrund; }
+            set { _ablehnungsgrund = value; }
         }
 
-        private string _comment3;
-        public string Comment3
+        private string _comment;
+        public string Comment
         {
-            get { return _comment3; }
-            set { _comment3 = value; }
+            get { return _comment; }
+            set { _comment = value; }
         }
 
-        private int _prof;
-        public int Prof
+        private bool _prof;
+        public bool Prof
         {
             get { return _prof; }
             set { _prof = value; }
         }
 
-        private int _verwaltung;
-        public int Verwaltung
+        private bool _verwaltung;
+        public bool Verwaltung
         {
             get { return _verwaltung; }
             set { _verwaltung = value; }
         }
 
-        private int _angenommen;
-        public int Angenommen
+        private bool _angenommen;
+        public bool Angenommen
         {
             get { return _angenommen; }
             set { _angenommen = value; }

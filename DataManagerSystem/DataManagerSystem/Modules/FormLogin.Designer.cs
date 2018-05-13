@@ -211,6 +211,7 @@
             this.Text = "Login";
             this.TransparencyKey = System.Drawing.Color.DimGray;
             this.Load += new System.EventHandler(this.Form_Login_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormLogin_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

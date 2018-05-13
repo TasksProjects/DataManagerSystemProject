@@ -42,6 +42,7 @@
             this.DocxPathBtn = new System.Windows.Forms.Button();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DocxPathTB = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -176,12 +177,26 @@
             this.DocxPathTB.Size = new System.Drawing.Size(328, 22);
             this.DocxPathTB.TabIndex = 21;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.ForeColor = System.Drawing.Color.White;
+            this.ExitButton.Location = new System.Drawing.Point(567, 12);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(32, 29);
+            this.ExitButton.TabIndex = 24;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // SettingsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(611, 263);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DocxPathBtn);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.DocxPathTB);
@@ -216,5 +231,6 @@
         private System.Windows.Forms.Button DocxPathBtn;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox DocxPathTB;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

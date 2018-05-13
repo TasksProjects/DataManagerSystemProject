@@ -46,6 +46,11 @@ namespace DataManagerSystem
         // Button to Login
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+      
+        private void Login()
+        {
             UserData benutzerOnline = new UserData();
             //Checking the accuracy of user data
             if (UserNameTextBox.Text == string.Empty || PasswordTextBox.Text == string.Empty || AttributComboBox.Text == string.Empty)
@@ -57,8 +62,6 @@ namespace DataManagerSystem
                 benutzerOnline.Username = UserNameTextBox.Text.Trim();
                 benutzerOnline.Password = PasswordTextBox.Text.Trim();
                 benutzerOnline.UserAttribut = AttributComboBox.Text.Trim();
-
-                
 
                 if (benutzerOnline.UserAttribut != "SuperAdmin")
                 {
@@ -79,10 +82,6 @@ namespace DataManagerSystem
                     {
                         MessageBox.Show("Check your Username and Password!");
                     }
-                   
-                   
-                   
-               
                 }
                 else
                 {
@@ -104,8 +103,8 @@ namespace DataManagerSystem
                             };
                             superUserData = superUser;
                             XmlDataManager.XmlDataWriter(superUserData, "SuperUserStatut.xml");
-                     
-                            MainWindow objMainWindow = new MainWindow(userData.Username,userData.UserAttribut);
+
+                            MainWindow objMainWindow = new MainWindow(userData.Username, userData.UserAttribut);
                             objMainWindow.Show();
                             this.Hide();
                         }
@@ -118,7 +117,6 @@ namespace DataManagerSystem
             }
         }
 
-        
         // Check ob the User is already online
         public bool Search_Online_benutzer(UserData userdat)
         {
@@ -188,45 +186,49 @@ namespace DataManagerSystem
             // check if the username already exist and return his value
             bool response = Search_Online_benutzer(user);
             int userID = databaseManager.checkUserID(user.Username);
-      
-            
-                if (response == true)
+                 
+            if (response == true)
+            {
+                config = XmlDataManager.XmlConfigDataReader("configs.xml");
+                string query = "Update  tab_User set [BlnOnline] = '" + 1 + "'  where ID = " + userID + "";
+                OleDbConnection UserConnection = new OleDbConnection();
+                UserConnection.ConnectionString = config.DbConnectionString;
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = UserConnection;
+                UserConnection.Open();
+                try
                 {
-                    config = XmlDataManager.XmlConfigDataReader("configs.xml");
-                    string query = "Update  tab_User set [BlnOnline] = '" + 1 + "'  where ID = " + userID + "";
-                    OleDbConnection UserConnection = new OleDbConnection();
-                    UserConnection.ConnectionString = config.DbConnectionString;
-                    OleDbCommand cmd = new OleDbCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Connection = UserConnection;
-                    UserConnection.Open();
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                       // MessageBox.Show("Data Edit Successful");
-                        UserConnection.Close();
-                       
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error " + ex);
-                    }
-                     userData.Username = user.Username;
-                     userData.UserAttribut = user.UserAttribut;
-                     XmlDataManager.XmlDataWriter(userData, "userData.xml");
-                     Attribut = user.UserAttribut;
-                     MainWindow objMainWindow = new MainWindow(user.Username,Attribut);
-                     objMainWindow.Show();
-                     this.Hide();
+                    cmd.ExecuteNonQuery();
+                    UserConnection.Close();
+
+                    userData.Username = user.Username;
+                    userData.UserAttribut = user.UserAttribut;
+                    XmlDataManager.XmlDataWriter(userData, "userData.xml");
+                    Attribut = user.UserAttribut;
+                    MainWindow objMainWindow = new MainWindow(user.Username, Attribut);
+                    objMainWindow.Show();
+                    this.Hide();
 
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("connection failed! Wrong Username or Password Please Check your Data.");
-                }
+                    MessageBox.Show("Error " + ex);
+                }     
+            }
+            else
+            {
+                MessageBox.Show("connection failed! Wrong Username or Password Please Check your Data.");
+            }
+        }
+
+        private void FormLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                Login();
+            }
         }
     }
-
-
 }

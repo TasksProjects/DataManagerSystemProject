@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ConfigData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DatabasePath>G:\GitProjects\DataManagerSystem\DataManagerSystem\Database\Masterbewerbung.accdb</DatabasePath>
-  <DbConnectionString>Provider=Microsoft.ACE.OLEDB.12.0;Data Source=G:\GitProjects\DataManagerSystem\DataManagerSystem\Database\Masterbewerbung.accdb;Persist Security Info = False;</DbConnectionString>
-  <SaveDocxPath>G:\GitProjects\DataManagerSystem\DataManagerSystem\doc</SaveDocxPath>
+  <DatabasePath>C:\Users\william\Desktop\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\Database\db.accdb</DatabasePath>
+  <DbConnectionString>Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\william\Desktop\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\Database\db.accdb;Persist Security Info = False;</DbConnectionString>
+  <SaveDocxPath>C:\Users\william\Desktop</SaveDocxPath>
 </ConfigData>

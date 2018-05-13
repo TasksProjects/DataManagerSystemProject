@@ -72,5 +72,10 @@ namespace DataManagerSystem.Modules
                 DocxPathTB.Text = config.SaveDocxPath;
             }
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

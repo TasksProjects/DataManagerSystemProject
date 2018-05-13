@@ -60,7 +60,7 @@ namespace DataManagerSystem
             settingUI.Show();
         }
 
-        //Exit button
+        //Exit Program
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
@@ -82,18 +82,6 @@ namespace DataManagerSystem
         {
             BewerbungUI bewerbungUI = new BewerbungUI();
             bewerbungUI.Show();
-        }
-
-
-        private void EditButton_Click(object sender, EventArgs e)
-        {
-           // EditPerson editPerson = new EditPerson();
-           // editPerson.Show();
-        }
-
-        private void Helpbutton_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Disable(string status)
@@ -126,7 +114,6 @@ namespace DataManagerSystem
             // check if the username already exist and return his value
             Boolean response = Search_User_Online_To_Disconect(onlineuser);
             int userID = databaseManager.checkUserID(onlineuser.Username);
-
 
             if (response == true)
             {
@@ -188,6 +175,22 @@ namespace DataManagerSystem
             {
                 return false;
             }
+        }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Helpbutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

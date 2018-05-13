@@ -141,7 +141,7 @@
             this.RemoveUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveUserButton.ForeColor = System.Drawing.Color.White;
-            this.RemoveUserButton.Location = new System.Drawing.Point(178, 79);
+            this.RemoveUserButton.Location = new System.Drawing.Point(193, 79);
             this.RemoveUserButton.Name = "RemoveUserButton";
             this.RemoveUserButton.Size = new System.Drawing.Size(160, 30);
             this.RemoveUserButton.TabIndex = 37;
@@ -155,7 +155,7 @@
             this.EditUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditUserButton.ForeColor = System.Drawing.Color.White;
-            this.EditUserButton.Location = new System.Drawing.Point(368, 161);
+            this.EditUserButton.Location = new System.Drawing.Point(382, 161);
             this.EditUserButton.Name = "EditUserButton";
             this.EditUserButton.Size = new System.Drawing.Size(160, 30);
             this.EditUserButton.TabIndex = 36;
@@ -169,7 +169,7 @@
             this.AddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddUserButton.ForeColor = System.Drawing.Color.White;
-            this.AddUserButton.Location = new System.Drawing.Point(178, 161);
+            this.AddUserButton.Location = new System.Drawing.Point(193, 161);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(160, 30);
             this.AddUserButton.TabIndex = 35;
@@ -197,7 +197,7 @@
             this.EditAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditAccountButton.ForeColor = System.Drawing.Color.White;
-            this.EditAccountButton.Location = new System.Drawing.Point(368, 79);
+            this.EditAccountButton.Location = new System.Drawing.Point(382, 79);
             this.EditAccountButton.Name = "EditAccountButton";
             this.EditAccountButton.Size = new System.Drawing.Size(160, 30);
             this.EditAccountButton.TabIndex = 33;
@@ -209,7 +209,7 @@
             // 
             this.UsernameLabel.AutoSize = true;
             this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.Location = new System.Drawing.Point(12, 196);
+            this.UsernameLabel.Location = new System.Drawing.Point(34, 194);
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(91, 20);
             this.UsernameLabel.TabIndex = 34;
@@ -220,7 +220,7 @@
             this.Atrributlabel.AutoSize = true;
             this.Atrributlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atrributlabel.ForeColor = System.Drawing.Color.Blue;
-            this.Atrributlabel.Location = new System.Drawing.Point(12, 219);
+            this.Atrributlabel.Location = new System.Drawing.Point(35, 214);
             this.Atrributlabel.Name = "Atrributlabel";
             this.Atrributlabel.Size = new System.Drawing.Size(56, 16);
             this.Atrributlabel.TabIndex = 34;
@@ -230,7 +230,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DataManagerSystem.Properties.Resources.Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 79);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

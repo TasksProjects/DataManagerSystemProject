@@ -584,7 +584,6 @@
             this.SpeicherBtn.TabIndex = 21;
             this.SpeicherBtn.Text = "Speichern";
             this.SpeicherBtn.UseVisualStyleBackColor = false;
-            this.SpeicherBtn.Click += new System.EventHandler(this.SpeicherBtn_Click);
             // 
             // AbbrechenBtn
             // 
