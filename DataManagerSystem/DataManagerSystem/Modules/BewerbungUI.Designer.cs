@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Bewerbungsstatus = new System.Windows.Forms.Button();
             this.Deletebtn = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.EditBtn = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(615, 15);
+            this.label2.Location = new System.Drawing.Point(465, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 40;
@@ -66,6 +67,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Bewerbungsstatus);
             this.panel1.Controls.Add(this.Deletebtn);
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Controls.Add(this.EditBtn);
@@ -78,6 +80,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1081, 793);
             this.panel1.TabIndex = 41;
+            // 
+            // Bewerbungsstatus
+            // 
+            this.Bewerbungsstatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bewerbungsstatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Bewerbungsstatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bewerbungsstatus.ForeColor = System.Drawing.Color.White;
+            this.Bewerbungsstatus.Location = new System.Drawing.Point(727, 12);
+            this.Bewerbungsstatus.Name = "Bewerbungsstatus";
+            this.Bewerbungsstatus.Size = new System.Drawing.Size(142, 23);
+            this.Bewerbungsstatus.TabIndex = 55;
+            this.Bewerbungsstatus.Text = "Bewerbungstatus";
+            this.Bewerbungsstatus.UseVisualStyleBackColor = false;
             // 
             // Deletebtn
             // 
@@ -131,7 +146,7 @@
             // 
             this.BewerbungIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BewerbungIDTextBox.Enabled = false;
-            this.BewerbungIDTextBox.Location = new System.Drawing.Point(723, 13);
+            this.BewerbungIDTextBox.Location = new System.Drawing.Point(575, 15);
             this.BewerbungIDTextBox.Name = "BewerbungIDTextBox";
             this.BewerbungIDTextBox.Size = new System.Drawing.Size(146, 20);
             this.BewerbungIDTextBox.TabIndex = 53;
@@ -163,5 +178,6 @@
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.TextBox BewerbungIDTextBox;
         private System.Windows.Forms.Button Deletebtn;
+        private System.Windows.Forms.Button Bewerbungsstatus;
     }
 }
