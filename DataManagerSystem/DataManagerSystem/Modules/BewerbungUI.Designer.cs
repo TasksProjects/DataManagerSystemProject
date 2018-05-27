@@ -93,6 +93,7 @@
             this.Bewerbungsstatus.TabIndex = 55;
             this.Bewerbungsstatus.Text = "Bewerbungstatus";
             this.Bewerbungsstatus.UseVisualStyleBackColor = false;
+            this.Bewerbungsstatus.Click += new System.EventHandler(this.Bewerbungsstatus_Click);
             // 
             // Deletebtn
             // 

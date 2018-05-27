@@ -102,7 +102,6 @@
     <Compile Include="Configs\Bewerbungsdata.cs" />
     <Compile Include="Configs\ConfigData.cs" />
     <Compile Include="Configs\DatabaseManager.cs" />
-    <Compile Include="Configs\StudentData.cs" />
     <Compile Include="Configs\SuperUserData.cs" />
     <Compile Include="Configs\UserData.cs" />
     <Compile Include="Configs\WordDocCreator.cs" />
@@ -191,6 +190,12 @@
     <Compile Include="Modules\SettingsUI.Designer.cs">
       <DependentUpon>SettingsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\StudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\StudentInfo.Designer.cs">
+      <DependentUpon>StudentInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\StudiengangUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\SettingsUI.resx">
       <DependentUpon>SettingsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\StudentInfo.resx">
+      <DependentUpon>StudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\StudiengangUI.resx">
       <DependentUpon>StudiengangUI.cs</DependentUpon>

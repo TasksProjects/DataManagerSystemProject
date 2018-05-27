@@ -68,8 +68,8 @@ namespace DataManagerSystem
      
         private void AddButton_Click(object sender, EventArgs e)
         {
-            NewStudentUI newStudentUI = new NewStudentUI(User_online);
-            newStudentUI.Show();
+           // NewStudentUI newStudentUI = new NewStudentUI(User_online);
+          //  newStudentUI.Show();
         }
 
         private void AdminButton_Click(object sender, EventArgs e)
@@ -80,8 +80,8 @@ namespace DataManagerSystem
 
         private void ShowDbButton_Click(object sender, EventArgs e)
         {
-            BewerbungUI bewerbungUI = new BewerbungUI();
-            bewerbungUI.Show();
+            //BewerbungUI bewerbungUI = new BewerbungUI();
+           // bewerbungUI.Show();
         }
 
         private void Disable(string status)

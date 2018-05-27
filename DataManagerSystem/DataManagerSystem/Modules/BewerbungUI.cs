@@ -345,6 +345,9 @@ namespace DataManagerSystem.Modules
             }
         }
 
-       
+        private void Bewerbungsstatus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

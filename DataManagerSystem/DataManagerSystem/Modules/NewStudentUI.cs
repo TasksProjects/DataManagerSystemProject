@@ -19,7 +19,7 @@ namespace DataManagerSystem.Modules
 
         public NewStudentUI(string benutzername)
         {   
-            /*InitializeComponent();
+            InitializeComponent();
             benutzer_Name = benutzername;
             AutoCompleteText_Nationalitaet();
             Load_Nationalitaet_Database();
@@ -34,10 +34,10 @@ namespace DataManagerSystem.Modules
             AutoCompleteText_Vorname();
             AutoCompleteText_Name();
             Load_Semester_Database();
-            AutoCompleteText_Semester();*/
+            AutoCompleteText_Semester();
         }
 
-        /*private void AddStudiengangBtn_Click(object sender, EventArgs e)
+        private void AddStudiengangBtn_Click(object sender, EventArgs e)
         {
             UserData user = new UserData();
             SuperUserData superUser = new SuperUserData();
@@ -1105,6 +1105,6 @@ namespace DataManagerSystem.Modules
             string filename = "\\" + NameTB.Text.Trim() + DateTime.Now.ToShortDateString().Trim() + ".docx";
 
             Docx.CreateDocx(config.SaveDocxPath.Trim() + filename.Trim());
-        }*/
+        }
     }
 }
