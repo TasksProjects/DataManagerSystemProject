@@ -121,6 +121,7 @@
             this.HochschuleComboBox.Name = "HochschuleComboBox";
             this.HochschuleComboBox.Size = new System.Drawing.Size(253, 21);
             this.HochschuleComboBox.TabIndex = 37;
+            this.HochschuleComboBox.SelectedIndexChanged += new System.EventHandler(this.HochschuleComboBox_SelectedIndexChanged);
             // 
             // numericUpDown1
             // 

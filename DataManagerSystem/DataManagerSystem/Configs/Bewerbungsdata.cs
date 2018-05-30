@@ -13,13 +13,6 @@ namespace DataManagerSystem.Configs
 
         }
 
-        private int _id;
-        public int ID
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
         private string _vorname;
         public string Vorname
         {
@@ -41,18 +34,18 @@ namespace DataManagerSystem.Configs
             set { _nationalitaet = value; }
         }
 
-        private string _studiengang;
-        public string Studiengang
+        private string _bachelor;
+        public string Bachelor
         {
-            get { return _studiengang; }
-            set { _studiengang = value; }
+            get { return _bachelor; }
+            set { _bachelor = value; }
         }
 
-        private string _note;
-        public string Note
+        private string _studentNote;
+        public string Student_Note
         {
-            get { return _note; }
-            set { _note = value; }
+            get { return _studentNote; }
+            set { _studentNote = value; }
         }
 
         private string _creditpunkte;
@@ -76,11 +69,11 @@ namespace DataManagerSystem.Configs
             set { _geschlecht = value; }
         }
 
-        private string _hochschule;
-        public string Hochschule
+        private int _studentID;
+        public int StudentID
         {
-            get { return _hochschule; }
-            set { _hochschule = value; }
+            get { return _studentID; }
+            set { _studentID = value; }
         }
 
         private string _masterstudiengang; 

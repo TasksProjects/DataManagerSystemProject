@@ -82,7 +82,6 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(216, 21);
             this.PasswordTextBox.TabIndex = 2;
-            this.PasswordTextBox.Text = "1234";
             this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // ExitButton
