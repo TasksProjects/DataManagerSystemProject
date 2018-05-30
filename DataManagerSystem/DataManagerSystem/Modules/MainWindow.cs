@@ -68,8 +68,8 @@ namespace DataManagerSystem
      
         private void AddButton_Click(object sender, EventArgs e)
         {
-           // NewStudentUI newStudentUI = new NewStudentUI(User_online);
-          //  newStudentUI.Show();
+           NewStudentUI newStudentUI = new NewStudentUI();
+          newStudentUI.Show();
         }
 
         private void AdminButton_Click(object sender, EventArgs e)
@@ -80,8 +80,8 @@ namespace DataManagerSystem
 
         private void ShowDbButton_Click(object sender, EventArgs e)
         {
-            //BewerbungUI bewerbungUI = new BewerbungUI();
-           // bewerbungUI.Show();
+           BewerbungUI bewerbungUI = new BewerbungUI();
+           bewerbungUI.Show();
         }
 
         private void Disable(string status)
@@ -101,7 +101,7 @@ namespace DataManagerSystem
         private void StudiengangButton_Click(object sender, EventArgs e)
         {
             string studuengang = "";
-            StudiengangUI studiengangUI = new StudiengangUI(User_online, studuengang );
+            StudiengangUI studiengangUI = new StudiengangUI(studuengang );
             studiengangUI.Show();
         }
 
@@ -130,13 +130,11 @@ namespace DataManagerSystem
                 {
                     cmd.ExecuteNonQuery();
                     UserConnection.Close();
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error " + ex);
                 }
-
             }
             else
             {
