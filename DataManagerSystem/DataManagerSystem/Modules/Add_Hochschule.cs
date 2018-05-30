@@ -10,21 +10,14 @@ namespace DataManagerSystem.Modules
     public partial class Add_Hochschule : Form
     {
         DatabaseManager databaseManager = new DatabaseManager();
-        string benutzerOnline;
         private ConfigData config = new ConfigData();
 
-      
-
-        public Add_Hochschule(string benutzer_online, string hochschuleName)
+        public Add_Hochschule(string hochschuleName)
         {
-
             InitializeComponent();
             NameTextBox.Text = hochschuleName;
-            benutzerOnline = benutzer_online;
             AutoCompleteText_Land();
-            Load_Hochschule_Land_Database();
-            
-
+            Load_Hochschule_Land_Database();           
         }
 
         private void Add_Hochschule_Load(object sender, EventArgs e)
@@ -64,7 +57,7 @@ namespace DataManagerSystem.Modules
             }
         }
 
-        // fill the Combo´Box Hochschule with Database
+        // fill the ComboBox Hochschule with Database
         private void AutoCompleteText_Land()
         {
             LandComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -91,8 +84,7 @@ namespace DataManagerSystem.Modules
                 while (reader.Read())
                 {
                     string LandName = reader["txtName"].ToString();
-                    coll.Add(LandName);
-                   
+                    coll.Add(LandName);                  
                 }
             }
             catch (Exception ex)
@@ -101,15 +93,11 @@ namespace DataManagerSystem.Modules
             }
             LandComboBox.AutoCompleteCustomSource = coll;
         }
-
-       
-
+     
         public int Search_Land_ID(string LandName)
         {
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
             string query = "SELECT ID FROM tab_land where txtName = '" + LandName + "' ";
-
-
 
             OleDbConnection LandConnection1 = new OleDbConnection();
             LandConnection1.ConnectionString = config.DbConnectionString;
@@ -122,7 +110,6 @@ namespace DataManagerSystem.Modules
             };
             OleDbDataReader reader = cmd1.ExecuteReader();
 
-
             if (reader.HasRows)
 
             {
@@ -132,12 +119,10 @@ namespace DataManagerSystem.Modules
                 LandConnection1.Close();
                 return id;
             }
-
             else
             {
                 LandConnection1.Close();
-                return 0;
-               
+                return 0;             
             }
         }
 
@@ -148,9 +133,7 @@ namespace DataManagerSystem.Modules
             string query = "insert into  tab_hochschule ([txtName],[intLand])" +
                           " values ('" + NameTextBox.Text.Trim() + "','" +  Land_ID + "')";
             OleDbConnection UserConnection = new OleDbConnection();
-
             UserConnection.ConnectionString = config.DbConnectionString;
-
 
             OleDbCommand cmd = new OleDbCommand
             {
@@ -163,8 +146,7 @@ namespace DataManagerSystem.Modules
             {
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data Saved Successful");
-                UserConnection.Close();
-       
+                UserConnection.Close();      
             }
             catch (Exception ex)
             {
@@ -176,84 +158,23 @@ namespace DataManagerSystem.Modules
         {
             if (!NameTextBox.Text.Trim().Equals(string.Empty) && !LandComboBox.Text.Trim().Equals(string.Empty))
             {
-                UserData user = new UserData();
-                SuperUserData superUser = new SuperUserData();
-                if (File.Exists("userData.xml"))
+                int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
+                if (ID_Land != 0 && ID_Land != -1)
                 {
-                    user = XmlDataManager.XmlUserDataReader("userData.xml");
+                    AddHochschule(ID_Land);
+                }
+                else if (ID_Land == 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        Add_Land add_Land = new Add_Land(LandComboBox.Text);
+                        this.Close();
+                        add_Land.Show();            
+                    }
                 }
 
-                if (user.UserAttribut != "SuperAdmin")
-                {
-                    bool test_Connection = databaseManager.Test_Connection_User(benutzerOnline);
-
-                    if (test_Connection == true)
-                    {
-                        int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
-                        if (ID_Land != 0 && ID_Land != -1)
-                        {
-                            AddHochschule(ID_Land);
-                        }
-                        else if (ID_Land == 0)
-                        {
-
-                            DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
-                            if (dialogResult == DialogResult.OK)
-                            {
-                                Add_Land add_Land = new Add_Land(benutzerOnline, LandComboBox.Text);
-                                add_Land.Show();
-                                this.Close();
-                            }
-
-                        }
-
-                        this.Close();
-                        /*StudiengangUI studiengangUI = new StudiengangUI();
-                        studiengangUI.Show();*/
-                    }
-                    else
-                    {
-                        MessageBox.Show("The User " + benutzerOnline + " is offline!");
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    if (File.Exists("SuperUserStatut.xml"))
-                    {
-                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                    }
-
-                    if (superUser.SuperUserstatut == 1)
-                    {
-                        int ID_Land = Search_Land_ID(LandComboBox.Text.Trim());
-                        if (ID_Land != 0 && ID_Land != -1)
-                        {
-                            AddHochschule(ID_Land);
-                        }
-                        else if (ID_Land == 0)
-                        {
-
-                            DialogResult dialogResult = MessageBox.Show("Land doesn't exist! Please click Ok to add a new Land!", "confirmation", MessageBoxButtons.OKCancel);
-                            if (dialogResult == DialogResult.OK)
-                            {
-                                Add_Land add_Land = new Add_Land(benutzerOnline, LandComboBox.Text);
-                                add_Land.Show();
-                                this.Close();
-                            }
-
-                        }
-
-                        this.Close();
-                        /*StudiengangUI studiengangUI = new StudiengangUI();
-                        studiengangUI.Show();*/
-                    }
-                    else
-                    {
-                        MessageBox.Show("The User " + benutzerOnline + " is offline!");
-                        this.Close();
-                    }
-                }
+                this.Close();
             }
             else
             {
@@ -261,13 +182,9 @@ namespace DataManagerSystem.Modules
             }
         }
 
-      
-
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            /*StudiengangUI studiengangUI = new StudiengangUI();
-            studiengangUI.Show();*/
         }
     }
 }

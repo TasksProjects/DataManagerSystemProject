@@ -14,13 +14,12 @@ namespace DataManagerSystem.Modules
     {
         private ConfigData config = new ConfigData();
         DatabaseManager databaseManager = new DatabaseManager();
-        string benutzer_Name;
-        string geschlecht;
-        /*
-        public NewStudentUI(string benutzername)
+        Bewerbungsdata bd = new Bewerbungsdata(); //bewerbungsdata
+
+        public NewStudentUI()
         {   
             InitializeComponent();
-            benutzer_Name = benutzername;
+
             AutoCompleteText_Nationalitaet();
             Load_Nationalitaet_Database();
             AutoCompleteText_Land();
@@ -36,145 +35,12 @@ namespace DataManagerSystem.Modules
             Load_Semester_Database();
             AutoCompleteText_Semester();
         }
-        
-        private void AddStudiengangBtn_Click(object sender, EventArgs e)
-        {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
-            if (File.Exists("userData.xml"))
-            {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-
-            if (user.UserAttribut != "SuperAdmin")
-            {
-                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
-
-                if (test_Connection == true)
-                {
-                    StudiengangUI studiengangUI = new StudiengangUI(benutzer_Name, StudiengangCB.Text);
-                    studiengangUI.Show();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                    this.Close();
-                }
-            }
-            else
-            {
-                if (File.Exists("SuperUserStatut.xml"))
-                {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                }
-
-                if (superUser.SuperUserstatut == 1)
-                {
-                    StudiengangUI studiengangUI = new StudiengangUI(benutzer_Name, StudiengangCB.Text);
-                    studiengangUI.Show();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                    this.Close();
-                }
-            }
-        }
-
-        private void AddHochschuleBtn_Click(object sender, EventArgs e)
-        {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
-            if (File.Exists("userData.xml"))
-            {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-
-            if (user.UserAttribut != "SuperAdmin")
-            {
-                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
-
-                if (test_Connection == true)
-                {
-                    Add_Hochschule add_Hochschule = new Add_Hochschule(benutzer_Name, HochshuleCB.Text);
-                    add_Hochschule.Show();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                    this.Close();
-                }
-            }
-            else
-            {
-                if (File.Exists("SuperUserStatut.xml"))
-                {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                }
-
-                if (superUser.SuperUserstatut == 1)
-                {
-                    Add_Hochschule add_Hochschule = new Add_Hochschule(benutzer_Name, HochshuleCB.Text);
-                    add_Hochschule.Show();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                    this.Close();
-                }
-            }
-        }
-
-        private void AddNationalitaetBtn_Click(object sender, EventArgs e)
-        {
-            UserData user = new UserData();
-            SuperUserData superUser = new SuperUserData();
-            if (File.Exists("userData.xml"))
-            {
-                user = XmlDataManager.XmlUserDataReader("userData.xml");
-            }
-
-            if (user.UserAttribut != "SuperAdmin")
-            {
-                bool test_Connection = databaseManager.Test_Connection_User(benutzer_Name);
-
-                if (test_Connection == true)
-                {
-                    Add_Land add_Land = new Add_Land(benutzer_Name, NationalityTB.Text);
-                    add_Land.Show();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                    this.Close();
-                }
-            }
-            else
-            {
-                if (File.Exists("SuperUserStatut.xml"))
-                {
-                    superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                }
-
-                if (superUser.SuperUserstatut == 1)
-                {
-                    Add_Land add_Land = new Add_Land(benutzer_Name, NationalityTB.Text);
-                    add_Land.Show();
-                }
-                else
-                {
-                    MessageBox.Show("The User " + benutzer_Name + " is offline!");
-                    this.Close();
-                }
-            }
-        }
 
         private void NewStudentUI_Load(object sender, EventArgs e)
         {
             if (File.Exists("configs.xml"))
             {
                 config = XmlDataManager.XmlConfigDataReader("configs.xml");
-
             }
             else
             {
@@ -182,6 +48,24 @@ namespace DataManagerSystem.Modules
             }
         }
 
+        private void AddStudiengangBtn_Click(object sender, EventArgs e)
+        {
+            StudiengangUI studiengangUI = new StudiengangUI(StudiengangCB.Text);
+            studiengangUI.Show();             
+        }
+
+        private void AddHochschuleBtn_Click(object sender, EventArgs e)
+        {
+            Add_Hochschule add_Hochschule = new Add_Hochschule(HochshuleCB.Text);
+            add_Hochschule.Show();
+        }
+
+        private void AddNationalitaetBtn_Click(object sender, EventArgs e)
+        { 
+            Add_Land add_Land = new Add_Land(NationalityTB.Text);
+            add_Land.Show();     
+        }
+    
         //Load Nationalität in NationalitätComboBox
         private void Load_Nationalitaet_Database()
         {
@@ -679,7 +563,6 @@ namespace DataManagerSystem.Modules
             cmd1.CommandText = query;
             OleDbDataReader reader = cmd1.ExecuteReader();
 
-
             if (reader.HasRows)
 
             {
@@ -712,9 +595,7 @@ namespace DataManagerSystem.Modules
             cmd1.CommandText = query;
             OleDbDataReader reader = cmd1.ExecuteReader();
 
-
             if (reader.HasRows)
-
             {
                 reader.Read();
                 string resultat = reader["ID"].ToString();
@@ -722,7 +603,6 @@ namespace DataManagerSystem.Modules
                 int id = Convert.ToInt32(resultat);
                 return id;
             }
-
             else
             {
                 UserConnection1.Close();
@@ -734,69 +614,60 @@ namespace DataManagerSystem.Modules
         public bool Add_New_Student()
         {
             bool response = false;
-            int check_NoteVorläufing;
-
-            
-
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
 
-            if (NoteVorläufingCheckBox.Checked == true)
-            {
-                check_NoteVorläufing = 1;
-            }
-            else
-            {
-                check_NoteVorläufing = 0;
-            }
+            bd.Vorname = FirstnameTB.Text.Trim();
+            bd.Name = NameTB.Text.Trim();
 
+            MannlichRadioButton.Checked = (bd.Geschlecht == "Männlich") ? true : false;
+            WeiblichRadioButton.Checked = (bd.Geschlecht == "Weiblich") ? true : false;
 
+            bd.Nationalitaet = NationalityTB.Text.Trim();
+            bd.Note = AbschlussnoteTB.Text.Trim(); ;
+            bd.NoteVorlaeufig = (NoteVorläufingCheckBox.Checked == true)? true : false;
+            bd.Studiengang = StudiengangCB.Text.Trim();
+            bd.Masterstudiengang = MasterstudiengangCB.Text.Trim();
+            bd.Masterstudiengang_2 = MasterstudiengangCB2.Text.Trim();
+            bd.Masterstudiengang_3 = MasterstudiengangCB3.Text.Trim();
+            bd.Hochschule = HochschuleTexBox.Text.Trim();
+            bd.Creditpunkte = CpTB.Text.Trim();
+            bd.Ablehnungsgrund = AblehnungsgrundTB.Text.Trim();
+            bd.Comment = KommentarTB.Text.Trim();
+            bd.Zusatz = ZusatzTB.Text.Trim();
+            bd.Angenommen = (AngenommenCheckBox.Checked == true) ? true : false;
+            bd.Prof = (AnProfCheckBox.Checked == true) ? true : false;
+            bd.Verwaltung = (AnHaCheckBox.Checked == true) ? true : false;
 
-            int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
-            int Student_studiengang = Search_StudiengangID(StudiengangCB.Text.Trim());
-            double AbschlussNote;
+            double note = 0;
+            double.TryParse(bd.Note, out note);
+
+            int vorlaeufig = (bd.NoteVorlaeufig) ? 1 : 0;
+
             int CP;
-            bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
-            bool result = int.TryParse(CpTB.Text.Trim(), out CP);
+            int.TryParse(CpTB.Text.Trim(), out CP);
 
-            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0)&& ((res == true) && (result == true)))
+            string query = "insert into  tab_bewerbung([Vorname],[Name],[Geschlecht],[Nationalitaet],[Studiengang],[Hochschule],[Creditpunkt],[NoteVorlaeufig],[Note],[Masterstudiengang],[Masterstudiengang2],[Masterstudiengang3],[Semester],[Kommentar],[Zusatz],[Ablehnungsgrund],[An Prof],[Verwaltung],[Angenommen])" +
+                    " values ('" + bd.Vorname + "','" + bd.Name + "','" + bd.Geschlecht + "','" + bd.Nationalitaet + "'," +
+                    "'" + bd.Studiengang + "','" + bd.Hochschule + "', '" + vorlaeufig + "', '" + note + "')";
+            OleDbConnection UserConnection = new OleDbConnection();
+            UserConnection.ConnectionString = config.DbConnectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = UserConnection;
+            UserConnection.Open();
+            try
             {
-                
-                    StudentData studentData = new StudentData
-                    {
-                        Vorname = FirstnameTB.Text.Trim(),
-                        Name = NameTB.Text.Trim(),
-                        Nationalitaet = Student_nationalitaet,
-                        Bachelor = Student_studiengang,
-                        Geschlecht = geschlecht,
-                        //Student_Note = Convert.ToDouble(AbschlussnoteTB.Text.Trim()),
-                        Student_Note = AbschlussNote,
-                        NoteVorlaefig = check_NoteVorläufing,
-                        // Creditpunkte = Convert.ToInt32(CpTB.Text.Trim())
-                        Creditpunkte = CP
-                    };
-
-                    string query = "insert into  tab_person([txtVorname],[txtName],[txtGeschlecht],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
-                           " values ('" + studentData.Vorname + "','" + studentData.Name + "','" + studentData.Geschlecht + "','" + studentData.Nationalitaet + "'," +
-                           "'" + studentData.Bachelor + "','" + studentData.Student_Note + "', '" + studentData.NoteVorlaefig + "', '" + studentData.Creditpunkte + "')";
-                    OleDbConnection UserConnection = new OleDbConnection();
-                    UserConnection.ConnectionString = config.DbConnectionString;
-                    OleDbCommand cmd = new OleDbCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = query;
-                    cmd.Connection = UserConnection;
-                    UserConnection.Open();
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                        // MessageBox.Show("Data Saved Successful");
-                        UserConnection.Close();
-                        response = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error " + ex);
-                    }
+                cmd.ExecuteNonQuery();
+                // MessageBox.Show("Data Saved Successful");
+                UserConnection.Close();
+                response = true;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+            
             return response;
         }
         
@@ -900,7 +771,7 @@ namespace DataManagerSystem.Modules
         }
 
         // Add a New Bewerbung in Database
-        public void Add_New_Bewerbung()
+        /*public void Add_New_Bewerbung()
         {
             if (Add_New_Student() == true)
             {
@@ -936,8 +807,6 @@ namespace DataManagerSystem.Modules
                 }
                 config = XmlDataManager.XmlConfigDataReader("configs.xml");
 
-
-
                 int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
                 int Studenten_ID = Search_ID_Student(NameTB.Text.Trim());
                 int MasterstudiengangID = Search_ID_Masterstudiengang(MasterstudiengangCB.Text.Trim());
@@ -951,7 +820,7 @@ namespace DataManagerSystem.Modules
                     {
                         StudentID = Studenten_ID,
                         Master_StudiengangID = MasterstudiengangID,
-                        Master_StudiengangID2 = MasterstudiengangID2,
+                        Master_Studiengang_2 = MasterstudiengangID2,
                         Master_StudiengangID3 = MasterstudiengangID3,
                         SemesterID = Studenten_SemesterID,
                         Comment1 = ZusatzTB.Text.Trim(),
@@ -1073,15 +942,15 @@ namespace DataManagerSystem.Modules
                 }
             }
         }
-
+        */
         private void MannlichRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            geschlecht = "Mannlich";
+            bd.Geschlecht = "Mannlich";
         }
 
         private void WeiblichRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            geschlecht = "Weiblich";
+            bd.Geschlecht = "Weiblich";
         }
 
         private void ExportDocx()
@@ -1106,11 +975,5 @@ namespace DataManagerSystem.Modules
 
             Docx.CreateDocx(config.SaveDocxPath.Trim() + filename.Trim());
         }
-
-        private void AddNationalitaetBtn_Click_1(object sender, EventArgs e)
-        {
-
-        }*/
-        
     }
 }

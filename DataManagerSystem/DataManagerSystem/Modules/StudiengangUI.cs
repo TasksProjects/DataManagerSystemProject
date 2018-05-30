@@ -10,11 +10,9 @@ namespace DataManagerSystem.Modules
     public partial class StudiengangUI : Form
     {
         DatabaseManager databaseManager = new DatabaseManager();
-        string benutzerOnline;
         private ConfigData config = new ConfigData();
         
-
-        public StudiengangUI(string User)
+        public StudiengangUI()
         {
             InitializeComponent();
            
@@ -22,10 +20,9 @@ namespace DataManagerSystem.Modules
             Load_Hochschule_Database();
         }
 
-        public StudiengangUI(string benutzername, string StudiengangName)
+        public StudiengangUI(string StudiengangName)
         {
             InitializeComponent();
-            benutzerOnline = benutzername;
             StudyTextBox.Text = StudiengangName;
             AutoCompleteText_Hochschule();
             Load_Hochschule_Database();
@@ -109,7 +106,6 @@ namespace DataManagerSystem.Modules
             }
             HochschuleComboBox.AutoCompleteCustomSource = coll;
         }
-
        
         // function to search a hochschule's id
         public int Search_Hochschule_ID(string hochschuleName)
@@ -187,7 +183,6 @@ namespace DataManagerSystem.Modules
 
         }
 
-
         // Function to add a new studiengang
         public void Add_Studiengang(int Hochschule_ID, int titel)
         {
@@ -226,81 +221,26 @@ namespace DataManagerSystem.Modules
             }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
-           
+        private void AddButton_Click(object sender, EventArgs e)           
         {
             if (!(StudyTextBox.Text.Trim().Equals(string.Empty))&& !(HochschuleComboBox.Equals(string.Empty))&& !(TitelComboBox.Text.Trim().Equals(string.Empty)))
-            {
-                UserData user = new UserData();
-                SuperUserData superUser = new SuperUserData();
-                if (File.Exists("userData.xml"))
+            {              
+                int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
+                int ID_titel = Search_Title_ID(TitelComboBox.Text.Trim());
+                if (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
                 {
-                    user = XmlDataManager.XmlUserDataReader("userData.xml");
+                    Add_Studiengang(ID_Hochschule, ID_titel);
                 }
-
-                if (user.UserAttribut != "SuperAdmin")
+                else if (ID_Hochschule == 0)
                 {
-                    bool test_Connection = databaseManager.Test_Connection_User(benutzerOnline);
-
-                    if (test_Connection == true)
+                    DialogResult dialogResult = MessageBox.Show("Hochschule doesn't exist! Please click Ok to add a new hochschule!", "confirmation", MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.OK)
                     {
-                        int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
-                        int ID_titel = Search_Title_ID(TitelComboBox.Text.Trim());
-                        if (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
-                        {
-                            Add_Studiengang(ID_Hochschule, ID_titel);
-                        }
-                        else if (ID_Hochschule == 0)
-                        {
-
-                            DialogResult dialogResult = MessageBox.Show("Hochschule doesn't exist! Please click Ok to add a new hochschule!", "confirmation", MessageBoxButtons.OKCancel);
-                            if (dialogResult == DialogResult.OK)
-                            {
-                                Add_Hochschule add_Hochschule = new Add_Hochschule(benutzerOnline, HochschuleComboBox.Text);
-                                add_Hochschule.Show();
-                                this.Close();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("The User " + benutzerOnline + " is offline!");
+                        Add_Hochschule add_Hochschule = new Add_Hochschule(HochschuleComboBox.Text);
+                        add_Hochschule.Show();
                         this.Close();
                     }
-                }
-                else
-                {
-                    if (File.Exists("SuperUserStatut.xml"))
-                    {
-                        superUser = XmlDataManager.XmlSuperUserDataReader("SuperUserStatut.xml");
-                    }
-
-                    if (superUser.SuperUserstatut == 1)
-                    {
-                        int ID_Hochschule = Search_Hochschule_ID(HochschuleComboBox.Text.Trim());
-                        int ID_titel = Search_Title_ID(TitelComboBox.Text.Trim());
-                        if (ID_Hochschule != 0 && ID_Hochschule != -1 && ID_titel != 0 && ID_titel != -1)
-                        {
-                            Add_Studiengang(ID_Hochschule, ID_titel);
-                        }
-                        else if (ID_Hochschule == 0)
-                        {
-
-                            DialogResult dialogResult = MessageBox.Show("Hochschule doesn't exist! Please click Ok to add a new hochschule!", "confirmation", MessageBoxButtons.OKCancel);
-                            if (dialogResult == DialogResult.OK)
-                            {
-                                Add_Hochschule add_Hochschule = new Add_Hochschule(benutzerOnline, HochschuleComboBox.Text);
-                                add_Hochschule.Show();
-                                this.Close();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("The User " + benutzerOnline + " is offline!");
-                        this.Close();
-                    }
-                }
+                }         
             }
             else
             {
@@ -343,11 +283,6 @@ namespace DataManagerSystem.Modules
         private void Cancelbutton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void HochschuleComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }

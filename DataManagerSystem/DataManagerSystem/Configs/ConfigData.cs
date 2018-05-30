@@ -9,7 +9,6 @@ namespace DataManagerSystem.Configs
     public class ConfigData
     {
         private string _databasePath; //Database Path
-
         public string DatabasePath
         {
             get { return _databasePath; }
@@ -17,7 +16,6 @@ namespace DataManagerSystem.Configs
         }
 
         private string _dbConnectionString; //Database Default Path
-
         public string DbConnectionString
         {
             get { return _dbConnectionString;}
@@ -25,7 +23,6 @@ namespace DataManagerSystem.Configs
         }
 
         private string _saveDocxPath;
-
         public string SaveDocxPath
         {
             get { return _saveDocxPath; }

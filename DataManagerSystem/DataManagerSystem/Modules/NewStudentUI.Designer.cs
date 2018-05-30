@@ -623,7 +623,6 @@
             this.CanceledBtn.TabIndex = 16;
             this.CanceledBtn.Text = "Abbrechen";
             this.CanceledBtn.UseVisualStyleBackColor = false;
-            // 
             // CpTB
             // 
             this.CpTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
