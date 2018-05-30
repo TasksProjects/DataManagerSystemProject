@@ -183,7 +183,8 @@ namespace DataManagerSystem
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-
+            UebersichtBetreuer uebersichtBetreuer = new UebersichtBetreuer();
+            uebersichtBetreuer.Show();
         }
 
         private void Helpbutton_Click(object sender, EventArgs e)
