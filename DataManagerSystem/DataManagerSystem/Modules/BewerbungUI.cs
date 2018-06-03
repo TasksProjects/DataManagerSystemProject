@@ -37,9 +37,15 @@ namespace DataManagerSystem.Modules
                 OleDbCommand cmd = new OleDbCommand();
                 cmd.Connection = UserConnection;
 
-                string query = "SELECT * FROM tab_bewerbung";
-                   
-                               
+
+                string query = "SELECT b.ID, b.Vorname, b.Name, b.Geschlecht, c.txtNationalität AS Nationalitaet,d.txtName AS Studiengang, e.txtName AS Hochschule, " +
+                    "b.Creditpunkt, b.NoteVorlaeufig, b.Note,f.txtName AS Masterstudiengang, h.txtName AS Masterstudiengang2, j.txtName AS Masterstudiengang3, s.txtSemester AS Semester, " +
+                    "b.Kommentar, b.Zusatz, b.Ablehnungsgrund, b.AnProf, b.Verwaltung, b.Angenommen " +
+                    "FROM tab_bewerbung AS b, tab_land AS c, tab_hochschule AS e, tab_studiengang AS d, tab_masterstudiengang AS f, tab_masterstudiengang AS h, " +
+                    "tab_semester AS s, tab_masterstudiengang AS j " +
+                    "Where c.ID = b.Nationalitaet AND e.ID = b.Hochschule AND d.ID = b.Studiengang AND f.ID = b.Masterstudiengang " +
+                    "AND s.ID = b.Semester AND h.ID = b.Masterstudiengang2 AND j.ID = b.Masterstudiengang3";
+
                 cmd.CommandText = query;
 
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -77,7 +83,7 @@ namespace DataManagerSystem.Modules
             
             bewerbungsdata.Zusatz = row.Cells["Zusatz"].Value.ToString();
             bewerbungsdata.Comment = row.Cells["Kommentar"].Value.ToString();
-            bewerbungsdata.Prof = (bool)row.Cells["An Prof"].Value;
+            bewerbungsdata.Prof = (bool)row.Cells["AnProf"].Value;
             bewerbungsdata.Ablehnungsgrund = row.Cells["Ablehnungsgrund"].Value.ToString();
             bewerbungsdata.Verwaltung = (bool)row.Cells["Verwaltung"].Value;
             bewerbungsdata.Angenommen = (bool)row.Cells["Angenommen"].Value;
@@ -267,6 +273,49 @@ namespace DataManagerSystem.Modules
             Docx.CreateDocx(filepath);
 
             return filepath;
+        }
+
+        private void StatusBtn_Click(object sender, EventArgs e)
+        {
+            if (BewerbungIdTB.Text.Trim() != string.Empty)
+            {
+                StudentInfo studentInfo = new StudentInfo(bewerbungsdata);
+                studentInfo.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No Cell Selected!");
+            }        
+        }
+
+        private void EinstufBtn_Click(object sender, EventArgs e)
+        {
+
+            if (BewerbungIdTB.Text.Trim() != string.Empty)
+            {
+                EinstufenUI einstufenUI = new EinstufenUI(bewerbungsdata);
+                einstufenUI.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No Cell Selected!");
+            }
+        }
+
+        private void BtnNotenEingeben_Click(object sender, EventArgs e)
+        {
+            if (BewerbungIdTB.Text.Trim() != string.Empty)
+            {
+                NotenEingeben notenEingeben = new NotenEingeben (bewerbungsdata);
+                notenEingeben.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No Cell Selected!");
+            }
         }
     }
 }

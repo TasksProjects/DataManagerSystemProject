@@ -1,30 +1,65 @@
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.ResolveComReference.cache
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Land.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Semester.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.BewerbungUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditPerson.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangUI.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.cache
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CopyComplete
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
-G:\GitProjekt\DataManagerSystemProject\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+G:\GitProjects\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.ResolveComReference.cache
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Land.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Semester.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.BewerbungUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditPerson.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangUI.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.cache
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CopyComplete
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+G:\GitProjects\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.config
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe.manifest
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.application
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.exe
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\bin\Debug\DataManagerSystem.pdb
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csprojResolveAssemblyReference.cache
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.ResolveComReference.cache
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddBetreuer.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AddUserUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Hochschule.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Land.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.Add_Semester.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.AdminUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.BewerbungUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditAccountUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditPerson.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EditUserUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.FormLogin.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.MainWindow.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NewStudentUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.RemoveUserUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.SettingsUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.UebersichtBetreuer.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Properties.Resources.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.GenerateResource.cache
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CoreCompileInputs.cache
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe.manifest
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.application
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.csproj.CopyComplete
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.exe
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.pdb
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudentInfo.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.EinstufenUI.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.NotenEingeben.resources
+G:\projet Lehrstuhl Verfahren technik\Back up\30.05.2018 franc version\DataManagerSystem\DataManagerSystem\obj\Debug\DataManagerSystem.Modules.StudiengangNotenEingeben.resources

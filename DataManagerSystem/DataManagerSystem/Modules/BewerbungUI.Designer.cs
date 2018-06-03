@@ -43,6 +43,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.EditBtn = new System.Windows.Forms.Button();
             this.BewerbungIdTB = new System.Windows.Forms.TextBox();
+            this.BtnNotenEingeben = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel1.Controls.Add(this.BtnNotenEingeben);
             this.panel1.Controls.Add(this.HA4_1Btn);
             this.panel1.Controls.Add(this.EinstufBtn);
             this.panel1.Controls.Add(this.AnProfBtn);
@@ -103,12 +105,13 @@
             this.EinstufBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EinstufBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EinstufBtn.ForeColor = System.Drawing.Color.White;
-            this.EinstufBtn.Location = new System.Drawing.Point(688, 742);
+            this.EinstufBtn.Location = new System.Drawing.Point(741, 742);
             this.EinstufBtn.Name = "EinstufBtn";
             this.EinstufBtn.Size = new System.Drawing.Size(144, 33);
             this.EinstufBtn.TabIndex = 61;
             this.EinstufBtn.Text = "Einstufen";
             this.EinstufBtn.UseVisualStyleBackColor = false;
+            this.EinstufBtn.Click += new System.EventHandler(this.EinstufBtn_Click);
             // 
             // AnProfBtn
             // 
@@ -117,7 +120,7 @@
             this.AnProfBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnProfBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnProfBtn.ForeColor = System.Drawing.Color.White;
-            this.AnProfBtn.Location = new System.Drawing.Point(450, 742);
+            this.AnProfBtn.Location = new System.Drawing.Point(379, 742);
             this.AnProfBtn.Name = "AnProfBtn";
             this.AnProfBtn.Size = new System.Drawing.Size(144, 33);
             this.AnProfBtn.TabIndex = 60;
@@ -132,7 +135,7 @@
             this.PrintBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PrintBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintBtn.ForeColor = System.Drawing.Color.White;
-            this.PrintBtn.Location = new System.Drawing.Point(231, 742);
+            this.PrintBtn.Location = new System.Drawing.Point(194, 742);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(144, 33);
             this.PrintBtn.TabIndex = 59;
@@ -187,6 +190,7 @@
             this.StatusBtn.TabIndex = 55;
             this.StatusBtn.Text = "Status anschauen";
             this.StatusBtn.UseVisualStyleBackColor = false;
+            this.StatusBtn.Click += new System.EventHandler(this.StatusBtn_Click);
             // 
             // Deletebtn
             // 
@@ -248,6 +252,21 @@
             this.BewerbungIdTB.Size = new System.Drawing.Size(160, 26);
             this.BewerbungIdTB.TabIndex = 53;
             // 
+            // BtnNotenEingeben
+            // 
+            this.BtnNotenEingeben.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnNotenEingeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BtnNotenEingeben.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNotenEingeben.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNotenEingeben.ForeColor = System.Drawing.Color.White;
+            this.BtnNotenEingeben.Location = new System.Drawing.Point(559, 742);
+            this.BtnNotenEingeben.Name = "BtnNotenEingeben";
+            this.BtnNotenEingeben.Size = new System.Drawing.Size(144, 33);
+            this.BtnNotenEingeben.TabIndex = 63;
+            this.BtnNotenEingeben.Text = "Noten Eingeben";
+            this.BtnNotenEingeben.UseVisualStyleBackColor = false;
+            this.BtnNotenEingeben.Click += new System.EventHandler(this.BtnNotenEingeben_Click);
+            // 
             // BewerbungUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +300,6 @@
         private System.Windows.Forms.Button HA4_1Btn;
         private System.Windows.Forms.Button EinstufBtn;
         private System.Windows.Forms.Button AnProfBtn;
+        private System.Windows.Forms.Button BtnNotenEingeben;
     }
 }

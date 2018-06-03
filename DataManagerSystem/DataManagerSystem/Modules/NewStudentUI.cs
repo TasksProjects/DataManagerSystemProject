@@ -14,7 +14,7 @@ namespace DataManagerSystem.Modules
     {
         private ConfigData config = new ConfigData();
         DatabaseManager databaseManager = new DatabaseManager();
-        Bewerbungsdata bd = new Bewerbungsdata(); //bewerbungsdata
+        string geschlecht;
 
         public NewStudentUI()
         {   
@@ -614,60 +614,67 @@ namespace DataManagerSystem.Modules
         public bool Add_New_Student()
         {
             bool response = false;
+            int check_NoteVorläufing;
+           
+
             config = XmlDataManager.XmlConfigDataReader("configs.xml");
 
-            bd.Vorname = FirstnameTB.Text.Trim();
-            bd.Name = NameTB.Text.Trim();
+            if (NoteVorläufingCheckBox.Checked == true)
+            {
+                check_NoteVorläufing = 1;
+            }
+            else
+            {
+                check_NoteVorläufing = 0;
+            }
 
-            MannlichRadioButton.Checked = (bd.Geschlecht == "Männlich") ? true : false;
-            WeiblichRadioButton.Checked = (bd.Geschlecht == "Weiblich") ? true : false;
-
-            bd.Nationalitaet = NationalityTB.Text.Trim();
-            bd.Note = AbschlussnoteTB.Text.Trim(); ;
-            bd.NoteVorlaeufig = (NoteVorläufingCheckBox.Checked == true)? true : false;
-            bd.Studiengang = StudiengangCB.Text.Trim();
-            bd.Masterstudiengang = MasterstudiengangCB.Text.Trim();
-            bd.Masterstudiengang_2 = MasterstudiengangCB2.Text.Trim();
-            bd.Masterstudiengang_3 = MasterstudiengangCB3.Text.Trim();
-            bd.Hochschule = HochschuleTexBox.Text.Trim();
-            bd.Creditpunkte = CpTB.Text.Trim();
-            bd.Ablehnungsgrund = AblehnungsgrundTB.Text.Trim();
-            bd.Comment = KommentarTB.Text.Trim();
-            bd.Zusatz = ZusatzTB.Text.Trim();
-            bd.Angenommen = (AngenommenCheckBox.Checked == true) ? true : false;
-            bd.Prof = (AnProfCheckBox.Checked == true) ? true : false;
-            bd.Verwaltung = (AnHaCheckBox.Checked == true) ? true : false;
-
-            double note = 0;
-            double.TryParse(bd.Note, out note);
-
-            int vorlaeufig = (bd.NoteVorlaeufig) ? 1 : 0;
-
+            int Student_nationalitaet = Search_NationalitaetID(NationalityTB.Text.Trim());
+            int Student_studiengang = Search_StudiengangID(StudiengangCB.Text.Trim());
+            double AbschlussNote;
             int CP;
-            int.TryParse(CpTB.Text.Trim(), out CP);
+            bool res = double.TryParse(AbschlussnoteTB.Text.Trim(), out AbschlussNote);
+            bool result = int.TryParse(CpTB.Text.Trim(), out CP);
 
-            string query = "insert into  tab_bewerbung([Vorname],[Name],[Geschlecht],[Nationalitaet],[Studiengang],[Hochschule],[Creditpunkt],[NoteVorlaeufig],[Note],[Masterstudiengang],[Masterstudiengang2],[Masterstudiengang3],[Semester],[Kommentar],[Zusatz],[Ablehnungsgrund],[An Prof],[Verwaltung],[Angenommen])" +
-                    " values ('" + bd.Vorname + "','" + bd.Name + "','" + bd.Geschlecht + "','" + bd.Nationalitaet + "'," +
-                    "'" + bd.Studiengang + "','" + bd.Hochschule + "', '" + vorlaeufig + "', '" + note + "')";
-            OleDbConnection UserConnection = new OleDbConnection();
-            UserConnection.ConnectionString = config.DbConnectionString;
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = query;
-            cmd.Connection = UserConnection;
-            UserConnection.Open();
-            try
+            if ((Student_nationalitaet !=0)&&(Student_studiengang !=0)&& ((res == true) && (result == true)))
             {
-                cmd.ExecuteNonQuery();
-                // MessageBox.Show("Data Saved Successful");
-                UserConnection.Close();
-                response = true;
+                /*
+                    StudentData studentData = new StudentData
+                    {
+                        Vorname = FirstnameTB.Text.Trim(),
+                        Name = NameTB.Text.Trim(),
+                        Nationalitaet = Student_nationalitaet,
+                        Bachelor = Student_studiengang,
+                        Geschlecht = geschlecht,
+                        //Student_Note = Convert.ToDouble(AbschlussnoteTB.Text.Trim()),
+                        Student_Note = AbschlussNote,
+                        NoteVorlaefig = check_NoteVorläufing,
+                        // Creditpunkte = Convert.ToInt32(CpTB.Text.Trim())
+                        Creditpunkte = CP
+                    };
+
+                    string query = "insert into  tab_person([txtVorname],[txtName],[txtGeschlecht],[intNationalität],[intBachelor],[dblNote],[blnNoteVorläufig],[intCP])" +
+                           " values ('" + studentData.Vorname + "','" + studentData.Name + "','" + studentData.Geschlecht + "','" + studentData.Nationalitaet + "'," +
+                           "'" + studentData.Bachelor + "','" + studentData.Student_Note + "', '" + studentData.NoteVorlaefig + "', '" + studentData.Creditpunkte + "')";
+                    OleDbConnection UserConnection = new OleDbConnection();
+                    UserConnection.ConnectionString = config.DbConnectionString;
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = UserConnection;
+                    UserConnection.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        // MessageBox.Show("Data Saved Successful");
+                        UserConnection.Close();
+                        response = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex);
+                    }
+                    */
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex);
-            }
-            
             return response;
         }
         
@@ -945,12 +952,12 @@ namespace DataManagerSystem.Modules
         */
         private void MannlichRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            bd.Geschlecht = "Mannlich";
+            geschlecht = "Mannlich";
         }
 
         private void WeiblichRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            bd.Geschlecht = "Weiblich";
+            geschlecht = "Weiblich";
         }
 
         private void ExportDocx()
